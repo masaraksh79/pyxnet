@@ -36,6 +36,7 @@ void Server::initialize()
     slotTime        = par("slotTime");
     cycleSlots      = par("cycleSlots");
     numHosts        = par("numHosts");
+    ARSlot          = par("ARSInitial");
 
     pid = 1;
 
@@ -73,11 +74,15 @@ simtime_t Server::getNextSlotTime()
     return t;
 }
 
+/* Base BCS packet
+ * The one and only TDM advertisement
+ * */
 void Server::downMessage(BasePkt *pkt)
 {
     pkt->setPid(pid);
     pkt->setLts(lscnt);
     pkt->setCycleSlots(cycleSlots);
+    pkt->setARS(ARSlot);
 
     //TODO: add errors to swap ---> p->setBitError(false);
 

@@ -9,7 +9,6 @@
 
 #include "Host.h"
 #include "pkt_m.h"
-#include <stdlib.h>
 
 namespace pyxis {
 
@@ -18,6 +17,7 @@ Define_Module(Host);
 Host::Host()
 {
     slotEvent = new cMessage("Slot");
+    joinPkt = new JoinPkt("PR_Join");
 }
 
 Host::~Host()
@@ -39,10 +39,13 @@ void Host::initialize()
 
     srand(getId());
 
-    bootState = BOOT;
+    inNetworkState = ALONE;
+    syncState = BOOT;
     bootDelay = rand() % randomStart;
     logicSlotCnt = rand() % cycleSlots;
     pid = 0;
+    reqSlot = -1;
+    cycleCnt = 0;
     isSynced = false;
     slotRx = 0;
     slotUs = (rand() % 100) / 100.0 * slotTime.dbl();
@@ -58,21 +61,41 @@ void Host::handleMessage(cMessage *msg)
     if (msg->isSelfMessage())
     {
         if (0 == logicSlotCnt % cycleSlots)  // one cycle passed
+        {
             logicSlotCnt = 0;
+            EV << "New cycle:" << cycleCnt++ << "\n";
+        }
 
         slotUs = simTime();
 
-        ++logicSlotCnt;
-
         if (bootDelay)
-            bootDelay--;
-        else if (bootState == BOOTING)
         {
-            EV << "start delay " << bootDelay << "\n";
-            bootState = UNSYNC;
+            bootDelay--;
+        }
+        else if (syncState == BOOTING)
+        {
+            EV << "Finished booting MAC " << getMAC() << "\n";
+            syncState = UNSYNC;
+        }
+
+        if (UNSYNC < syncState) // normal or partial synchronized state
+        {
+            if (ALONE == inNetworkState)
+            {
+                if (0 == logicSlotCnt)
+                    reqSlot = findUpJoinSlot();
+
+                if (reqSlot >= 0 && reqSlot == logicSlotCnt)
+                {
+                    EV << "Sending Join Request from " << getMAC() << " in slot " << reqSlot << "\n";
+                    upJoinRequest(joinPkt);
+                    reqSlot = -1;
+                }
+            }
         }
 
         scheduleAt(getNextSlotTime(), msg);
+        ++logicSlotCnt;
         return;
     }
 
@@ -84,10 +107,10 @@ simtime_t Host::getNextSlotTime()
 {
     simtime_t t = simTime();
 
-    if (BOOT == bootState)  // creates a slot-fraction time offset, random and different for each host
+    if (BOOT == syncState)  // creates a slot-fraction time offset, random and different for each host
     {
         t += slotTime + (slotTime * (double)(rand() % 1000) / 1000.0);
-        bootState = BOOTING;
+        syncState = BOOTING;
         return t;
     }
     else
@@ -105,16 +128,17 @@ void Host::receiveBase(cMessage* msg)
     if (bootDelay > 0)
         return;
 
-    if (UNSYNC == bootState)
+    cycleSlots  = pkt->getCycleSlots();
+    ARSlot      = pkt->getARS();
+
+    if (UNSYNC == syncState)
     {
         if (slotRx != slotUs)
         {
-            simtime_t tmpslotUs = slotUs;
-            int tmplscnt = logicSlotCnt;
+            simtime_t tmpSlotUs = slotUs;
+            int tmpLogicSlotCnt = logicSlotCnt;
 
             logicSlotCnt = pkt->getLts();
-
-            cycleSlots = pkt->getCycleSlots();
 
             //TODO: use radioDelay for difference error!
 
@@ -126,7 +150,7 @@ void Host::receiveBase(cMessage* msg)
             if (hasGUI())
             {
                 char buf[64];
-                sprintf(buf, "Time %lf->%lf, Slot %d->%d", tmpslotUs.dbl(), slotUs.dbl(), tmplscnt, logicSlotCnt);
+                sprintf(buf, "Corrected %lf->%lf, Slot %d->%d", tmpSlotUs.dbl(), slotUs.dbl(), tmpLogicSlotCnt, logicSlotCnt);
                 bubble(buf);
             }
 
@@ -135,30 +159,46 @@ void Host::receiveBase(cMessage* msg)
             scheduleAt(slotUs, slotEvent);
         }
 
-        bootState = LSYNC;      // assume LSYNC and TSYNC automatically (TODO: might only be TSYNC is packet is bad)
+        syncState = LSYNC;      // assume LSYNC and TSYNC automatically (TODO: might only be TSYNC is packet is bad)
     }
+}
 
+void Host::upJoinRequest(JoinPkt* pkt)
+{
+    pkt->setMac(getMAC());
+    cMessage *copy = ((cMessage *)pkt)->dup();
+    send(copy, "out");
+}
+
+int Host::getMAC()
+{
+    return (getId() | 52295);
+}
+
+int Host::findUpJoinSlot()
+{
+    return ( 1 + rand() % ARSlot );
 }
 
 void Host::refreshDisplay() const
 {
     getDisplayString().setTagArg("t", 2, "#808000");
-    if (bootState == BOOT)
+    if (syncState == BOOT)
     {
         getDisplayString().setTagArg("i", 1, "");
         getDisplayString().setTagArg("t", 0, "");
     }
-    if (bootState == UNSYNC)
+    if (syncState == UNSYNC)
     {
         getDisplayString().setTagArg("i", 1, "red");
         getDisplayString().setTagArg("t", 0, "BOOTED");
     }
-    else if (bootState == TSYNC)
+    else if (syncState == TSYNC)
     {
         getDisplayString().setTagArg("i", 1, "yellow");
         getDisplayString().setTagArg("t", 0, "TIME-SYNCED");
     }
-    else if (bootState == LSYNC)
+    else if (syncState == LSYNC)
     {
         getDisplayString().setTagArg("i", 1, "green");
         getDisplayString().setTagArg("t", 0, "SYNCED");

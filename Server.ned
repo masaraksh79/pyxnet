@@ -15,6 +15,7 @@ simple Server
     parameters:
         int numHosts;
         int cycleSlots;
+        int ARSInitial;
         double txRate @unit(bps);          // transmission rate
         //volatile int pkLenBits @unit(b);  // packet length in bits
         //volatile double iaTime @unit(s);  // packet interarrival time

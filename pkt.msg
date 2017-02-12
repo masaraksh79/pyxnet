@@ -22,5 +22,11 @@ packet BasePkt {
     int pid;			// base PID (might be PRR PID)
     int lts;				// logical time-slot
     int cycleSlots;	// adv next cycle slots
-    
+    int ARS;			// Access Request Slot len
+    int macs[];		// a combination of MAC+PID	
+    int pids[];		// in an array for single or group PID allocation
+}
+
+packet JoinPkt {
+    int mac;				// a replacement of MAC address in real nodes
 }

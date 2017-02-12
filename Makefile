@@ -1,12 +1,12 @@
 #
-# OMNeT++/OMNEST Makefile for pyxis
+# OMNeT++/OMNEST Makefile for pyxnet
 #
 # This file was generated with the command:
 #  opp_makemake -f --deep -O out
 #
 
 # Name of target to be created (-o option)
-TARGET = pyxis$(EXE_SUFFIX)
+TARGET = pyxnet$(EXE_SUFFIX)
 
 # User interface (uncomment one) (-u option)
 USERIF_LIBS = $(ALL_ENV_LIBS) # that is, $(TKENV_LIBS) $(QTENV_LIBS) $(CMDENV_LIBS)
@@ -115,7 +115,7 @@ smheaders: $(SMFILES:.sm=_sm.h)
 clean:
 	$(qecho) Cleaning...
 	$(Q)-rm -rf $O
-	$(Q)-rm -f pyxis pyxis.exe libpyxis.so libpyxis.a libpyxis.dll libpyxis.dylib
+	$(Q)-rm -f pyxnet pyxnet.exe libpyxnet.so libpyxnet.a libpyxnet.dll libpyxnet.dylib
 	$(Q)-rm -f ./*_m.cc ./*_m.h ./*_sm.cc ./*_sm.h
 
 cleanall: clean
