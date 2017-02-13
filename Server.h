@@ -23,7 +23,8 @@ class Server : public cSimpleModule
       // parameters
       simtime_t radioDelay;
       int cycleSlots, ARSlot;
-      int numHosts;
+      int numHosts, rxAtSlot;
+      bool* failedSlots;
       double txRate;
       simtime_t slotTime;
       cQueue queue;
@@ -38,8 +39,7 @@ class Server : public cSimpleModule
       // Unit that has received a packet from another valid PID acquires TSYNC
       // and if the packet content is sound the LSYNC (there might be the case)
       // where UNSYNC->LSYNC however if packet has bad CRC then only UNSYNC->TSYNC
-      int pid, lscnt;     // Pyxis node ID and logical slot counter
-      int pkCounter;
+      int pid, logicSlotCnt;     // Pyxis node ID and logical slot counter
 
     public:
       Server();
@@ -50,6 +50,9 @@ class Server : public cSimpleModule
       virtual void handleMessage(cMessage *msg) override;
       simtime_t getNextSlotTime();
       void downMessage(BasePkt *pkt);
+      void initFailSlots(int slots);
+      void receiveRemote(cPacket* msg);
+      void processJoin(JoinPkt* msg);
 };
 
 }; //namespace

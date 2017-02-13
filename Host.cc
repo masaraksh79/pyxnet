@@ -139,6 +139,7 @@ void Host::receiveBase(cMessage* msg)
             int tmpLogicSlotCnt = logicSlotCnt;
 
             logicSlotCnt = pkt->getLts();
+            EV << "MAC " << getMAC() << " logical slot now is " << logicSlotCnt << "\n";
 
             //TODO: use radioDelay for difference error!
 
@@ -172,7 +173,7 @@ void Host::upJoinRequest(JoinPkt* pkt)
 
 int Host::getMAC()
 {
-    return (getId() | 52295);
+    return (getId() + 52295);
 }
 
 int Host::findUpJoinSlot()

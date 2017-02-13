@@ -42,9 +42,8 @@ void Server::initialize()
 
     srand(getId());
 
-    lscnt = 0;
-
-    pkCounter = 0;
+    logicSlotCnt = 0;
+    initFailSlots(ARSlot);
 
     scheduleAt(getNextSlotTime(), slotEvent);
 }
@@ -54,17 +53,19 @@ void Server::handleMessage(cMessage *msg)
     // time slot tick event
     if (msg->isSelfMessage())
     {
-        if (0 == lscnt % cycleSlots)  // one cycle passed
-            lscnt = 0;
+        if (0 == logicSlotCnt % cycleSlots)  // one cycle passed
+            logicSlotCnt = 0;
 
-        if (lscnt == 0) // may always be sent from ts0
+        if (logicSlotCnt == 0) // may always be sent from ts0
             this->downMessage(bcs_pkt);
 
-        ++lscnt;
+        ++logicSlotCnt;
 
         scheduleAt(getNextSlotTime(), msg);
         return;
     }
+
+    receiveRemote((cPacket *)msg);
 
 }
 
@@ -80,9 +81,13 @@ simtime_t Server::getNextSlotTime()
 void Server::downMessage(BasePkt *pkt)
 {
     pkt->setPid(pid);
-    pkt->setLts(lscnt);
+    pkt->setLts(logicSlotCnt);
     pkt->setCycleSlots(cycleSlots);
     pkt->setARS(ARSlot);
+    // fill in failed slots from last cycle
+    pkt->setFailedSlotsArraySize(ARSlot);
+    for (int i = 0; i < ARSlot; i++)
+        pkt->setFailedSlots(i, failedSlots[i]);
 
     //TODO: add errors to swap ---> p->setBitError(false);
 
@@ -91,6 +96,46 @@ void Server::downMessage(BasePkt *pkt)
         cMessage *copy = ((cMessage *)pkt)->dup();
         send(copy, "out", i);
     }
+
+    // Initialize failed slot information for next cycle
+    this->initFailSlots(ARSlot);
+}
+
+void Server::initFailSlots(int slots)
+{
+    if (failedSlots != NULL)
+        delete failedSlots;
+
+    failedSlots = new bool[slots];
+
+    for (int i = 0; i < slots; i++)
+        failedSlots[i] = false;
+
+    rxAtSlot = 0;   // used to detect whether received more than one remote in same AR Slot
+}
+
+void Server::receiveRemote(cPacket* msg)
+{
+    static int tmpLogicSlot = -1;
+
+    EV << "PB Rx in mini-slot # " << logicSlotCnt << "\n";
+
+    if (tmpLogicSlot != logicSlotCnt)
+    {
+        tmpLogicSlot = logicSlotCnt;
+        processJoin((JoinPkt *)msg);
+        return;
+    }
+
+    EV << "Detected collision in mini-slot # " << logicSlotCnt << "\n";
+
+    if (logicSlotCnt <= ARSlot && logicSlotCnt > 0)
+        failedSlots[logicSlotCnt-1] = true;
+}
+
+void Server::processJoin(JoinPkt* msg)
+{
+    // TODO: allocate PID
 }
 
 }; //namespace

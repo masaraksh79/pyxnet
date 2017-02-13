@@ -25,6 +25,7 @@ packet BasePkt {
     int ARS;			// Access Request Slot len
     int macs[];		// a combination of MAC+PID	
     int pids[];		// in an array for single or group PID allocation
+    bool failedSlots[];		// in an array for slots with detected collision
 }
 
 packet JoinPkt {

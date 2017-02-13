@@ -27,8 +27,8 @@ network Pyxis
         }; 
 	connections:
     	for i=0..numHosts-1 { 
-        	server.out[i] --> { delay=3us; } --> host[i].in;
-        	server.in[i] <-- { delay=50us; } <-- host[i].out;
+        	server.out[i] --> { delay=1us; } --> host[i].in;
+        	server.in[i] <-- { delay=1us; } <-- host[i].out;
 		}
 }
 
