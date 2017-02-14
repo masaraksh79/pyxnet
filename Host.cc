@@ -45,6 +45,7 @@ void Host::initialize()
     logicSlotCnt = rand() % cycleSlots;
     pid = 0;
     reqSlot = -1;
+    collisionCnt = 0;
     cycleCnt = 0;
     isSynced = false;
     slotRx = 0;
@@ -166,9 +167,7 @@ void Host::receiveBase(cMessage* msg)
     if (UNSYNC < syncState)
     {
        // handle the advertisement about collision from PB to back-off
-       for (int i = 0; i < ARSlot; i++)
-           if (pkt->getFailedSlots(i) && i == reqSlot)
-               this->backOff();
+       this->backOff(pkt);
     }
 }
 
@@ -186,13 +185,39 @@ int Host::getMAC()
 
 int Host::findUpJoinSlot()
 {
+    if (collisionCnt > 0)
+    {
+        double harmonic = (1.0 / (1.0 + collisionCnt));
+        double heads = uniform(1, 0.0, 1.0);
+
+        collisionCnt--;
+
+        if (heads <= harmonic)
+        {
+            EV << "MAC " << getMAC() << " will capture a slot!\n";
+            return ( 1 + rand() % ARSlot );
+        }
+        else
+        {
+            EV << "MAC " << getMAC() << " avoided request due collisions\n";
+            return -1;
+        }
+    }
+
     return ( 1 + rand() % ARSlot );
 }
 
-void Host::backOff()
+void Host::backOff(BasePkt* pkt)
 {
-    // Implement harmonic back-off
-    EV << "MAC " << getMAC() << " is backing Off!\n";
+    for (int i = 0; i < ARSlot; i++)
+    {
+        if (pkt->getFailedSlots(i) && i == reqSlot)
+        {
+            collisionCnt++;
+            // Implement harmonic back-off
+            EV << "MAC " << getMAC() << " is backing Off!\n";
+        }
+    }
 }
 
 void Host::refreshDisplay() const

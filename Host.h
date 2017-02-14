@@ -26,7 +26,7 @@ class Host : public cSimpleModule
     // parameters
     simtime_t radioDelay;
     int cycleSlots, ARSlot, bootDelay, randomStart;
-    int reqSlot;
+    int reqSlot, collisionCnt;
     double txRate;
     simtime_t slotRx, slotUs;
     simtime_t slotTime;
@@ -59,7 +59,7 @@ class Host : public cSimpleModule
     void receiveBase(cMessage* msg);
     void upJoinRequest(JoinPkt* pkt);
     int getMAC();
-    void backOff();
+    void backOff(BasePkt* pkt);
     int findUpJoinSlot();
     simtime_t getNextSlotTime();
 };
