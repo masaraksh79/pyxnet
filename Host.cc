@@ -89,7 +89,7 @@ void Host::handleMessage(cMessage *msg)
                 {
                     EV << "Sending Join Request from " << getMAC() << " in slot " << reqSlot << "\n";
                     upJoinRequest(joinPkt);
-                    reqSlot = -1;
+                    //reqSlot = -1;
                 }
             }
         }
@@ -162,6 +162,14 @@ void Host::receiveBase(cMessage* msg)
 
         syncState = LSYNC;      // assume LSYNC and TSYNC automatically (TODO: might only be TSYNC is packet is bad)
     }
+
+    if (UNSYNC < syncState)
+    {
+       // handle the advertisement about collision from PB to back-off
+       for (int i = 0; i < ARSlot; i++)
+           if (pkt->getFailedSlots(i) && i == reqSlot)
+               this->backOff();
+    }
 }
 
 void Host::upJoinRequest(JoinPkt* pkt)
@@ -179,6 +187,12 @@ int Host::getMAC()
 int Host::findUpJoinSlot()
 {
     return ( 1 + rand() % ARSlot );
+}
+
+void Host::backOff()
+{
+    // Implement harmonic back-off
+    EV << "MAC " << getMAC() << " is backing Off!\n";
 }
 
 void Host::refreshDisplay() const

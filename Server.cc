@@ -110,8 +110,6 @@ void Server::initFailSlots(int slots)
 
     for (int i = 0; i < slots; i++)
         failedSlots[i] = false;
-
-    rxAtSlot = 0;   // used to detect whether received more than one remote in same AR Slot
 }
 
 void Server::receiveRemote(cPacket* msg)
@@ -127,7 +125,7 @@ void Server::receiveRemote(cPacket* msg)
         return;
     }
 
-    EV << "Detected collision in mini-slot # " << logicSlotCnt << "\n";
+    EV << "Detected collision in mini-slot # " << logicSlotCnt-1 << "\n";
 
     if (logicSlotCnt <= ARSlot && logicSlotCnt > 0)
         failedSlots[logicSlotCnt-1] = true;

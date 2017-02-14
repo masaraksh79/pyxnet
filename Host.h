@@ -59,6 +59,7 @@ class Host : public cSimpleModule
     void receiveBase(cMessage* msg);
     void upJoinRequest(JoinPkt* pkt);
     int getMAC();
+    void backOff();
     int findUpJoinSlot();
     simtime_t getNextSlotTime();
 };

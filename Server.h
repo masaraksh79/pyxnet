@@ -23,7 +23,7 @@ class Server : public cSimpleModule
       // parameters
       simtime_t radioDelay;
       int cycleSlots, ARSlot;
-      int numHosts, rxAtSlot;
+      int numHosts;
       bool* failedSlots;
       double txRate;
       simtime_t slotTime;
