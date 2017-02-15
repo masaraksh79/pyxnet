@@ -29,7 +29,7 @@ PROJECTRELATIVE_PATH =
 O = $(PROJECT_OUTPUT_DIR)/$(CONFIGNAME)/$(PROJECTRELATIVE_PATH)
 
 # Object files for local .cc, .msg and .sm files
-OBJS = $O/Host.o $O/Server.o $O/pkt_m.o
+OBJS = $O/Host.o $O/JoinLeave.o $O/Server.o $O/pkt_m.o
 
 # Message files
 MSGFILES = \
@@ -129,8 +129,13 @@ depend:
 # DO NOT DELETE THIS LINE -- make depend depends on it.
 $O/Host.o: Host.cc \
 	Host.h \
+	JoinLeave.h \
+	pkt_m.h
+$O/JoinLeave.o: JoinLeave.cc \
+	JoinLeave.h \
 	pkt_m.h
 $O/Server.o: Server.cc \
+	JoinLeave.h \
 	Server.h \
 	pkt_m.h
 $O/pkt_m.o: pkt_m.cc \

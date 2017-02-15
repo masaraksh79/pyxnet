@@ -43,13 +43,16 @@ void Host::initialize()
     syncState = BOOT;
     bootDelay = rand() % randomStart;
     logicSlotCnt = rand() % cycleSlots;
-    pid = 0;
+
+
+    pid = EMPTY_PID;
+
     reqSlot = -1;
     collisionCnt = 0;
     cycleCnt = 0;
     isSynced = false;
     slotRx = 0;
-    slotUs = (rand() % 100) / 100.0 * slotTime.dbl();
+    slotUs = uniform(0, 0.0, 1.0) * slotTime.dbl();
 
     gate("in")->setDeliverOnReceptionStart(true);
 
@@ -110,7 +113,7 @@ simtime_t Host::getNextSlotTime()
 
     if (BOOT == syncState)  // creates a slot-fraction time offset, random and different for each host
     {
-        t += slotTime + (slotTime * (double)(rand() % 1000) / 1000.0);
+        t += slotTime + (slotTime * uniform(0, 0.0, 1.0));
         syncState = BOOTING;
         return t;
     }
@@ -168,6 +171,9 @@ void Host::receiveBase(cMessage* msg)
     {
        // handle the advertisement about collision from PB to back-off
        this->backOff(pkt);
+
+       if (ALONE == inNetworkState)
+           this->processPBJoin(pkt);
     }
 }
 
@@ -220,6 +226,20 @@ void Host::backOff(BasePkt* pkt)
     }
 }
 
+void Host::processPBJoin(BasePkt* pkt)
+{
+    for (int i = 0; i < pkt->getMacsArraySize(); i++)
+    {
+        if (pkt->getMacs(i) == getMAC())
+        {
+            pid = pkt->getPids(i);
+            inNetworkState = JOINED;
+            EV << "Received allocation for PID " <<  pid << "!\n";
+            break;
+        }
+    }
+}
+
 void Host::refreshDisplay() const
 {
     getDisplayString().setTagArg("t", 2, "#808000");
@@ -241,7 +261,16 @@ void Host::refreshDisplay() const
     else if (syncState == LSYNC)
     {
         getDisplayString().setTagArg("i", 1, "green");
-        getDisplayString().setTagArg("t", 0, "SYNCED");
+
+        if (pid == EMPTY_PID)
+            getDisplayString().setTagArg("t", 0, "SYNCED");
+        else
+        {
+            char pidstr[20] = {0};
+            sprintf(pidstr, "SYNCED (%d)", pid);
+            getDisplayString().setTagArg("t", 0, (const char *)pidstr);
+        }
+
     }
 }
 

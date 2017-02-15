@@ -12,6 +12,7 @@
 
 #include <omnetpp.h>
 #include "pkt_m.h"
+#include "JoinLeave.h"
 
 using namespace omnetpp;
 
@@ -61,6 +62,7 @@ class Host : public cSimpleModule
     int getMAC();
     void backOff(BasePkt* pkt);
     int findUpJoinSlot();
+    void processPBJoin(BasePkt* pkt);
     simtime_t getNextSlotTime();
 };
 

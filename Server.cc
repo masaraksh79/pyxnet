@@ -38,7 +38,9 @@ void Server::initialize()
     numHosts        = par("numHosts");
     ARSlot          = par("ARSInitial");
 
-    pid = 1;
+    jl = new JoinLeave(bcs_pkt, numHosts);
+
+    pid = PID_PB;
 
     srand(getId());
 
@@ -57,7 +59,11 @@ void Server::handleMessage(cMessage *msg)
             logicSlotCnt = 0;
 
         if (logicSlotCnt == 0) // may always be sent from ts0
+        {
             this->downMessage(bcs_pkt);
+
+            jl->clearJoinInBCS(bcs_pkt);
+        }
 
         ++logicSlotCnt;
 
@@ -133,7 +139,9 @@ void Server::receiveRemote(cPacket* msg)
 
 void Server::processJoin(JoinPkt* msg)
 {
-    // TODO: allocate PID
+    int pid = jl->allocatePID(msg->getMac());
+    EV << "Allocated PID " << pid << " to MAC " << msg->getMac() << "\n";
+    jl->addJointoBCS(bcs_pkt, pid, msg->getMac());
 }
 
 }; //namespace

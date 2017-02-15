@@ -12,6 +12,7 @@
 
 #include <omnetpp.h>
 #include "pkt_m.h"
+#include "JoinLeave.h"
 
 using namespace omnetpp;
 
@@ -40,6 +41,9 @@ class Server : public cSimpleModule
       // and if the packet content is sound the LSYNC (there might be the case)
       // where UNSYNC->LSYNC however if packet has bad CRC then only UNSYNC->TSYNC
       int pid, logicSlotCnt;     // Pyxis node ID and logical slot counter
+
+      //Supporting lib classes
+      JoinLeave *jl;
 
     public:
       Server();
