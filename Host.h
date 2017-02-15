@@ -25,18 +25,24 @@ class Host : public cSimpleModule
 {
   private:
     // parameters
+    simsignal_t queueLength;
+
     simtime_t radioDelay;
     int cycleSlots, ARSlot, bootDelay, randomStart;
     int reqSlot, collisionCnt;
+    int dataLen;
     double txRate;
     simtime_t slotRx, slotUs;
     simtime_t slotTime;
-    cQueue queue;
+    cPacketQueue *queue;
+    cPar *iaTime;
 
     // state variables, event pointers etc
     cModule *server;
     cMessage *slotEvent;
     JoinPkt* joinPkt;
+    RequestPkt* requestPkt;
+    cMessage* newPkt;
     // time and logic synchronization
     // first the unit boots and starts with its random time slot
     // then unit automatically drops into UNSYNC mode
@@ -59,11 +65,13 @@ class Host : public cSimpleModule
     virtual void refreshDisplay() const override;
     void receiveBase(cMessage* msg);
     void upJoinRequest(JoinPkt* pkt);
+    void upRequest(RequestPkt* pkt);
     int getMAC();
     void backOff(BasePkt* pkt);
-    int findUpJoinSlot();
+    int findUpSlot();
     void processPBJoin(BasePkt* pkt);
     simtime_t getNextSlotTime();
+    simtime_t getNextPktTime();
 };
 
 }; //namespace

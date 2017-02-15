@@ -22,6 +22,8 @@ class Server : public cSimpleModule
 {
     private:
       // parameters
+      simsignal_t collisionsBase;
+
       simtime_t radioDelay;
       int cycleSlots, ARSlot;
       int numHosts;

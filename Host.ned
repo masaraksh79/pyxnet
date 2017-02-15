@@ -16,13 +16,15 @@ simple Host
     parameters:
         int numHosts;
         int randomStart;
+        int dataLen;									// typical packet len from Host data source (bytes)
         int cycleSlots;									// dummy inited but is received from PB
         double txRate @unit(bps);          // transmission rate
         double radioDelay @unit(s);       // propagation delay of radio link
         //volatile int pkLenBits @unit(b);   // packet length in bits
-        //volatile double iaTime @unit(s);  // packet interarrival time
+        volatile double iaTime @unit(s);  // packet interarrival time
         double slotTime @unit(s);         
         @display("i=device/pc_s");
+        @signal[queueLenPackets](type="long");
      gates:
         input in;
         output out;        

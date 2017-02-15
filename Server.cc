@@ -32,6 +32,8 @@ void Server::initialize()
     if (!server)
         throw cRuntimeError("server not found");
 
+    collisionsBase = registerSignal("collisionsAtBase");
+
     txRate          = par("txRate");
     slotTime        = par("slotTime");
     cycleSlots      = par("cycleSlots");
@@ -132,6 +134,7 @@ void Server::receiveRemote(cPacket* msg)
     }
 
     EV << "Detected collision in mini-slot # " << logicSlotCnt-1 << "\n";
+    emit(collisionsBase, 1);
 
     if (logicSlotCnt <= ARSlot && logicSlotCnt > 0)
         failedSlots[logicSlotCnt-1] = true;

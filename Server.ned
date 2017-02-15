@@ -21,6 +21,7 @@ simple Server
         //volatile double iaTime @unit(s);  // packet interarrival time
         double slotTime @unit(s);         
         @display("i=device/antennatower_l");
+        @signal[collisionsAtBase](type="long");
     gates:
          input in[numHosts];
          output out[numHosts];

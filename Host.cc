@@ -18,11 +18,17 @@ Host::Host()
 {
     slotEvent = new cMessage("Slot");
     joinPkt = new JoinPkt("PR_Join");
+    requestPkt = new RequestPkt("PR_Rq");
+    newPkt = new cMessage;
+    queue = new cPacketQueue("Buffer");
 }
 
 Host::~Host()
 {
     cancelAndDelete(slotEvent);
+    cancelAndDelete(joinPkt);
+    cancelAndDelete(requestPkt);
+    cancelAndDelete(newPkt);
 }
 
 void Host::initialize()
@@ -31,11 +37,15 @@ void Host::initialize()
     if (!server)
         throw cRuntimeError("server not found");
 
+    queueLength = registerSignal("queueLenPackets");
+
     txRate          = par("txRate");
     slotTime        = par("slotTime");
     radioDelay      = par("radioDelay");
     cycleSlots      = par("cycleSlots");
     randomStart     = par("randomStart");
+    iaTime          = &par("iaTime");
+    dataLen         = par("dataLen");
 
     srand(getId());
 
@@ -56,7 +66,8 @@ void Host::initialize()
 
     gate("in")->setDeliverOnReceptionStart(true);
 
-    scheduleAt(getNextSlotTime(), slotEvent);
+    scheduleAt(getNextSlotTime(), slotEvent);   // mini-slot event
+    scheduleAt(getNextPktTime(), newPkt);       // event to add new packet into queue
 }
 
 void Host::handleMessage(cMessage *msg)
@@ -64,10 +75,18 @@ void Host::handleMessage(cMessage *msg)
     // time slot tick event
     if (msg->isSelfMessage())
     {
+        if (newPkt == msg)  // new fifo packet
+        {
+            queue->insert(new cPacket("Scada", 0, dataLen));
+            scheduleAt(getNextPktTime(), newPkt);
+            return;
+        }
+
         if (0 == logicSlotCnt % cycleSlots)  // one cycle passed
         {
             logicSlotCnt = 0;
             EV << "New cycle:" << cycleCnt++ << "\n";
+            emit(queueLength, queue->getLength());
         }
 
         slotUs = simTime();
@@ -84,16 +103,20 @@ void Host::handleMessage(cMessage *msg)
 
         if (UNSYNC < syncState) // normal or partial synchronized state
         {
-            if (ALONE == inNetworkState)
-            {
-                if (0 == logicSlotCnt)
-                    reqSlot = findUpJoinSlot();
+            if (0 == logicSlotCnt)
+                reqSlot = findUpSlot();
 
-                if (reqSlot >= 0 && reqSlot == logicSlotCnt)
+            if (reqSlot >= 0 && reqSlot == logicSlotCnt)
+            {
+                if (ALONE == inNetworkState)
                 {
                     EV << "Sending Join Request from " << getMAC() << " in slot " << reqSlot << "\n";
                     upJoinRequest(joinPkt);
-                    //reqSlot = -1;
+                }
+                else if (queue->getLength()) // Joined (only sends if data is in the queue)
+                {
+                    EV << "Sending Request from " << getMAC() << " in slot " << reqSlot << "\n";
+                    upRequest(requestPkt);
                 }
             }
         }
@@ -121,6 +144,11 @@ simtime_t Host::getNextSlotTime()
     {
         return (t + slotTime);
     }
+}
+
+simtime_t Host::getNextPktTime()
+{
+    return (simTime() + iaTime->doubleValue());
 }
 
 void Host::receiveBase(cMessage* msg)
@@ -184,12 +212,27 @@ void Host::upJoinRequest(JoinPkt* pkt)
     send(copy, "out");
 }
 
+void Host::upRequest(RequestPkt* pkt)
+{
+    if (pid == EMPTY_PID)
+    {
+        EV << "Should not try sending request if PID=0!\n";
+        return;
+    }
+
+    pkt->setPid(pid);
+    pkt->setBytes(queue->getBitLength());
+    EV << "Requested to transmit " << queue->getLength() << " pkts\n";
+    cMessage *copy = ((cMessage *)pkt)->dup();
+    send(copy, "out");
+}
+
 int Host::getMAC()
 {
     return (getId() + 52295);
 }
 
-int Host::findUpJoinSlot()
+int Host::findUpSlot()
 {
     if (collisionCnt > 0)
     {
