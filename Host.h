@@ -13,6 +13,7 @@
 #include <omnetpp.h>
 #include "pkt_m.h"
 #include "JoinLeave.h"
+#include "PyxisDefs.h"
 
 using namespace omnetpp;
 
@@ -26,10 +27,11 @@ class Host : public cSimpleModule
   private:
     // parameters
     simsignal_t queueLength;
+    simsignal_t collCnt;
 
     simtime_t radioDelay;
     int cycleSlots, ARSlot, bootDelay, randomStart;
-    int reqSlot, collisionCnt;
+    int reqSlot, collisionCnt, slotBytes;
     int dataLen;
     double txRate;
     simtime_t slotRx, slotUs;

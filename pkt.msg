@@ -26,6 +26,8 @@ packet BasePkt {
     int macs[];		// a combination of MAC+PID	
     int pids[];		// in an array for single or group PID allocation
     bool failedSlots[];		// in an array for slots with detected collision
+    int alloc_pids[];
+    int alloc_frames[];
 }
 
 packet JoinPkt {

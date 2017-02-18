@@ -17,8 +17,8 @@ Define_Module(Host);
 Host::Host()
 {
     slotEvent = new cMessage("Slot");
-    joinPkt = new JoinPkt("PR_Join");
-    requestPkt = new RequestPkt("PR_Rq");
+    joinPkt = new JoinPkt("PR_Join",JOIN_PKT_TYPE);
+    requestPkt = new RequestPkt("PR_Rq",REQ_PKT_TYPE);
     newPkt = new cMessage;
     queue = new cPacketQueue("Buffer");
 }
@@ -38,6 +38,7 @@ void Host::initialize()
         throw cRuntimeError("server not found");
 
     queueLength = registerSignal("queueLenPackets");
+    collCnt = registerSignal("collisionsAtHost");
 
     txRate          = par("txRate");
     slotTime        = par("slotTime");
@@ -46,6 +47,7 @@ void Host::initialize()
     randomStart     = par("randomStart");
     iaTime          = &par("iaTime");
     dataLen         = par("dataLen");
+    slotBytes       = par("slotBytes");
 
     srand(getId());
 
@@ -75,6 +77,7 @@ void Host::handleMessage(cMessage *msg)
     // time slot tick event
     if (msg->isSelfMessage())
     {
+        //TODO: need to see what doing with fragmentation
         if (newPkt == msg)  // new fifo packet
         {
             queue->insert(new cPacket("Scada", 0, dataLen));
@@ -239,8 +242,6 @@ int Host::findUpSlot()
         double harmonic = (1.0 / (1.0 + collisionCnt));
         double heads = uniform(1, 0.0, 1.0);
 
-        collisionCnt--;
-
         if (heads <= harmonic)
         {
             EV << "MAC " << getMAC() << " will capture a slot!\n";
@@ -256,15 +257,33 @@ int Host::findUpSlot()
     return ( 1 + rand() % ARSlot );
 }
 
+/* Harmonic backOff
+ * ----------------
+ * Will transmit the next request (or join request)
+ * with probability 1/(1+k) where k is the last counted
+ * number of collisions. Collisions are reported by the base
+ * in BCS and if on my last AR slot there were none do
+ * --cnt until 0 otherwise cnt++;
+ * */
+
 void Host::backOff(BasePkt* pkt)
 {
     for (int i = 0; i < ARSlot; i++)
     {
-        if (pkt->getFailedSlots(i) && i == reqSlot)
+        if (i == reqSlot)
         {
-            collisionCnt++;
-            // Implement harmonic back-off
-            EV << "MAC " << getMAC() << " is backing Off!\n";
+            if (pkt->getFailedSlots(i))
+            {
+                collisionCnt++;
+                EV << "MAC " << getMAC() << " will backOff from " << (1.0/(1.0+collisionCnt)) << "\n";
+            }
+            else if (collisionCnt)  // return from backing off
+            {
+                collisionCnt--;
+            }
+
+            emit(collCnt, collisionCnt);
+            break;
         }
     }
 }

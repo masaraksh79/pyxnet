@@ -88,5 +88,11 @@ void JoinLeave::clearJoinInBCS(BasePkt* pkt)
     }
 }
 
+void JoinLeave::confirmGivenPID(int pid)
+{
+    if (pidTable[pid].state == PID_OFFER)
+        pidTable[pid].state = PID_GIVEN;
+}
+
 
 } /* namespace pyxis */

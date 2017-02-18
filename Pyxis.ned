@@ -7,9 +7,11 @@ network Pyxis
     parameters:
         int numHosts; 								// number of hosts
         int cycleSlots;									// initially assumed cycle (only AS - access slots)
+        int slotBytes;
         double txRate @unit(bps);  			// transmission rate
         double slotTime @unit(ms);  		// mini-slot time
-        @display("bgi=background/terrain,s");
+        @display("bgb=5000,3000;bgi=maps/usa,s;bgg=1000,2,grey95;bgu=km");
+        //@display("bgi=background/terrain,s");
     submodules:
         server: Server
         {
@@ -17,6 +19,7 @@ network Pyxis
            txRate = txRate;
            slotTime = slotTime;		
            cycleSlots = cycleSlots;
+           slotBytes = slotBytes;
         };
         host[numHosts]: Host
         {
@@ -24,6 +27,7 @@ network Pyxis
             txRate = txRate;
             slotTime = slotTime;		
            cycleSlots = cycleSlots;
+           slotBytes = slotBytes;
         }; 
 	connections:
     	for i=0..numHosts-1 { 

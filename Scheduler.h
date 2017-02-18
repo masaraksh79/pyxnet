@@ -13,44 +13,33 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#ifndef JOINLEAVE_H_
-#define JOINLEAVE_H_
+#ifndef SCHEDULER_H_
+#define SCHEDULER_H_
 
-#include "pkt_m.h"
+#include <vector>
 
 namespace pyxis {
 
-#define EMPTY_PID   0
-#define PID_PB      1
-#define PID_PR_MIN  2
-#define PID_PR_MAX  252 // maximum is 251 + 1
-#define PID_BCAST   255
-
-// Can respond with join allocations at a time (may become dynamic...)
-#define NUM_OF_ALLOCATED    4
-
-typedef enum { PID_IDLE = 0, PID_OFFER, PID_GIVEN } pid_state_t;
 typedef struct
 {
-    pid_state_t state;
-    int mac;
+    int pid;
+    int frames;
 }
-pid_t;
+req_t;
 
-class JoinLeave {
+class Scheduler {
 public:
-    JoinLeave();
-    JoinLeave(BasePkt* pkt, int hosts);
-    virtual ~JoinLeave();
-    int allocatePID(int mac);
-    void addJointoBCS(BasePkt* pkt, int pid, int mac);
-    void clearJoinInBCS(BasePkt* pkt);
-    void confirmGivenPID(int pid);
+    Scheduler(int hosts);
+    virtual ~Scheduler();
+    void addDataRequest(int pid, int frames);
+    void clearDataRequests();
+    int getNeededDataFrames();
 private:
     int numHosts;
-    pid_t *pidTable;
+    int numFrames;      // number of frames requested from start of AR
+    std::vector<req_t> requests;
 };
 
 } /* namespace pyxis */
 
-#endif /* JOINLEAVE_H_ */
+#endif /* SCHEDULER_H_ */

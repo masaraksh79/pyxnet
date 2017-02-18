@@ -15,12 +15,15 @@ simple Server
     parameters:
         int numHosts;
         int cycleSlots;
-        int ARSInitial;
+        int ARSmin;
+        int ARSmax;
+        int slotBytes;
         double txRate @unit(bps);          // transmission rate
         //volatile int pkLenBits @unit(b);  // packet length in bits
         //volatile double iaTime @unit(s);  // packet interarrival time
         double slotTime @unit(s);         
-        @display("i=device/antennatower_l");
+        @display("i=device/antennatower_l;p=2000,300");
+        @statistic[collisionsAtBase](record=vector(mean);title="Number of uplink collisions");
         @signal[collisionsAtBase](type="long");
     gates:
          input in[numHosts];

@@ -29,7 +29,7 @@ PROJECTRELATIVE_PATH =
 O = $(PROJECT_OUTPUT_DIR)/$(CONFIGNAME)/$(PROJECTRELATIVE_PATH)
 
 # Object files for local .cc, .msg and .sm files
-OBJS = $O/Host.o $O/JoinLeave.o $O/Server.o $O/pkt_m.o
+OBJS = $O/Host.o $O/JoinLeave.o $O/Scheduler.o $O/Server.o $O/pkt_m.o
 
 # Message files
 MSGFILES = \
@@ -130,12 +130,17 @@ depend:
 $O/Host.o: Host.cc \
 	Host.h \
 	JoinLeave.h \
+	PyxisDefs.h \
 	pkt_m.h
 $O/JoinLeave.o: JoinLeave.cc \
 	JoinLeave.h \
 	pkt_m.h
+$O/Scheduler.o: Scheduler.cc \
+	Scheduler.h
 $O/Server.o: Server.cc \
 	JoinLeave.h \
+	PyxisDefs.h \
+	Scheduler.h \
 	Server.h \
 	pkt_m.h
 $O/pkt_m.o: pkt_m.cc \

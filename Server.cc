@@ -9,6 +9,7 @@
 
 #include "Server.h"
 #include "pkt_m.h"
+#include "PyxisDefs.h"
 
 namespace pyxis {
 
@@ -36,18 +37,26 @@ void Server::initialize()
 
     txRate          = par("txRate");
     slotTime        = par("slotTime");
-    cycleSlots      = par("cycleSlots");
+    maxCycleSlots   = par("cycleSlots");
     numHosts        = par("numHosts");
-    ARSlot          = par("ARSInitial");
+    ARSmin          = par("ARSmin");
+    ARSmax          = par("ARSmax");
+    slotBytes       = par("slotBytes");
+
+    ARSlot = ARSmin;
+    initFailSlots(ARSlot);
+    cycleSlots = ARSlot + 1;
+    SSlot = 0;  // no data at the start
+    cycleCnt = 0;
 
     jl = new JoinLeave(bcs_pkt, numHosts);
+    sc = new Scheduler(numHosts);
 
     pid = PID_PB;
 
     srand(getId());
 
     logicSlotCnt = 0;
-    initFailSlots(ARSlot);
 
     scheduleAt(getNextSlotTime(), slotEvent);
 }
@@ -58,7 +67,10 @@ void Server::handleMessage(cMessage *msg)
     if (msg->isSelfMessage())
     {
         if (0 == logicSlotCnt % cycleSlots)  // one cycle passed
+        {
             logicSlotCnt = 0;
+            cycleCnt++;
+        }
 
         if (logicSlotCnt == 0) // may always be sent from ts0
         {
@@ -90,8 +102,22 @@ void Server::downMessage(BasePkt *pkt)
 {
     pkt->setPid(pid);
     pkt->setLts(logicSlotCnt);
-    pkt->setCycleSlots(cycleSlots);
+
+    // Work out the size of new ARS before advertising it
+    this->updateARSlot();
     pkt->setARS(ARSlot);
+
+    SSlot = sc->getNeededDataFrames();
+
+    cycleSlots = 1/*BCS*/ + ARSlot + SSlot;
+    if (cycleSlots > maxCycleSlots)
+    {
+        cycleSlots = maxCycleSlots;
+        SSlot = cycleSlots - 1 - ARSlot;
+    }
+
+    pkt->setCycleSlots(cycleSlots);
+
     // fill in failed slots from last cycle
     pkt->setFailedSlotsArraySize(ARSlot);
     for (int i = 0; i < ARSlot; i++)
@@ -106,7 +132,8 @@ void Server::downMessage(BasePkt *pkt)
     }
 
     // Initialize failed slot information for next cycle
-    this->initFailSlots(ARSlot);
+    initFailSlots(ARSlot);
+    sc->clearDataRequests();
 }
 
 void Server::initFailSlots(int slots)
@@ -120,6 +147,26 @@ void Server::initFailSlots(int slots)
         failedSlots[i] = false;
 }
 
+void Server::updateARSlot()
+{
+    int f = 0;
+
+    for (int i = 0; i < ARSlot; i++)
+       if (failedSlots[i])
+          f++;
+
+    if (f >= ARSlot/2)        // increase
+    {
+        if (ARSlot < ARSmax)
+            ARSlot++;
+    }
+    else   // decrease
+    {
+        if (ARSlot > ARSmin)
+            ARSlot--;
+    }
+}
+
 void Server::receiveRemote(cPacket* msg)
 {
     static int tmpLogicSlot = -1;
@@ -129,7 +176,18 @@ void Server::receiveRemote(cPacket* msg)
     if (tmpLogicSlot != logicSlotCnt)
     {
         tmpLogicSlot = logicSlotCnt;
-        processJoin((JoinPkt *)msg);
+
+        if (JOIN_PKT_TYPE == msg->getKind())
+        {
+            processJoin((JoinPkt *)msg);
+        }
+        else if (REQ_PKT_TYPE == msg->getKind())
+        {
+            processRequest((RequestPkt *)msg);
+        }
+
+        emit(collisionsBase, 0);
+
         return;
     }
 
@@ -145,6 +203,31 @@ void Server::processJoin(JoinPkt* msg)
     int pid = jl->allocatePID(msg->getMac());
     EV << "Allocated PID " << pid << " to MAC " << msg->getMac() << "\n";
     jl->addJointoBCS(bcs_pkt, pid, msg->getMac());
+}
+
+void Server::processRequest(RequestPkt *msg)
+{
+    int pid = msg->getPid();
+
+    int reqBytes = msg->getBytes();
+    int reqFrames = reqBytes / slotBytes + ((reqBytes % slotBytes) ? 1 : 0);
+
+    // this request shall be processed in downMessage
+    sc->addDataRequest(pid, reqFrames);
+
+    // mark PID as "Given" if it appears as "Offered" (later "Offered" PIDs would run a timeout)
+    // TODO: emit 1 here to measure the Join time vs #nodes on a simulation time scale
+    jl->confirmGivenPID(pid);
+
+}
+
+void Server::refreshDisplay() const
+{
+    getDisplayString().setTagArg("t", 2, "#808000");
+    char str[40] = {0};
+    sprintf(str, "Cycle %d Access:%d Data:%d", cycleCnt, ARSlot, SSlot);
+    getDisplayString().setTagArg("i", 1, "red");
+    getDisplayString().setTagArg("t", 0, (const char *)str);
 }
 
 }; //namespace

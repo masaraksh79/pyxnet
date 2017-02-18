@@ -13,6 +13,8 @@
 #include <omnetpp.h>
 #include "pkt_m.h"
 #include "JoinLeave.h"
+#include "PyxisDefs.h"
+#include "Scheduler.h"
 
 using namespace omnetpp;
 
@@ -25,7 +27,8 @@ class Server : public cSimpleModule
       simsignal_t collisionsBase;
 
       simtime_t radioDelay;
-      int cycleSlots, ARSlot;
+      int cycleCnt, cycleSlots, maxCycleSlots, slotBytes;
+      int ARSlot, ARSmin, ARSmax, SSlot;
       int numHosts;
       bool* failedSlots;
       double txRate;
@@ -46,6 +49,7 @@ class Server : public cSimpleModule
 
       //Supporting lib classes
       JoinLeave *jl;
+      Scheduler *sc;
 
     public:
       Server();
@@ -54,11 +58,14 @@ class Server : public cSimpleModule
     protected:
       virtual void initialize() override;
       virtual void handleMessage(cMessage *msg) override;
+      virtual void refreshDisplay() const override;
       simtime_t getNextSlotTime();
       void downMessage(BasePkt *pkt);
       void initFailSlots(int slots);
+      void updateARSlot();
       void receiveRemote(cPacket* msg);
       void processJoin(JoinPkt* msg);
+      void processRequest(RequestPkt *msg);
 };
 
 }; //namespace
