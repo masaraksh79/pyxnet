@@ -50,7 +50,7 @@ void Server::initialize()
     cycleCnt = 0;
 
     jl = new JoinLeave(bcs_pkt, numHosts);
-    sc = new Scheduler(numHosts);
+    sc = new Scheduler(numHosts, maxCycleSlots, ARSmin + 1);
 
     pid = PID_PB;
 
@@ -75,7 +75,6 @@ void Server::handleMessage(cMessage *msg)
         if (logicSlotCnt == 0) // may always be sent from ts0
         {
             this->downMessage(bcs_pkt);
-
             jl->clearJoinInBCS(bcs_pkt);
         }
 
@@ -100,12 +99,28 @@ simtime_t Server::getNextSlotTime()
  * */
 void Server::downMessage(BasePkt *pkt)
 {
+    int max_alc;
+
     pkt->setPid(pid);
     pkt->setLts(logicSlotCnt);
 
     // Work out the size of new ARS before advertising it
     this->updateARSlot();
     pkt->setARS(ARSlot);
+
+    // Data allocation
+    sc->allocate();
+    if (0 < (max_alc = sc->getNumOfAllocated()))
+    {
+        pkt->setAlloc_pidsArraySize(max_alc);
+        pkt->setAlloc_framesArraySize(max_alc);
+        for (int j = 0; j < max_alc; j++)
+        {
+            pkt->setAlloc_pids(j, sc->getAllocatedPID(j));
+            pkt->setAlloc_frames(j, sc->getAllocatedFrames(j));
+            EV << "ALLOCATED > " << sc->getAllocatedFrames(j) << " frames to PID " << sc->getAllocatedPID(j) << "\n";
+        }
+    }
 
     SSlot = sc->getNeededDataFrames();
 
@@ -133,7 +148,14 @@ void Server::downMessage(BasePkt *pkt)
 
     // Initialize failed slot information for next cycle
     initFailSlots(ARSlot);
-    sc->clearDataRequests();
+    sc->clearRequests(maxCycleSlots, ARSlot + 1);
+    sc->clearAllocations();
+    for (int i = 0; i < max_alc; i++)
+    {
+        pkt->setAlloc_pids(i, EMPTY_PID);
+        pkt->setAlloc_frames(i, 0);
+    }
+
 }
 
 void Server::initFailSlots(int slots)
@@ -171,8 +193,6 @@ void Server::receiveRemote(cPacket* msg)
 {
     static int tmpLogicSlot = -1;
 
-    EV << "PB Rx in mini-slot # " << logicSlotCnt << "\n";
-
     if (tmpLogicSlot != logicSlotCnt)
     {
         tmpLogicSlot = logicSlotCnt;
@@ -208,12 +228,15 @@ void Server::processJoin(JoinPkt* msg)
 void Server::processRequest(RequestPkt *msg)
 {
     int pid = msg->getPid();
+    char eve[90] = {0};
 
     int reqBytes = msg->getBytes();
     int reqFrames = reqBytes / slotBytes + ((reqBytes % slotBytes) ? 1 : 0);
 
     // this request shall be processed in downMessage
-    sc->addDataRequest(pid, reqFrames);
+    sc->addDataRequest(pid, reqFrames, uniform(0.0, 1.0, 1), eve);
+
+    EV << eve;
 
     // mark PID as "Given" if it appears as "Offered" (later "Offered" PIDs would run a timeout)
     // TODO: emit 1 here to measure the Join time vs #nodes on a simulation time scale

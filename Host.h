@@ -34,6 +34,7 @@ class Host : public cSimpleModule
     int reqSlot, collisionCnt, slotBytes;
     int dataLen;
     double txRate;
+    int myMAC;
     simtime_t slotRx, slotUs;
     simtime_t slotTime;
     cPacketQueue *queue;
@@ -72,6 +73,7 @@ class Host : public cSimpleModule
     void backOff(BasePkt* pkt);
     int findUpSlot();
     void processPBJoin(BasePkt* pkt);
+    void processPBControl(BasePkt* pkt);
     simtime_t getNextSlotTime();
     simtime_t getNextPktTime();
 };

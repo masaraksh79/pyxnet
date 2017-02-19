@@ -16,9 +16,11 @@
 #ifndef SCHEDULER_H_
 #define SCHEDULER_H_
 
-#include <vector>
+#include <omnetpp.h>
 
 namespace pyxis {
+
+#define MAX_ALLOCATIONS 10
 
 typedef struct
 {
@@ -27,17 +29,36 @@ typedef struct
 }
 req_t;
 
+typedef struct
+{
+    int pid;
+    int frames;
+}
+alc_t;
+
 class Scheduler {
 public:
-    Scheduler(int hosts);
+    Scheduler(int, int, int );  /* args: hosts, cycle slots, access slots (AR+1) */
     virtual ~Scheduler();
-    void addDataRequest(int pid, int frames);
-    void clearDataRequests();
+    void addDataRequest(int pid, int frames, double rng, char* eve);
+    void clearRequests(int CS, int AS);
+    void clearAllocations();
+    int getNumOfAllocated();
+    int getAllocatedPID(int id);
+    int getAllocatedFrames(int id);
     int getNeededDataFrames();
+    void allocate();
+    bool emptyRequests();
 private:
     int numHosts;
+    int numMiniSlots;
     int numFrames;      // number of frames requested from start of AR
-    std::vector<req_t> requests;
+    int maxFrames;
+    req_t* requests;
+    alc_t* allocations;
+    int reqPLeft, reqPRight;
+    // requests operations
+    bool allocateItem(int r);
 };
 
 } /* namespace pyxis */

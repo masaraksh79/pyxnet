@@ -58,6 +58,7 @@ void Host::initialize()
 
 
     pid = EMPTY_PID;
+    myMAC = this->getMAC();
 
     reqSlot = -1;
     collisionCnt = 0;
@@ -205,6 +206,8 @@ void Host::receiveBase(cMessage* msg)
 
        if (ALONE == inNetworkState)
            this->processPBJoin(pkt);
+       else
+           this->processPBControl(pkt);
     }
 }
 
@@ -302,6 +305,22 @@ void Host::processPBJoin(BasePkt* pkt)
     }
 }
 
+void Host::processPBControl(BasePkt* pkt)
+{
+    for (int i = 0; i < pkt->getAlloc_pidsArraySize(); i++)
+    {
+        if (pid == pkt->getAlloc_pids(i))
+        {
+            int alc = pkt->getAlloc_frames(i);
+            while (alc && !queue->empty())
+            {
+                queue->pop();
+                alc--;
+            }
+        }
+    }
+}
+
 void Host::refreshDisplay() const
 {
     getDisplayString().setTagArg("t", 2, "#808000");
@@ -313,23 +332,30 @@ void Host::refreshDisplay() const
     if (syncState == UNSYNC)
     {
         getDisplayString().setTagArg("i", 1, "red");
-        getDisplayString().setTagArg("t", 0, "BOOTED");
+        char pidstr[20] = {0};
+        sprintf(pidstr, "BOOTED (%d)", pid, myMAC);
+        getDisplayString().setTagArg("t", 0, (const char *)pidstr);
     }
     else if (syncState == TSYNC)
     {
         getDisplayString().setTagArg("i", 1, "yellow");
-        getDisplayString().setTagArg("t", 0, "TIME-SYNCED");
+        char pidstr[20] = {0};
+        sprintf(pidstr, "TIME-SYNCED (%d)", pid, myMAC);
+        getDisplayString().setTagArg("t", 0, (const char *)pidstr);
     }
     else if (syncState == LSYNC)
     {
         getDisplayString().setTagArg("i", 1, "green");
+        char pidstr[20] = {0};
 
         if (pid == EMPTY_PID)
-            getDisplayString().setTagArg("t", 0, "SYNCED");
+        {
+            sprintf(pidstr, "SYNCED (%d)", myMAC);
+            getDisplayString().setTagArg("t", 0, (const char *)pidstr);
+        }
         else
         {
-            char pidstr[20] = {0};
-            sprintf(pidstr, "SYNCED (%d)", pid);
+            sprintf(pidstr, "%d/%d\nBytes:%lu", pid, myMAC, queue->getByteLength());
             getDisplayString().setTagArg("t", 0, (const char *)pidstr);
         }
 

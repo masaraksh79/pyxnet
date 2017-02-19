@@ -136,7 +136,9 @@ $O/JoinLeave.o: JoinLeave.cc \
 	JoinLeave.h \
 	pkt_m.h
 $O/Scheduler.o: Scheduler.cc \
-	Scheduler.h
+	JoinLeave.h \
+	Scheduler.h \
+	pkt_m.h
 $O/Server.o: Server.cc \
 	JoinLeave.h \
 	PyxisDefs.h \
