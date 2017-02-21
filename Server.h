@@ -25,6 +25,8 @@ class Server : public cSimpleModule
     private:
       // parameters
       simsignal_t collisionsBase;
+      simsignal_t allocatedBps;
+      simsignal_t requestedBps;
 
       simtime_t radioDelay;
       int cycleCnt, cycleSlots, maxCycleSlots, slotBytes;
@@ -46,6 +48,7 @@ class Server : public cSimpleModule
       // and if the packet content is sound the LSYNC (there might be the case)
       // where UNSYNC->LSYNC however if packet has bad CRC then only UNSYNC->TSYNC
       int pid, logicSlotCnt;     // Pyxis node ID and logical slot counter
+      int backOff;
 
       //Supporting lib classes
       JoinLeave *jl;

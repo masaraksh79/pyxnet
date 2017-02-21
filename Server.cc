@@ -33,7 +33,9 @@ void Server::initialize()
     if (!server)
         throw cRuntimeError("server not found");
 
-    collisionsBase = registerSignal("collisionsAtBase");
+    collisionsBase  = registerSignal("collisionsAtBase");
+    allocatedBps = registerSignal("allocatedBps");
+    requestedBps = registerSignal("requestedBps");
 
     txRate          = par("txRate");
     slotTime        = par("slotTime");
@@ -42,8 +44,16 @@ void Server::initialize()
     ARSmin          = par("ARSmin");
     ARSmax          = par("ARSmax");
     slotBytes       = par("slotBytes");
+    backOff         = par("backOff");
+
+    if (backOff == (int)BACKOFF_HARMONIC)   // for HarmonicBackOff find the middle size window
+    {
+        ARSmin = ARSmin + (ARSmax - ARSmin)/2;
+        ARSmax = ARSmin;
+    }
 
     ARSlot = ARSmin;
+
     initFailSlots(ARSlot);
     cycleSlots = ARSlot + 1;
     SSlot = 0;  // no data at the start
@@ -85,7 +95,7 @@ void Server::handleMessage(cMessage *msg)
     }
 
     receiveRemote((cPacket *)msg);
-
+    delete msg;
 }
 
 simtime_t Server::getNextSlotTime()
@@ -110,6 +120,8 @@ void Server::downMessage(BasePkt *pkt)
 
     // Data allocation
     sc->allocate();
+    emit(allocatedBps, 8 * slotBytes * sc->getNumOfAllocatedFrames());
+    emit(requestedBps, 8 * slotBytes * sc->getNumOfRequestedFrames());
     if (0 < (max_alc = sc->getNumOfAllocated()))
     {
         pkt->setAlloc_pidsArraySize(max_alc);
@@ -173,19 +185,22 @@ void Server::updateARSlot()
 {
     int f = 0;
 
-    for (int i = 0; i < ARSlot; i++)
-       if (failedSlots[i])
-          f++;
+    if (backOff != (int)BACKOFF_HARMONIC)
+    {
+        for (int i = 0; i < ARSlot; i++)
+           if (failedSlots[i])
+              f++;
 
-    if (f >= ARSlot/2)        // increase
-    {
-        if (ARSlot < ARSmax)
-            ARSlot++;
-    }
-    else   // decrease
-    {
-        if (ARSlot > ARSmin)
-            ARSlot--;
+        if (f >= ARSlot/2)        // increase
+        {
+            if (ARSlot < ARSmax)
+                ARSlot++;
+        }
+        else   // decrease
+        {
+            if (ARSlot > ARSmin)
+                ARSlot--;
+        }
     }
 }
 

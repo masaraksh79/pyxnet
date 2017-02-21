@@ -29,6 +29,14 @@ Host::~Host()
     cancelAndDelete(joinPkt);
     cancelAndDelete(requestPkt);
     cancelAndDelete(newPkt);
+
+    while (!queue->isEmpty())
+    {
+        cPacket* p = queue->pop();
+        delete p;
+    }
+
+    delete queue;
 }
 
 void Host::initialize()
@@ -48,6 +56,7 @@ void Host::initialize()
     iaTime          = &par("iaTime");
     dataLen         = par("dataLen");
     slotBytes       = par("slotBytes");
+    backOff         = par("backOff");
 
     srand(getId());
 
@@ -132,6 +141,7 @@ void Host::handleMessage(cMessage *msg)
 
     // handle message from base
     this->receiveBase(msg);
+    delete msg;
 }
 
 simtime_t Host::getNextSlotTime()
@@ -157,6 +167,7 @@ simtime_t Host::getNextPktTime()
 
 void Host::receiveBase(cMessage* msg)
 {
+    static int prevARSlot = -1;
     BasePkt *pkt = (BasePkt *)msg;
 
     slotRx = simTime();
@@ -166,6 +177,13 @@ void Host::receiveBase(cMessage* msg)
 
     cycleSlots  = pkt->getCycleSlots();
     ARSlot      = pkt->getARS();
+
+    if (prevARSlot != ARSlot)
+    {
+        prevARSlot = ARSlot;
+        collisionCnt = 0;
+    }
+
 
     if (UNSYNC == syncState)
     {
@@ -202,7 +220,7 @@ void Host::receiveBase(cMessage* msg)
     if (UNSYNC < syncState)
     {
        // handle the advertisement about collision from PB to back-off
-       this->backOff(pkt);
+       this->doBackOff(pkt);
 
        if (ALONE == inNetworkState)
            this->processPBJoin(pkt);
@@ -240,7 +258,7 @@ int Host::getMAC()
 
 int Host::findUpSlot()
 {
-    if (collisionCnt > 0)
+    if (backOff != (int)BACKOFF_RAMPUP && collisionCnt > 0)
     {
         double harmonic = (1.0 / (1.0 + collisionCnt));
         double heads = uniform(1, 0.0, 1.0);
@@ -269,7 +287,7 @@ int Host::findUpSlot()
  * --cnt until 0 otherwise cnt++;
  * */
 
-void Host::backOff(BasePkt* pkt)
+void Host::doBackOff(BasePkt* pkt)
 {
     for (int i = 0; i < ARSlot; i++)
     {
@@ -307,14 +325,17 @@ void Host::processPBJoin(BasePkt* pkt)
 
 void Host::processPBControl(BasePkt* pkt)
 {
+    cPacket* p;
+
     for (int i = 0; i < pkt->getAlloc_pidsArraySize(); i++)
     {
         if (pid == pkt->getAlloc_pids(i))
         {
             int alc = pkt->getAlloc_frames(i);
-            while (alc && !queue->empty())
+            while (alc && !queue->isEmpty())
             {
-                queue->pop();
+                p = queue->pop();
+                delete p;
                 alc--;
             }
         }

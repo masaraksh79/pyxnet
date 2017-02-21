@@ -14,6 +14,7 @@
 simple Host
 {
     parameters:
+        int backOff;
         int numHosts;
         int randomStart;
         int dataLen;									// typical packet len from Host data source (bytes)
@@ -24,7 +25,7 @@ simple Host
         //volatile int pkLenBits @unit(b);   // packet length in bits
         volatile double iaTime @unit(s);  // packet interarrival time
         double slotTime @unit(s);         
-        @display("i=device/smallrouter;p=1200,1000,ri,800,800 ");
+        @display("i=device/smallrouter;p=1200,800,ri,1000,1000 ");
         @statistic[queueLenPackets](record=vector(mean);title="Transmit Queue Length");
         @signal[queueLenPackets](type="long");
         @statistic[collisionsAtHost](record=vector(mean);title="Local Detected Collisions");

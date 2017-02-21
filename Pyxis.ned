@@ -5,6 +5,7 @@
 network Pyxis
 {
     parameters:
+        int backOff;
         int numHosts; 								// number of hosts
         int cycleSlots;									// initially assumed cycle (only AS - access slots)
         int slotBytes;
@@ -20,6 +21,7 @@ network Pyxis
            slotTime = slotTime;		
            cycleSlots = cycleSlots;
            slotBytes = slotBytes;
+           backOff = backOff;
         };
         host[numHosts]: Host
         {
@@ -28,6 +30,7 @@ network Pyxis
             slotTime = slotTime;		
            cycleSlots = cycleSlots;
            slotBytes = slotBytes;
+           backOff = backOff;
         }; 
 	connections:
     	for i=0..numHosts-1 { 

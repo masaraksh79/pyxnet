@@ -13,6 +13,7 @@
 simple Server
 {
     parameters:
+        int backOff;
         int numHosts;
         int cycleSlots;
         int ARSmin;
@@ -25,8 +26,12 @@ simple Server
         @display("i=device/antennatower_l;p=2000,300");
         @statistic[collisionsAtBase](record=vector(mean);title="Number of uplink collisions");
         @signal[collisionsAtBase](type="long");
-    gates:
-         input in[numHosts];
-         output out[numHosts];
+        @statistic[allocatedBps](record=vector(mean);title="Number of allocated frames per cycle");
+        @signal[allocatedBps](type="long");
+        @statistic[requestedBps](record=vector(mean);title="Number of requested frames per cycle");
+        @signal[requestedBps](type="long");
+         gates:
+            input in[numHosts];
+            output out[numHosts];
 }
 

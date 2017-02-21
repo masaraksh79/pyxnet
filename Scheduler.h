@@ -20,7 +20,7 @@
 
 namespace pyxis {
 
-#define MAX_ALLOCATIONS 10
+#define MAX_ALLOCATIONS 25
 
 typedef struct
 {
@@ -48,9 +48,12 @@ public:
     int getAllocatedFrames(int id);
     int getNeededDataFrames();
     void allocate();
+    int getNumOfAllocatedFrames();
+    int getNumOfRequestedFrames();
     bool emptyRequests();
 private:
     int numHosts;
+    int numReqFrames, numAlcFrames;
     int numMiniSlots;
     int numFrames;      // number of frames requested from start of AR
     int maxFrames;

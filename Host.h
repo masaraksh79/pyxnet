@@ -57,6 +57,7 @@ class Host : public cSimpleModule
     int pid, logicSlotCnt;     // Pyxis node ID and logical slot counter
     long long cycleCnt;
     bool isSynced;
+    int backOff;
 
   public:
     Host();
@@ -70,7 +71,7 @@ class Host : public cSimpleModule
     void upJoinRequest(JoinPkt* pkt);
     void upRequest(RequestPkt* pkt);
     int getMAC();
-    void backOff(BasePkt* pkt);
+    void doBackOff(BasePkt* pkt);
     int findUpSlot();
     void processPBJoin(BasePkt* pkt);
     void processPBControl(BasePkt* pkt);

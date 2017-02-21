@@ -197,6 +197,12 @@ void Scheduler::allocate()
     int i;
     bool running = 1, aborting = 0;
 
+    // Count the number of requested frames
+    numReqFrames = 0;
+    for (i = 0; i <= numHosts; i++)
+        if (requests[i].pid != EMPTY_PID)
+            numReqFrames += requests[i].frames;
+
     while (maxFrames > 0 && running && !aborting)
     {
         // run an allocation round
@@ -228,6 +234,13 @@ void Scheduler::allocate()
         }
 
     } //end_while
+
+    numAlcFrames = 0;
+    // Count the number of allocated frames
+    for (i = 0; i < MAX_ALLOCATIONS; i++)
+        if (allocations[i].pid != EMPTY_PID)
+            numAlcFrames += allocations[i].frames;
+
 }
 
 int Scheduler::getNumOfAllocated()
@@ -254,6 +267,16 @@ int Scheduler::getAllocatedPID(int id)
 int Scheduler::getAllocatedFrames(int id)
 {
     return allocations[id].frames;
+}
+
+int Scheduler::getNumOfAllocatedFrames()
+{
+    return numAlcFrames;
+}
+
+int Scheduler::getNumOfRequestedFrames()
+{
+    return numReqFrames;
 }
 
 } /* namespace pyxis */
