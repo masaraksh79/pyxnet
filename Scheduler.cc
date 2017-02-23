@@ -145,7 +145,7 @@ bool Scheduler::allocateItem(int r)
 {
     int i, k;
 
-    if (maxFrames > 0 && requests[r].frames > 0)
+    if (maxFrames > 0)
     {
         k = -1;
 

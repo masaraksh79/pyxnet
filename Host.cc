@@ -90,7 +90,7 @@ void Host::handleMessage(cMessage *msg)
         //TODO: need to see what doing with fragmentation
         if (newPkt == msg)  // new fifo packet
         {
-            queue->insert(new cPacket("Scada", 0, dataLen));
+            queue->insert(new cPacket("Scada", 0, 8 * dataLen));
             scheduleAt(getNextPktTime(), newPkt);
             return;
         }
@@ -245,7 +245,7 @@ void Host::upRequest(RequestPkt* pkt)
     }
 
     pkt->setPid(pid);
-    pkt->setBytes(queue->getBitLength());
+    pkt->setBytes(queue->getByteLength());
     EV << "Requested to transmit " << queue->getLength() << " pkts\n";
     cMessage *copy = ((cMessage *)pkt)->dup();
     send(copy, "out");
@@ -326,19 +326,52 @@ void Host::processPBJoin(BasePkt* pkt)
 void Host::processPBControl(BasePkt* pkt)
 {
     cPacket* p;
+    static int frame_count = 0;
+    int frames, frames_in_data = dataLen / slotBytes;
 
     for (int i = 0; i < pkt->getAlloc_pidsArraySize(); i++)
     {
         if (pid == pkt->getAlloc_pids(i))
         {
-            int alc = pkt->getAlloc_frames(i);
-            while (alc && !queue->isEmpty())
+            // the number of frames refers to the number of subframes which might combine
+            // one or more queue frames. For example, scada can be 350 but 1 link frame
+            // 40 bytes. Hence we need to calculate whether this can be drawn from the queue
+            // and manage the intermediate "fragmentation"
+            if (0 < (frames = pkt->getAlloc_frames(i)))
             {
-                p = queue->pop();
-                delete p;
-                alc--;
+                frame_count += frames;
+
+                if (frame_count == frames_in_data)   // received the exactly 1 packet allocation
+                {
+                    if (!queue->isEmpty())
+                    {
+                        p = queue->pop();
+                        delete p;
+                        EV << "Host>released exactly 1 pkt\n";
+                    }
+
+                    frame_count = 0;
+                }
+                else if (frame_count > frames_in_data)
+                {
+                    int pkts = frame_count / frames_in_data;
+                    for (int i = 0; i < pkts; i++)
+                    {
+                        if (!queue->isEmpty())
+                        {
+                            p = queue->pop();
+                            delete p;
+                        }
+                    }
+                    frame_count = frame_count % frames_in_data;
+                    EV << "Host>released " << pkts << " packets and left with " << frame_count << " frames\n";
+                }
+                else
+                {
+                    EV << "Host>dealt with " << frame_count << " out of " << frames_in_data << " data packet frames\n";
+                }
             }
-        }
+        } // ignore other pids
     }
 }
 
