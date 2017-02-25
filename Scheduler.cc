@@ -18,18 +18,20 @@
 
 namespace pyxis {
 
-Scheduler::Scheduler(int hosts, int CS, int AS)
+Scheduler::Scheduler(int hosts, int CS, int AS, int maxPGBKcnt)
 {
     numHosts = hosts;
     numFrames = 0;
     numMiniSlots = CS - AS;
     maxFrames = numMiniSlots;
+    maxPGBK = maxPGBKcnt;
 
     requests = new req_t[numHosts + 1]; /* +1 for downlink */
     for (int i = 0; i <= numHosts; i++)
     {
         requests[i].pid = EMPTY_PID;
         requests[i].frames = 0;
+        requests[i].sfr = 0;
     }
 
     allocations = new alc_t[MAX_ALLOCATIONS];
@@ -38,6 +40,11 @@ Scheduler::Scheduler(int hosts, int CS, int AS)
         allocations[i].pid = EMPTY_PID;
         allocations[i].frames = 0;
     }
+
+    numPGBK = new int[numHosts];
+    for (int i = 0; i <= numHosts; i++)
+        numPGBK[i] = 0;
+
 }
 
 Scheduler::~Scheduler()
@@ -57,6 +64,7 @@ void Scheduler::addDataRequest(int pid, int frames, double rng, char* eve)
         if (reqPRight <= numHosts)
         {
             requests[reqPRight].frames = frames;
+            requests[reqPRight].sfr = frames;
             requests[reqPRight].pid = pid;
             sprintf (eve, "Req added to %d for PID %d\n", reqPRight, pid);
             reqPRight++;
@@ -65,6 +73,7 @@ void Scheduler::addDataRequest(int pid, int frames, double rng, char* eve)
         {
             reqPRight = 0;
             requests[reqPRight].frames = frames;
+            requests[reqPRight].sfr = frames;
             requests[reqPRight].pid = pid;
             sprintf (eve, "Req added to %d for PID %d\n", reqPRight, pid);
             reqPRight++;
@@ -75,6 +84,7 @@ void Scheduler::addDataRequest(int pid, int frames, double rng, char* eve)
         if (reqPLeft >= 0)
         {
             requests[reqPLeft].frames = frames;
+            requests[reqPLeft].sfr = frames;
             requests[reqPLeft].pid = pid;
             sprintf (eve, "Req added to %d for PID %d\n", reqPLeft, pid);
 
@@ -88,6 +98,7 @@ void Scheduler::addDataRequest(int pid, int frames, double rng, char* eve)
         {
             reqPLeft = numHosts;
             requests[reqPLeft].frames = frames;
+            requests[reqPLeft].sfr = frames;
             requests[reqPLeft].pid = pid;
             sprintf (eve, "Req added to %d for PID %d\n", reqPLeft, pid);
             reqPLeft--;
@@ -116,6 +127,7 @@ void Scheduler::clearRequests(int CS, int AS)
     for (int i = 0; i <= numHosts; i++)
     {
         requests[i].frames = 0;
+        requests[i].sfr = 0;
         requests[i].pid = EMPTY_PID;
     }
 }
@@ -238,8 +250,21 @@ void Scheduler::allocate()
     numAlcFrames = 0;
     // Count the number of allocated frames
     for (i = 0; i < MAX_ALLOCATIONS; i++)
+    {
         if (allocations[i].pid != EMPTY_PID)
+        {
+            if (allocations[i].frames > requests[i].sfr && requests[i].sfr)
+            {
+                numPGBK[i] = allocations[i].frames / requests[i].sfr +
+                        (allocations[i].frames % requests[i].sfr ? 1 : 0);
+
+                if (maxPGBK < numPGBK[i])
+                    numPGBK[i] = maxPGBK;
+            }
+
             numAlcFrames += allocations[i].frames;
+        }
+    }
 
 }
 
@@ -277,6 +302,11 @@ int Scheduler::getNumOfAllocatedFrames()
 int Scheduler::getNumOfRequestedFrames()
 {
     return numReqFrames;
+}
+
+int Scheduler::getPGBKCnt(int pid)
+{
+    return numPGBK[pid];
 }
 
 } /* namespace pyxis */

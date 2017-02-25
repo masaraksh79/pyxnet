@@ -56,7 +56,9 @@ void Host::initialize()
     iaTime          = &par("iaTime");
     dataLen         = par("dataLen");
     slotBytes       = par("slotBytes");
+    firstSlotBytes  = par("firstSlotBytes");
     backOff         = par("backOff");
+    //BCSlot          = par("BCSlot");
 
     srand(getId());
 
@@ -87,7 +89,6 @@ void Host::handleMessage(cMessage *msg)
     // time slot tick event
     if (msg->isSelfMessage())
     {
-        //TODO: need to see what doing with fragmentation
         if (newPkt == msg)  // new fifo packet
         {
             queue->insert(new cPacket("Scada", 0, 8 * dataLen));
@@ -244,11 +245,18 @@ void Host::upRequest(RequestPkt* pkt)
         return;
     }
 
-    pkt->setPid(pid);
-    pkt->setBytes(queue->getByteLength());
-    EV << "Requested to transmit " << queue->getLength() << " pkts\n";
-    cMessage *copy = ((cMessage *)pkt)->dup();
-    send(copy, "out");
+    if (!PGBK)
+    {
+        pkt->setPid(pid);
+        pkt->setBytes(queue->getByteLength());
+        EV << "Requested to transmit " << queue->getLength() << " pkts\n";
+        cMessage *copy = ((cMessage *)pkt)->dup();
+        send(copy, "out");
+    }
+    else
+    {
+        EV << "Skip due to prev request piggybacking!\n";
+    }
 }
 
 int Host::getMAC()
@@ -266,7 +274,7 @@ int Host::findUpSlot()
         if (heads <= harmonic)
         {
             EV << "MAC " << getMAC() << " will capture a slot!\n";
-            return ( 1 + rand() % ARSlot );
+            return ( 1/*BCSlot*/ + rand() % ARSlot );
         }
         else
         {
@@ -275,7 +283,7 @@ int Host::findUpSlot()
         }
     }
 
-    return ( 1 + rand() % ARSlot );
+    return ( 1/*BCSlot*/ + rand() % ARSlot );
 }
 
 /* Harmonic backOff
@@ -327,12 +335,30 @@ void Host::processPBControl(BasePkt* pkt)
 {
     cPacket* p;
     static int frame_count = 0;
-    int frames, frames_in_data = dataLen / slotBytes;
+    int frames, frames_in_data;
+
+    //assuming consecutive frames allocation per PID
+    if (dataLen > firstSlotBytes)
+    {
+        int frs = (dataLen - firstSlotBytes) / slotBytes;
+        int ext = ((dataLen - firstSlotBytes) % slotBytes) ? 1 : 0;
+        frames_in_data = 1 + frs + ext;
+    }
+    else
+    {
+        frames_in_data = 1;
+    }
+
+    PGBK = false;
 
     for (int i = 0; i < pkt->getAlloc_pidsArraySize(); i++)
     {
         if (pid == pkt->getAlloc_pids(i))
         {
+            //check if your next data piggy backed by server to avoid the next request (in case true)
+            if (pkt->getPgbks(i) > 0)
+                PGBK = true;
+
             // the number of frames refers to the number of subframes which might combine
             // one or more queue frames. For example, scada can be 350 but 1 link frame
             // 40 bytes. Hence we need to calculate whether this can be drawn from the queue
@@ -409,7 +435,7 @@ void Host::refreshDisplay() const
         }
         else
         {
-            sprintf(pidstr, "%d/%d\nBytes:%lu", pid, myMAC, queue->getByteLength());
+            sprintf(pidstr, "%d/%x\nBytes:%lu", pid, myMAC, queue->getByteLength());
             getDisplayString().setTagArg("t", 0, (const char *)pidstr);
         }
 

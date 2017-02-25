@@ -16,19 +16,21 @@ simple Server
         int backOff;
         int numHosts;
         int cycleSlots;
+        int BCSlot;
         int ARSmin;
         int ARSmax;
+        int maxPGBK;
         int slotBytes;
         double txRate @unit(bps);          // transmission rate
         //volatile int pkLenBits @unit(b);  // packet length in bits
         //volatile double iaTime @unit(s);  // packet interarrival time
         double slotTime @unit(s);         
         @display("i=device/antennatower_l;p=2000,300");
-        @statistic[collisionsAtBase](record=vector(mean);title="Number of uplink collisions");
+        @statistic[collisionsAtBase](record=mean;title="Number of uplink collisions");
         @signal[collisionsAtBase](type="long");
-        @statistic[allocatedBps](record=vector(mean);title="Number of allocated frames per cycle");
+        @statistic[allocatedBps](record=mean;title="Number of allocated frames per cycle");
         @signal[allocatedBps](type="long");
-        @statistic[requestedBps](record=vector(mean);title="Number of requested frames per cycle");
+        @statistic[requestedBps](record=mean;title="Number of requested frames per cycle");
         @signal[requestedBps](type="long");
          gates:
             input in[numHosts];

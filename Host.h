@@ -31,7 +31,8 @@ class Host : public cSimpleModule
 
     simtime_t radioDelay;
     int cycleSlots, ARSlot, bootDelay, randomStart;
-    int reqSlot, collisionCnt, slotBytes;
+    //int BCSlot;
+    int reqSlot, collisionCnt, slotBytes, firstSlotBytes;
     int dataLen;
     double txRate;
     int myMAC;
@@ -58,6 +59,7 @@ class Host : public cSimpleModule
     long long cycleCnt;
     bool isSynced;
     int backOff;
+    bool PGBK;
 
   public:
     Host();

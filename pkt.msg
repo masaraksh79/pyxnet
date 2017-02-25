@@ -28,6 +28,7 @@ packet BasePkt {
     bool failedSlots[];		// in an array for slots with detected collision
     int alloc_pids[];
     int alloc_frames[];
+    int pgbks[];
 }
 
 packet JoinPkt {

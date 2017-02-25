@@ -26,6 +26,7 @@ typedef struct
 {
     int pid;
     int frames;
+    int sfr;        // sticky frames, same as .frames just not nullified by ->allocate
 }
 req_t;
 
@@ -38,7 +39,7 @@ alc_t;
 
 class Scheduler {
 public:
-    Scheduler(int, int, int );  /* args: hosts, cycle slots, access slots (AR+1) */
+    Scheduler(int, int, int, int );  /* args: hosts, cycle slots, access slots (AR+1), max PGBK allowed */
     virtual ~Scheduler();
     void addDataRequest(int pid, int frames, double rng, char* eve);
     void clearRequests(int CS, int AS);
@@ -51,12 +52,15 @@ public:
     int getNumOfAllocatedFrames();
     int getNumOfRequestedFrames();
     bool emptyRequests();
+    int getPGBKCnt(int pid);
 private:
     int numHosts;
     int numReqFrames, numAlcFrames;
+    int *numPGBK;
     int numMiniSlots;
     int numFrames;      // number of frames requested from start of AR
     int maxFrames;
+    int maxPGBK;
     req_t* requests;
     alc_t* allocations;
     int reqPLeft, reqPRight;

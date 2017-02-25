@@ -45,22 +45,21 @@ void Server::initialize()
     ARSmax          = par("ARSmax");
     slotBytes       = par("slotBytes");
     backOff         = par("backOff");
+    maxPGBK         = par("maxPGBK");
+    //BCSlot          = par("BCSlot");
 
-    if (backOff == (int)BACKOFF_HARMONIC)   // for HarmonicBackOff find the middle size window
-    {
-        ARSmin = ARSmin + (ARSmax - ARSmin)/2;
+    if (backOff == (int)BACKOFF_HARMONIC)   // for HarmonicBackOff find the smallest size window
         ARSmax = ARSmin;
-    }
 
     ARSlot = ARSmin;
 
     initFailSlots(ARSlot);
-    cycleSlots = ARSlot + 1;
+    cycleSlots = ARSlot + 1/*BCSlot*/;
     SSlot = 0;  // no data at the start
     cycleCnt = 0;
 
     jl = new JoinLeave(bcs_pkt, numHosts);
-    sc = new Scheduler(numHosts, maxCycleSlots, ARSmin + 1);
+    sc = new Scheduler(numHosts, maxCycleSlots, ARSlot + 1, maxPGBK);
 
     pid = PID_PB;
 
@@ -134,13 +133,18 @@ void Server::downMessage(BasePkt *pkt)
         }
     }
 
+    // Handle piggybacked part of packet
+    pkt->setPgbksArraySize(numHosts);
+    for (int i = 0; i < numHosts; i++)
+        pkt->setPgbks(i, sc->getPGBKCnt(i));
+
     SSlot = sc->getNeededDataFrames();
 
-    cycleSlots = 1/*BCS*/ + ARSlot + SSlot;
+    cycleSlots = 1/*BCSlot*/ + ARSlot + SSlot;
     if (cycleSlots > maxCycleSlots)
     {
         cycleSlots = maxCycleSlots;
-        SSlot = cycleSlots - 1 - ARSlot;
+        SSlot = cycleSlots - 1/*BCSlot*/ - ARSlot;
     }
 
     pkt->setCycleSlots(cycleSlots);
@@ -160,7 +164,7 @@ void Server::downMessage(BasePkt *pkt)
 
     // Initialize failed slot information for next cycle
     initFailSlots(ARSlot);
-    sc->clearRequests(maxCycleSlots, ARSlot + 1);
+    sc->clearRequests(maxCycleSlots, ARSlot + 1/*BCSlot*/);
     sc->clearAllocations();
     for (int i = 0; i < max_alc; i++)
     {
@@ -191,7 +195,7 @@ void Server::updateARSlot()
            if (failedSlots[i])
               f++;
 
-        if (f >= ARSlot/2)        // increase
+        if (f >= ARSlot/3)        // increase
         {
             if (ARSlot < ARSmax)
                 ARSlot++;

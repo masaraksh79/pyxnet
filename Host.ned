@@ -19,10 +19,11 @@ simple Host
         int randomStart;
         int dataLen;									// typical packet len from Host data source (bytes)
         int slotBytes;
+        int BCSlot;
+        int firstSlotBytes;
         int cycleSlots;									// dummy inited but is received from PB
         double txRate @unit(bps);          // transmission rate
         double radioDelay @unit(s);       // propagation delay of radio link
-        //volatile int pkLenBits @unit(b);   // packet length in bits
         volatile double iaTime @unit(s);  // packet interarrival time
         double slotTime @unit(s);         
         @display("i=device/smallrouter;p=1200,800,ri,1000,1000 ");

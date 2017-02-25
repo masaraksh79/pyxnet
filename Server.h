@@ -31,6 +31,7 @@ class Server : public cSimpleModule
       simtime_t radioDelay;
       int cycleCnt, cycleSlots, maxCycleSlots, slotBytes;
       int ARSlot, ARSmin, ARSmax, SSlot;
+      //int BCSlot;
       int numHosts;
       bool* failedSlots;
       double txRate;
@@ -48,7 +49,7 @@ class Server : public cSimpleModule
       // and if the packet content is sound the LSYNC (there might be the case)
       // where UNSYNC->LSYNC however if packet has bad CRC then only UNSYNC->TSYNC
       int pid, logicSlotCnt;     // Pyxis node ID and logical slot counter
-      int backOff;
+      int backOff, maxPGBK;
 
       //Supporting lib classes
       JoinLeave *jl;
