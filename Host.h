@@ -31,7 +31,7 @@ class Host : public cSimpleModule
 
     simtime_t radioDelay;
     int cycleSlots, ARSlot, bootDelay, randomStart;
-    //int BCSlot;
+    int BCSlot;
     int reqSlot, collisionCnt, slotBytes, firstSlotBytes;
     int dataLen;
     double txRate;

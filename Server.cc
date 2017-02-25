@@ -46,7 +46,7 @@ void Server::initialize()
     slotBytes       = par("slotBytes");
     backOff         = par("backOff");
     maxPGBK         = par("maxPGBK");
-    //BCSlot          = par("BCSlot");
+    BCSlot          = par("BCSlot");
 
     if (backOff == (int)BACKOFF_HARMONIC)   // for HarmonicBackOff find the smallest size window
         ARSmax = ARSmin;
@@ -54,12 +54,12 @@ void Server::initialize()
     ARSlot = ARSmin;
 
     initFailSlots(ARSlot);
-    cycleSlots = ARSlot + 1/*BCSlot*/;
+    cycleSlots = ARSlot + BCSlot;
     SSlot = 0;  // no data at the start
     cycleCnt = 0;
 
     jl = new JoinLeave(bcs_pkt, numHosts);
-    sc = new Scheduler(numHosts, maxCycleSlots, ARSlot + 1, maxPGBK);
+    sc = new Scheduler(numHosts, maxCycleSlots, ARSlot + BCSlot, maxPGBK);
 
     pid = PID_PB;
 
@@ -140,11 +140,11 @@ void Server::downMessage(BasePkt *pkt)
 
     SSlot = sc->getNeededDataFrames();
 
-    cycleSlots = 1/*BCSlot*/ + ARSlot + SSlot;
+    cycleSlots = BCSlot + ARSlot + SSlot;
     if (cycleSlots > maxCycleSlots)
     {
         cycleSlots = maxCycleSlots;
-        SSlot = cycleSlots - 1/*BCSlot*/ - ARSlot;
+        SSlot = cycleSlots - BCSlot - ARSlot;
     }
 
     pkt->setCycleSlots(cycleSlots);
@@ -164,7 +164,7 @@ void Server::downMessage(BasePkt *pkt)
 
     // Initialize failed slot information for next cycle
     initFailSlots(ARSlot);
-    sc->clearRequests(maxCycleSlots, ARSlot + 1/*BCSlot*/);
+    sc->clearRequests(maxCycleSlots, ARSlot + BCSlot);
     sc->clearAllocations();
     for (int i = 0; i < max_alc; i++)
     {

@@ -31,7 +31,7 @@ class Server : public cSimpleModule
       simtime_t radioDelay;
       int cycleCnt, cycleSlots, maxCycleSlots, slotBytes;
       int ARSlot, ARSmin, ARSmax, SSlot;
-      //int BCSlot;
+      int BCSlot;
       int numHosts;
       bool* failedSlots;
       double txRate;

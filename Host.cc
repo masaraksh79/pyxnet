@@ -58,7 +58,7 @@ void Host::initialize()
     slotBytes       = par("slotBytes");
     firstSlotBytes  = par("firstSlotBytes");
     backOff         = par("backOff");
-    //BCSlot          = par("BCSlot");
+    BCSlot          = 2;
 
     srand(getId());
 
@@ -274,7 +274,7 @@ int Host::findUpSlot()
         if (heads <= harmonic)
         {
             EV << "MAC " << getMAC() << " will capture a slot!\n";
-            return ( 1/*BCSlot*/ + rand() % ARSlot );
+            return ( BCSlot + rand() % ARSlot );
         }
         else
         {
@@ -283,7 +283,7 @@ int Host::findUpSlot()
         }
     }
 
-    return ( 1/*BCSlot*/ + rand() % ARSlot );
+    return ( BCSlot + rand() % ARSlot );
 }
 
 /* Harmonic backOff

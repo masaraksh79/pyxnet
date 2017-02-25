@@ -19,7 +19,6 @@ simple Host
         int randomStart;
         int dataLen;									// typical packet len from Host data source (bytes)
         int slotBytes;
-        int BCSlot;
         int firstSlotBytes;
         int cycleSlots;									// dummy inited but is received from PB
         double txRate @unit(bps);          // transmission rate

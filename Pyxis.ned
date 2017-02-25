@@ -10,7 +10,6 @@ network Pyxis
         int cycleSlots;									// initially assumed cycle (only AS - access slots)
         int firstSlotBytes;							// slots belong to first packet with PHY header
         int slotBytes;									// each additional overlapping slot packet (incl. tx-rx time)
-        int BCSlot;
         double txRate @unit(bps);  			// transmission rate
         double slotTime @unit(ms);  		// mini-slot time
         @display("bgb=5000,3000;bgi=maps/usa,s;bgg=1000,2,grey95;bgu=km");
@@ -23,7 +22,6 @@ network Pyxis
            slotTime = slotTime;		
            cycleSlots = cycleSlots;
            slotBytes = slotBytes;
-           BCSlot = BCSlot;
            backOff = backOff;
         };
         host[numHosts]: Host
@@ -32,7 +30,6 @@ network Pyxis
             txRate = txRate;
             slotTime = slotTime;		
            cycleSlots = cycleSlots;
-           BCSlot = BCSlot;
            slotBytes = slotBytes;
            firstSlotBytes = firstSlotBytes;
            backOff = backOff;
