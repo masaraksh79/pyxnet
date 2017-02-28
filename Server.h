@@ -29,13 +29,12 @@ class Server : public cSimpleModule
       simsignal_t requestedBps;
 
       simtime_t radioDelay;
-      int cycleCnt, cycleSlots, maxCycleSlots, slotBytes;
+      int cycleCnt, cycleSlots, maxCycleSlots, slotBytes, firstSlotBytes;
       int ARSlot, ARSmin, ARSmax, SSlot;
       int BCSlot;
       int numHosts;
       bool* failedSlots;
-      double txRate;
-      simtime_t slotTime;
+      simtime_t slotTime, txRx;
       cQueue queue;
 
       // state variables, event pointers etc
@@ -48,7 +47,7 @@ class Server : public cSimpleModule
       // Unit that has received a packet from another valid PID acquires TSYNC
       // and if the packet content is sound the LSYNC (there might be the case)
       // where UNSYNC->LSYNC however if packet has bad CRC then only UNSYNC->TSYNC
-      int pid, logicSlotCnt;     // Pyxis node ID and logical slot counter
+      int pid, logicSlotCnt, tmpSlotCnt;     // Pyxis node ID and logical slot counter
       int backOff, maxPGBK;
 
       //Supporting lib classes
@@ -70,6 +69,7 @@ class Server : public cSimpleModule
       void receiveRemote(cPacket* msg);
       void processJoin(JoinPkt* msg);
       void processRequest(RequestPkt *msg);
+      int numOfTxDBytes(int frames);
 };
 
 }; //namespace

@@ -42,7 +42,7 @@ Scheduler::Scheduler(int hosts, int CS, int AS, int maxPGBKcnt)
     }
 
     numPGBK = new int[numHosts];
-    for (int i = 0; i <= numHosts; i++)
+    for (int i = 0; i < numHosts; i++)
         numPGBK[i] = 0;
 
 }

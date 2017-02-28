@@ -32,10 +32,12 @@ packet BasePkt {
 }
 
 packet JoinPkt {
+    int lts;
     int mac;				// a replacement of MAC address in real nodes
 }
 
 packet RequestPkt {
+    int lts;
     int pid;
     int bytes;
 }

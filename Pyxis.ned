@@ -10,24 +10,24 @@ network Pyxis
         int cycleSlots;									// initially assumed cycle (only AS - access slots)
         int firstSlotBytes;							// slots belong to first packet with PHY header
         int slotBytes;									// each additional overlapping slot packet (incl. tx-rx time)
-        double txRate @unit(bps);  			// transmission rate
-        double slotTime @unit(ms);  		// mini-slot time
+        double txRx @unit(s);  				// transmission - reception total switching per slot
+        double slotTime @unit(s);  		// mini-slot time
         @display("bgb=5000,3000;bgi=maps/usa,s;bgg=1000,2,grey95;bgu=km");
-        //@display("bgi=background/terrain,s");
     submodules:
         server: Server
         {
            numHosts = numHosts; 
-           txRate = txRate;
+           txRx = txRx;
            slotTime = slotTime;		
            cycleSlots = cycleSlots;
            slotBytes = slotBytes;
+           firstSlotBytes = firstSlotBytes;
            backOff = backOff;
         };
         host[numHosts]: Host
         {
             numHosts = numHosts;
-            txRate = txRate;
+            txRx = txRx;
             slotTime = slotTime;		
            cycleSlots = cycleSlots;
            slotBytes = slotBytes;

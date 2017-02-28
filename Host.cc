@@ -48,7 +48,7 @@ void Host::initialize()
     queueLength = registerSignal("queueLenPackets");
     collCnt = registerSignal("collisionsAtHost");
 
-    txRate          = par("txRate");
+    txRx            = par("txRx");
     slotTime        = par("slotTime");
     radioDelay      = par("radioDelay");
     cycleSlots      = par("cycleSlots");
@@ -69,6 +69,7 @@ void Host::initialize()
 
 
     pid = EMPTY_PID;
+    PGBK = 0;
     myMAC = this->getMAC();
 
     reqSlot = -1;
@@ -176,8 +177,14 @@ void Host::receiveBase(cMessage* msg)
     if (bootDelay > 0)
         return;
 
-    cycleSlots  = pkt->getCycleSlots();
-    ARSlot      = pkt->getARS();
+    cycleSlots   = pkt->getCycleSlots();
+    ARSlot       = pkt->getARS();
+
+    if (logicSlotCnt != pkt->getLts())
+    {
+        logicSlotCnt = pkt->getLts();
+        EV << "Adjusted to new " << logicSlotCnt << " logic slot!\n";
+    }
 
     if (prevARSlot != ARSlot)
     {
@@ -193,7 +200,6 @@ void Host::receiveBase(cMessage* msg)
             simtime_t tmpSlotUs = slotUs;
             int tmpLogicSlotCnt = logicSlotCnt;
 
-            logicSlotCnt = pkt->getLts();
             EV << "MAC " << getMAC() << " logical slot now is " << logicSlotCnt << "\n";
 
             //TODO: use radioDelay for difference error!
@@ -233,6 +239,7 @@ void Host::receiveBase(cMessage* msg)
 void Host::upJoinRequest(JoinPkt* pkt)
 {
     pkt->setMac(getMAC());
+    pkt->setLts(logicSlotCnt);
     cMessage *copy = ((cMessage *)pkt)->dup();
     send(copy, "out");
 }
@@ -248,6 +255,7 @@ void Host::upRequest(RequestPkt* pkt)
     if (!PGBK)
     {
         pkt->setPid(pid);
+        pkt->setLts(logicSlotCnt);
         pkt->setBytes(queue->getByteLength());
         EV << "Requested to transmit " << queue->getLength() << " pkts\n";
         cMessage *copy = ((cMessage *)pkt)->dup();
@@ -304,14 +312,19 @@ void Host::doBackOff(BasePkt* pkt)
             if (pkt->getFailedSlots(i))
             {
                 collisionCnt++;
+                emit(collCnt, collisionCnt);
                 EV << "MAC " << getMAC() << " will backOff from " << (1.0/(1.0+collisionCnt)) << "\n";
             }
             else if (collisionCnt)  // return from backing off
             {
                 collisionCnt--;
+                emit(collCnt, collisionCnt);
+            }
+            else
+            {
+                emit(collCnt, 0);
             }
 
-            emit(collCnt, collisionCnt);
             break;
         }
     }
@@ -349,7 +362,7 @@ void Host::processPBControl(BasePkt* pkt)
         frames_in_data = 1;
     }
 
-    PGBK = false;
+    PGBK = 0;
 
     for (int i = 0; i < pkt->getAlloc_pidsArraySize(); i++)
     {
@@ -357,7 +370,7 @@ void Host::processPBControl(BasePkt* pkt)
         {
             //check if your next data piggy backed by server to avoid the next request (in case true)
             if (pkt->getPgbks(i) > 0)
-                PGBK = true;
+                PGBK++;
 
             // the number of frames refers to the number of subframes which might combine
             // one or more queue frames. For example, scada can be 350 but 1 link frame

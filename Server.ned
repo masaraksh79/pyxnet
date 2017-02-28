@@ -21,8 +21,8 @@ simple Server
         int ARSmax;
         int maxPGBK;
         int slotBytes;
-        double txRate @unit(bps);          // transmission rate
-        //volatile int pkLenBits @unit(b);  // packet length in bits
+        int firstSlotBytes;
+        double txRx @unit(s);     
         //volatile double iaTime @unit(s);  // packet interarrival time
         double slotTime @unit(s);         
         @display("i=device/antennatower_l;p=2000,300");

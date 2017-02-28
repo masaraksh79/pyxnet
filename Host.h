@@ -34,10 +34,9 @@ class Host : public cSimpleModule
     int BCSlot;
     int reqSlot, collisionCnt, slotBytes, firstSlotBytes;
     int dataLen;
-    double txRate;
     int myMAC;
     simtime_t slotRx, slotUs;
-    simtime_t slotTime;
+    simtime_t slotTime, txRx;
     cPacketQueue *queue;
     cPar *iaTime;
 
@@ -59,7 +58,7 @@ class Host : public cSimpleModule
     long long cycleCnt;
     bool isSynced;
     int backOff;
-    bool PGBK;
+    int PGBK;
 
   public:
     Host();

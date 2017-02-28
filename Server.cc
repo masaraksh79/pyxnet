@@ -37,7 +37,7 @@ void Server::initialize()
     allocatedBps = registerSignal("allocatedBps");
     requestedBps = registerSignal("requestedBps");
 
-    txRate          = par("txRate");
+    txRx            = par("txRx");
     slotTime        = par("slotTime");
     maxCycleSlots   = par("cycleSlots");
     numHosts        = par("numHosts");
@@ -47,11 +47,15 @@ void Server::initialize()
     backOff         = par("backOff");
     maxPGBK         = par("maxPGBK");
     BCSlot          = par("BCSlot");
+    firstSlotBytes  = par("firstSlotBytes");
 
     if (backOff == (int)BACKOFF_HARMONIC)   // for HarmonicBackOff find the smallest size window
         ARSmax = ARSmin;
 
     ARSlot = ARSmin;
+
+    for (int i = 0; i < numHosts; i++)
+        gate("in", i)->setDeliverOnReceptionStart(true);
 
     initFailSlots(ARSlot);
     cycleSlots = ARSlot + BCSlot;
@@ -66,7 +70,8 @@ void Server::initialize()
     srand(getId());
 
     logicSlotCnt = 0;
-
+    tmpSlotCnt = -1;        // used to differentiate between current LTS
+    emit(collisionsBase, 0);
     scheduleAt(getNextSlotTime(), slotEvent);
 }
 
@@ -83,6 +88,7 @@ void Server::handleMessage(cMessage *msg)
 
         if (logicSlotCnt == 0) // may always be sent from ts0
         {
+            tmpSlotCnt = -1;
             this->downMessage(bcs_pkt);
             jl->clearJoinInBCS(bcs_pkt);
         }
@@ -103,6 +109,20 @@ simtime_t Server::getNextSlotTime()
     return t;
 }
 
+int Server::numOfTxDBytes(int frames)
+{
+    int bytes;
+
+    double s = maxCycleSlots * (slotTime.dbl() + txRx.dbl());
+
+    if (frames < 1)
+        bytes = 0;
+    else
+        bytes = firstSlotBytes + slotBytes * (frames - 1);
+
+    return (long)(8 * bytes / s);
+}
+
 /* Base BCS packet
  * The one and only TDM advertisement
  * */
@@ -119,8 +139,8 @@ void Server::downMessage(BasePkt *pkt)
 
     // Data allocation
     sc->allocate();
-    emit(allocatedBps, 8 * slotBytes * sc->getNumOfAllocatedFrames());
-    emit(requestedBps, 8 * slotBytes * sc->getNumOfRequestedFrames());
+    emit(allocatedBps, numOfTxDBytes(sc->getNumOfAllocatedFrames()));
+    emit(requestedBps, numOfTxDBytes(sc->getNumOfRequestedFrames()));
     if (0 < (max_alc = sc->getNumOfAllocated()))
     {
         pkt->setAlloc_pidsArraySize(max_alc);
@@ -151,8 +171,20 @@ void Server::downMessage(BasePkt *pkt)
 
     // fill in failed slots from last cycle
     pkt->setFailedSlotsArraySize(ARSlot);
+    int fcnt = 0;
     for (int i = 0; i < ARSlot; i++)
+    {
         pkt->setFailedSlots(i, failedSlots[i]);
+        if (failedSlots[i])
+            fcnt++;
+    }
+
+    if (fcnt && hasGUI())
+    {
+        char buf[64];
+        sprintf(buf, "Failed %d out of %d slots", fcnt, ARSlot);
+        bubble(buf);
+    }
 
     //TODO: add errors to swap ---> p->setBitError(false);
 
@@ -210,31 +242,35 @@ void Server::updateARSlot()
 
 void Server::receiveRemote(cPacket* msg)
 {
-    static int tmpLogicSlot = -1;
+    static int txSlot = -1;
 
-    if (tmpLogicSlot != logicSlotCnt)
+    if (tmpSlotCnt != logicSlotCnt)
     {
-        tmpLogicSlot = logicSlotCnt;
+        tmpSlotCnt = logicSlotCnt;
 
         if (JOIN_PKT_TYPE == msg->getKind())
         {
+            txSlot = ((JoinPkt *)msg)->getLts();
             processJoin((JoinPkt *)msg);
         }
         else if (REQ_PKT_TYPE == msg->getKind())
         {
+            txSlot = ((RequestPkt *)msg)->getLts();
             processRequest((RequestPkt *)msg);
         }
 
         emit(collisionsBase, 0);
-
         return;
     }
 
-    EV << "Detected collision in mini-slot # " << logicSlotCnt-1 << "\n";
-    emit(collisionsBase, 1);
-
-    if (logicSlotCnt <= ARSlot && logicSlotCnt > 0)
-        failedSlots[logicSlotCnt-1] = true;
+    if (logicSlotCnt < ARSlot + BCSlot && logicSlotCnt >= BCSlot)
+    {
+        failedSlots[logicSlotCnt - BCSlot] = true;
+        emit(collisionsBase, 1);
+        EV << "Detected collision in mini-slot # " << logicSlotCnt << " transmitted @" << txSlot << "\n";
+        EV << "Cycle "<< cycleCnt << "\n";
+        txSlot = -1;
+    }
 }
 
 void Server::processJoin(JoinPkt* msg)
