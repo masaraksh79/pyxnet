@@ -186,7 +186,7 @@ void Host::receiveBase(cMessage* msg)
         EV << "Adjusted to new " << logicSlotCnt << " logic slot!\n";
     }
 
-    if (prevARSlot != ARSlot)
+    if (prevARSlot < ARSlot)
     {
         prevARSlot = ARSlot;
         collisionCnt = 0;

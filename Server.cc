@@ -227,7 +227,7 @@ void Server::updateARSlot()
            if (failedSlots[i])
               f++;
 
-        if (f >= ARSlot/3)        // increase
+        if (f >= ARSlot/2)        // increase
         {
             if (ARSlot < ARSmax)
                 ARSlot++;
