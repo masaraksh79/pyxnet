@@ -34,8 +34,10 @@ void Server::initialize()
         throw cRuntimeError("server not found");
 
     collisionsBase  = registerSignal("collisionsAtBase");
-    allocatedBps = registerSignal("allocatedBps");
-    requestedBps = registerSignal("requestedBps");
+    allocatedBps    = registerSignal("allocatedBps");
+    requestedBps    = registerSignal("requestedBps");
+    initiatedBps    = registerSignal("initiatedBps");
+    ARSlotLen       = registerSignal("ARSlotLen");
 
     txRx            = par("txRx");
     slotTime        = par("slotTime");
@@ -109,7 +111,7 @@ simtime_t Server::getNextSlotTime()
     return t;
 }
 
-int Server::numOfTxDBytes(int frames)
+int Server::numOfTxDBits(int frames)
 {
     int bytes;
 
@@ -136,11 +138,12 @@ void Server::downMessage(BasePkt *pkt)
     // Work out the size of new ARS before advertising it
     this->updateARSlot();
     pkt->setARS(ARSlot);
+    emit(ARSlotLen, ARSlot);
 
     // Data allocation
     sc->allocate();
-    emit(allocatedBps, numOfTxDBytes(sc->getNumOfAllocatedFrames()));
-    emit(requestedBps, numOfTxDBytes(sc->getNumOfRequestedFrames()));
+    emit(allocatedBps, numOfTxDBits(sc->getNumOfAllocatedFrames()));
+    emit(requestedBps, numOfTxDBits(sc->getNumOfRequestedFrames()));
     if (0 < (max_alc = sc->getNumOfAllocated()))
     {
         pkt->setAlloc_pidsArraySize(max_alc);
@@ -227,7 +230,7 @@ void Server::updateARSlot()
            if (failedSlots[i])
               f++;
 
-        if (f >= ARSlot/2)        // increase
+        if (f >= ARSlot/4)        // increase
         {
             if (ARSlot < ARSmax)
                 ARSlot++;
@@ -243,6 +246,11 @@ void Server::updateARSlot()
 void Server::receiveRemote(cPacket* msg)
 {
     static int txSlot = -1;
+
+    if (REQ_PKT_TYPE == msg->getKind())
+    {
+        emit(initiatedBps, numOfTxDBits(((RequestPkt *)msg)->getFrames()));
+    }
 
     if (tmpSlotCnt != logicSlotCnt)
     {
@@ -285,8 +293,7 @@ void Server::processRequest(RequestPkt *msg)
     int pid = msg->getPid();
     char eve[90] = {0};
 
-    int reqBytes = msg->getBytes();
-    int reqFrames = reqBytes / slotBytes + ((reqBytes % slotBytes) ? 1 : 0);
+    int reqFrames = msg->getFrames();
 
     // this request shall be processed in downMessage
     sc->addDataRequest(pid, reqFrames, uniform(0.0, 1.0, 1), eve);

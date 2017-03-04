@@ -26,13 +26,17 @@ simple Server
         //volatile double iaTime @unit(s);  // packet interarrival time
         double slotTime @unit(s);         
         @display("i=device/antennatower_l;p=2000,300");
-        @statistic[collisionsAtBase](record=mean;title="Number of uplink collisions");
+        @statistic[collisionsAtBase](record=vector(mean);title="Number of uplink collisions");
         @signal[collisionsAtBase](type="long");
-        @statistic[allocatedBps](record=mean;title="Number of allocated frames per cycle");
+        @statistic[allocatedBps](record=vector(mean);title="Number of allocated frames per cycle");
         @signal[allocatedBps](type="long");
-        @statistic[requestedBps](record=mean;title="Number of requested frames per cycle");
+        @statistic[requestedBps](record=vector(mean);title="Number of recvd request bps per cycle");
         @signal[requestedBps](type="long");
-         gates:
+        @statistic[initiatedBps](record=vector(mean);title="Number of sent request bps per cycle");
+        @signal[initiatedBps](type="long");
+        @statistic[ARSlotLen](record=vector(mean);title="Average length of Access slot (in mini-slots)");
+        @signal[ARSlotLen](type="long");
+             gates:
             input in[numHosts];
             output out[numHosts];
 }

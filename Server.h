@@ -27,6 +27,8 @@ class Server : public cSimpleModule
       simsignal_t collisionsBase;
       simsignal_t allocatedBps;
       simsignal_t requestedBps;
+      simsignal_t initiatedBps;
+      simsignal_t ARSlotLen;
 
       simtime_t radioDelay;
       int cycleCnt, cycleSlots, maxCycleSlots, slotBytes, firstSlotBytes;

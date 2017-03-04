@@ -257,6 +257,19 @@ void Host::upRequest(RequestPkt* pkt)
         pkt->setPid(pid);
         pkt->setLts(logicSlotCnt);
         pkt->setBytes(queue->getByteLength());
+
+        int bytes = 0, frames;
+        if (queue->getByteLength() > firstSlotBytes)
+        {
+            bytes = queue->getByteLength() - firstSlotBytes;
+            frames = 1 + bytes / slotBytes + ((bytes % slotBytes) ? 1 : 0);
+        }
+        else if (queue->getByteLength() > 0)
+        {
+            frames = 1;
+        }
+
+        pkt->setFrames(frames);
         EV << "Requested to transmit " << queue->getLength() << " pkts\n";
         cMessage *copy = ((cMessage *)pkt)->dup();
         send(copy, "out");

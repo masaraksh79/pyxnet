@@ -40,4 +40,5 @@ packet RequestPkt {
     int lts;
     int pid;
     int bytes;
+    int frames;
 }
