@@ -38,6 +38,8 @@ local.properties
 pkt_m.cc
 pkt_m.h
 *.elog
+*.vec
+*.vci
 
 #################
 ## Visual Studio
