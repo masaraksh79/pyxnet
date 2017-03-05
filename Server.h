@@ -15,6 +15,7 @@
 #include "JoinLeave.h"
 #include "PyxisDefs.h"
 #include "Scheduler.h"
+#include "Defragmenter.h"
 
 using namespace omnetpp;
 
@@ -29,19 +30,22 @@ class Server : public cSimpleModule
       simsignal_t requestedBps;
       simsignal_t initiatedBps;
       simsignal_t ARSlotLen;
+      cPar *iaTime;
 
       simtime_t radioDelay;
       int cycleCnt, cycleSlots, maxCycleSlots, slotBytes, firstSlotBytes;
       int ARSlot, ARSmin, ARSmax, SSlot;
-      int BCSlot;
+      int BCSlot, dataLen;
       int numHosts;
+      int myMAC;
       bool* failedSlots;
       simtime_t slotTime, txRx;
-      cQueue queue;
+      cPacketQueue *queue;
 
       // state variables, event pointers etc
       cModule *server;
       cMessage *slotEvent;
+      cMessage *newPkt;
       BasePkt* bcs_pkt;
       // time and logic synchronization
       // first the unit boots and starts with its random time slot
@@ -55,6 +59,7 @@ class Server : public cSimpleModule
       //Supporting lib classes
       JoinLeave *jl;
       Scheduler *sc;
+      Defragmenter *df;
 
     public:
       Server();
@@ -65,13 +70,18 @@ class Server : public cSimpleModule
       virtual void handleMessage(cMessage *msg) override;
       virtual void refreshDisplay() const override;
       simtime_t getNextSlotTime();
+      simtime_t getNextPktTime();
       void downMessage(BasePkt *pkt);
       void initFailSlots(int slots);
       void updateARSlot();
       void receiveRemote(cPacket* msg);
       void processJoin(JoinPkt* msg);
       void processRequest(RequestPkt *msg);
-      int numOfTxDBytes(int frames);
+      int numOfTxDBits(int frames);
+      int getMAC();
+      void PBRequest();
+      void PBScheduleData();
+
 };
 
 }; //namespace

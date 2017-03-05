@@ -79,6 +79,8 @@ void Host::initialize()
     slotRx = 0;
     slotUs = uniform(0, 0.0, 1.0) * slotTime.dbl();
 
+    df = new Defragmenter(slotBytes, firstSlotBytes);
+
     gate("in")->setDeliverOnReceptionStart(true);
 
     scheduleAt(getNextSlotTime(), slotEvent);   // mini-slot event
@@ -257,20 +259,9 @@ void Host::upRequest(RequestPkt* pkt)
         pkt->setPid(pid);
         pkt->setLts(logicSlotCnt);
         pkt->setBytes(queue->getByteLength());
-
-        int bytes = 0, frames;
-        if (queue->getByteLength() > firstSlotBytes)
-        {
-            bytes = queue->getByteLength() - firstSlotBytes;
-            frames = 1 + bytes / slotBytes + ((bytes % slotBytes) ? 1 : 0);
-        }
-        else if (queue->getByteLength() > 0)
-        {
-            frames = 1;
-        }
-
+        int frames = df->queue2frames(queue->getByteLength());
         pkt->setFrames(frames);
-        EV << "Requested to transmit " << queue->getLength() << " pkts\n";
+        EV << "Requested to transmit " << frames << " pkts\n";
         cMessage *copy = ((cMessage *)pkt)->dup();
         send(copy, "out");
     }
@@ -364,16 +355,7 @@ void Host::processPBControl(BasePkt* pkt)
     int frames, frames_in_data;
 
     //assuming consecutive frames allocation per PID
-    if (dataLen > firstSlotBytes)
-    {
-        int frs = (dataLen - firstSlotBytes) / slotBytes;
-        int ext = ((dataLen - firstSlotBytes) % slotBytes) ? 1 : 0;
-        frames_in_data = 1 + frs + ext;
-    }
-    else
-    {
-        frames_in_data = 1;
-    }
+    frames_in_data = df->framesInData(dataLen);
 
     PGBK = 0;
 

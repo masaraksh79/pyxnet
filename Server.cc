@@ -19,12 +19,23 @@ Server::Server()
 {
     slotEvent = new cMessage("Slot");
     bcs_pkt = new BasePkt("BCS");
+    newPkt  = new cMessage("PBData");
+    queue = new cPacketQueue("Buffer");
 }
 
 Server::~Server()
 {
     cancelAndDelete(slotEvent);
+    cancelAndDelete(newPkt);
     delete bcs_pkt;
+
+    while (!queue->isEmpty())
+    {
+        cPacket* p = queue->pop();
+        delete p;
+    }
+
+    delete queue;
 }
 
 void Server::initialize()
@@ -46,6 +57,8 @@ void Server::initialize()
     ARSmin          = par("ARSmin");
     ARSmax          = par("ARSmax");
     slotBytes       = par("slotBytes");
+    iaTime          = &par("iaTime");
+    dataLen         = par("dataLen");
     backOff         = par("backOff");
     maxPGBK         = par("maxPGBK");
     BCSlot          = par("BCSlot");
@@ -66,15 +79,18 @@ void Server::initialize()
 
     jl = new JoinLeave(bcs_pkt, numHosts);
     sc = new Scheduler(numHosts, maxCycleSlots, ARSlot + BCSlot, maxPGBK);
+    df = new Defragmenter(slotBytes, firstSlotBytes);
 
     pid = PID_PB;
 
+    myMAC = this->getMAC();
     srand(getId());
 
     logicSlotCnt = 0;
     tmpSlotCnt = -1;        // used to differentiate between current LTS
     emit(collisionsBase, 0);
     scheduleAt(getNextSlotTime(), slotEvent);
+    scheduleAt(getNextPktTime(), newPkt);       // event to add new packet into queue
 }
 
 void Server::handleMessage(cMessage *msg)
@@ -82,6 +98,13 @@ void Server::handleMessage(cMessage *msg)
     // time slot tick event
     if (msg->isSelfMessage())
     {
+        if (newPkt == msg)  // new fifo packet
+        {
+            queue->insert(new cPacket("OTAP", 0, 8 * dataLen));
+            scheduleAt(getNextPktTime(), newPkt);
+            return;
+        }
+
         if (0 == logicSlotCnt % cycleSlots)  // one cycle passed
         {
             logicSlotCnt = 0;
@@ -109,6 +132,11 @@ simtime_t Server::getNextSlotTime()
 {
     simtime_t t = simTime() + slotTime;
     return t;
+}
+
+simtime_t Server::getNextPktTime()
+{
+    return (simTime() + iaTime->doubleValue());
 }
 
 int Server::numOfTxDBits(int frames)
@@ -140,10 +168,16 @@ void Server::downMessage(BasePkt *pkt)
     pkt->setARS(ARSlot);
     emit(ARSlotLen, ARSlot);
 
-    // Data allocation
+    // Base requests addition
+    this->PBRequest();
+
+    // Data allocation for all network
     sc->allocate();
+
+    // Collect stats
     emit(allocatedBps, numOfTxDBits(sc->getNumOfAllocatedFrames()));
     emit(requestedBps, numOfTxDBits(sc->getNumOfRequestedFrames()));
+
     if (0 < (max_alc = sc->getNumOfAllocated()))
     {
         pkt->setAlloc_pidsArraySize(max_alc);
@@ -155,6 +189,9 @@ void Server::downMessage(BasePkt *pkt)
             EV << "ALLOCATED > " << sc->getAllocatedFrames(j) << " frames to PID " << sc->getAllocatedPID(j) << "\n";
         }
     }
+
+    // Allocate data slots for Base
+    this->PBScheduleData();
 
     // Handle piggybacked part of packet
     pkt->setPgbksArraySize(numHosts);
@@ -208,6 +245,72 @@ void Server::downMessage(BasePkt *pkt)
     }
 
 }
+
+void Server::PBRequest()
+{
+    char eve[90] = {0};
+    int frames = df->queue2frames(queue->getByteLength());
+
+    if (frames)
+    {
+        sc->addDataRequest(pid, frames, uniform(0.0, 1.0, 1), eve);
+        EV << eve;
+    }
+}
+
+void Server::PBScheduleData()
+{
+    cPacket* p;
+    static int frame_count = 0;
+    int frames, max_alc = sc->getNumOfAllocated();
+    int frames_in_data = df->framesInData(dataLen);
+
+    for (int j = 0; j < max_alc; j++)
+    {
+        if (pid == sc->getAllocatedPID(j))
+        {
+            if (0 < (frames = sc->getAllocatedFrames(j)))
+            {
+                EV << "ALLOCATED > " << sc->getAllocatedFrames(j) << " frames to PB (BASE)\n";
+
+                frame_count += frames;
+
+                if (frame_count == frames_in_data)   // received the exactly 1 packet allocation
+                {
+                    if (!queue->isEmpty())
+                    {
+                        p = queue->pop();
+                        delete p;
+                        EV << "Server>released exactly 1 pkt\n";
+                    }
+
+                    frame_count = 0;
+                }
+                else if (frame_count > frames_in_data)
+                {
+                    int pkts = frame_count / frames_in_data;
+                    for (int i = 0; i < pkts; i++)
+                    {
+                        if (!queue->isEmpty())
+                        {
+                            p = queue->pop();
+                            delete p;
+                        }
+                    }
+                    frame_count = frame_count % frames_in_data;
+                    EV << "Server>released " << pkts << " packets and left with " << frame_count << " frames\n";
+                }
+                else
+                {
+                    EV << "Server>dealt with " << frame_count << " out of " << frames_in_data << " data packet frames\n";
+                }
+            }
+        }
+    }
+
+}
+
+
 
 void Server::initFailSlots(int slots)
 {
@@ -306,11 +409,16 @@ void Server::processRequest(RequestPkt *msg)
 
 }
 
+int Server::getMAC()
+{
+    return (getId() + 52295);
+}
+
 void Server::refreshDisplay() const
 {
     getDisplayString().setTagArg("t", 2, "#808000");
-    char str[40] = {0};
-    sprintf(str, "Cycle %d Access:%d Data:%d", cycleCnt, ARSlot, SSlot);
+    char str[80] = {0};
+    sprintf(str, "Cycle %d Access:%d Data:%d\n\t\t%x/Bytes:%d\n", cycleCnt, ARSlot, SSlot, myMAC, queue->getByteLength());
     getDisplayString().setTagArg("i", 1, "red");
     getDisplayString().setTagArg("t", 0, (const char *)str);
 }

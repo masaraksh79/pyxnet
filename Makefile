@@ -29,7 +29,13 @@ PROJECTRELATIVE_PATH =
 O = $(PROJECT_OUTPUT_DIR)/$(CONFIGNAME)/$(PROJECTRELATIVE_PATH)
 
 # Object files for local .cc, .msg and .sm files
-OBJS = $O/Host.o $O/JoinLeave.o $O/Scheduler.o $O/Server.o $O/pkt_m.o
+OBJS = \
+    $O/Defragmenter.o \
+    $O/Host.o \
+    $O/JoinLeave.o \
+    $O/Scheduler.o \
+    $O/Server.o \
+    $O/pkt_m.o
 
 # Message files
 MSGFILES = \
@@ -127,7 +133,10 @@ depend:
 	$(Q)$(MAKEDEPEND) $(INCLUDE_PATH) -f Makefile -P\$$O/ -- $(MSG_CC_FILES) $(SM_CC_FILES)  ./*.cc results/*.cc
 
 # DO NOT DELETE THIS LINE -- make depend depends on it.
+$O/Defragmenter.o: Defragmenter.cc \
+	Defragmenter.h
 $O/Host.o: Host.cc \
+	Defragmenter.h \
 	Host.h \
 	JoinLeave.h \
 	PyxisDefs.h \
@@ -140,6 +149,7 @@ $O/Scheduler.o: Scheduler.cc \
 	Scheduler.h \
 	pkt_m.h
 $O/Server.o: Server.cc \
+	Defragmenter.h \
 	JoinLeave.h \
 	PyxisDefs.h \
 	Scheduler.h \

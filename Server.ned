@@ -19,12 +19,14 @@ simple Server
         int BCSlot;
         int ARSmin;
         int ARSmax;
+        int dataLen;
         int maxPGBK;
         int slotBytes;
         int firstSlotBytes;
         double txRx @unit(s);     
         //volatile double iaTime @unit(s);  // packet interarrival time
         double slotTime @unit(s);         
+        volatile double iaTime @unit(s);  	
         @display("i=device/antennatower_l;p=2000,300");
         @statistic[collisionsAtBase](record=vector(mean);title="Number of uplink collisions");
         @signal[collisionsAtBase](type="long");

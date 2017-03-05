@@ -14,6 +14,7 @@
 #include "pkt_m.h"
 #include "JoinLeave.h"
 #include "PyxisDefs.h"
+#include "Defragmenter.h"
 
 using namespace omnetpp;
 
@@ -39,6 +40,8 @@ class Host : public cSimpleModule
     simtime_t slotTime, txRx;
     cPacketQueue *queue;
     cPar *iaTime;
+
+    Defragmenter *df;
 
     // state variables, event pointers etc
     cModule *server;
