@@ -19,7 +19,7 @@ simple Server
         int BCSlot;
         int ARSmin;
         int ARSmax;
-        int dataLen;
+        volatile int dataLen;
         int maxPGBK;
         int slotBytes;
         int firstSlotBytes;
@@ -28,17 +28,17 @@ simple Server
         double slotTime @unit(s);         
         volatile double iaTime @unit(s);  	
         @display("i=device/antennatower_l;p=2000,300");
-        @statistic[collisionsAtBase](record=vector(mean);title="Number of uplink collisions");
-        @signal[collisionsAtBase](type="long");
-        @statistic[allocatedBps](record=vector(mean);title="Number of allocated frames per cycle");
+        @statistic[collisionsAtBase](record=(mean);title="Proportion of collided slots in ARS");
+        @signal[collisionsAtBase](type="double");
+        @statistic[allocatedBps](record=(mean);title="Number of allocated frames per cycle");
         @signal[allocatedBps](type="long");
-        @statistic[requestedBps](record=vector(mean);title="Number of recvd request bps per cycle");
+        @statistic[requestedBps](record=(mean);title="Number of recvd request bps per cycle");
         @signal[requestedBps](type="long");
-        @statistic[initiatedBps](record=vector(mean);title="Number of sent request bps per cycle");
-        @signal[initiatedBps](type="long");
-        @statistic[ARSlotLen](record=vector(mean);title="Average length of Access slot (in mini-slots)");
-        @signal[ARSlotLen](type="long");
-             gates:
+        @statistic[efficiency](record=(mean);title="Average cycle efficiency");
+        @signal[efficiency](type="double");
+        @statistic[business](record=(mean);title="Average cycle business");
+        @signal[business](type="double");
+                 gates:
             input in[numHosts];
             output out[numHosts];
 }

@@ -17,7 +17,7 @@ simple Host
         int backOff;
         int numHosts;
         int randomStart;
-        int dataLen;									// typical packet len from Host data source (bytes)
+        volatile int dataLen;									// typical packet len from Host data source (bytes)
         int slotBytes;
         int firstSlotBytes;
         int cycleSlots;									// dummy inited but is received from PB

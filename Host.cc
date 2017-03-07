@@ -41,10 +41,6 @@ Host::~Host()
 
 void Host::initialize()
 {
-    server = getModuleByPath("server");
-    if (!server)
-        throw cRuntimeError("server not found");
-
     queueLength = registerSignal("queueLenPackets");
     collCnt = registerSignal("collisionsAtHost");
 

@@ -28,8 +28,8 @@ class Server : public cSimpleModule
       simsignal_t collisionsBase;
       simsignal_t allocatedBps;
       simsignal_t requestedBps;
-      simsignal_t initiatedBps;
-      simsignal_t ARSlotLen;
+      simsignal_t efficiency;
+      simsignal_t business;
       cPar *iaTime;
 
       simtime_t radioDelay;
@@ -39,6 +39,7 @@ class Server : public cSimpleModule
       int numHosts;
       int myMAC;
       bool* failedSlots;
+      bool* reservedSlots;
       simtime_t slotTime, txRx;
       cPacketQueue *queue;
 
@@ -72,7 +73,7 @@ class Server : public cSimpleModule
       simtime_t getNextSlotTime();
       simtime_t getNextPktTime();
       void downMessage(BasePkt *pkt);
-      void initFailSlots(int slots);
+      void initEvalSlots(int slots);
       void updateARSlot();
       void receiveRemote(cPacket* msg);
       void processJoin(JoinPkt* msg);

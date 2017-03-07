@@ -44,7 +44,6 @@ class Host : public cSimpleModule
     Defragmenter *df;
 
     // state variables, event pointers etc
-    cModule *server;
     cMessage *slotEvent;
     JoinPkt* joinPkt;
     RequestPkt* requestPkt;

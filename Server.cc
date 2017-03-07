@@ -47,8 +47,8 @@ void Server::initialize()
     collisionsBase  = registerSignal("collisionsAtBase");
     allocatedBps    = registerSignal("allocatedBps");
     requestedBps    = registerSignal("requestedBps");
-    initiatedBps    = registerSignal("initiatedBps");
-    ARSlotLen       = registerSignal("ARSlotLen");
+    efficiency      = registerSignal("efficiency");
+    business        = registerSignal("business");
 
     txRx            = par("txRx");
     slotTime        = par("slotTime");
@@ -72,7 +72,7 @@ void Server::initialize()
     for (int i = 0; i < numHosts; i++)
         gate("in", i)->setDeliverOnReceptionStart(true);
 
-    initFailSlots(ARSlot);
+    initEvalSlots(ARSlot);
     cycleSlots = ARSlot + BCSlot;
     SSlot = 0;  // no data at the start
     cycleCnt = 0;
@@ -88,7 +88,6 @@ void Server::initialize()
 
     logicSlotCnt = 0;
     tmpSlotCnt = -1;        // used to differentiate between current LTS
-    emit(collisionsBase, 0);
     scheduleAt(getNextSlotTime(), slotEvent);
     scheduleAt(getNextPktTime(), newPkt);       // event to add new packet into queue
 }
@@ -166,7 +165,6 @@ void Server::downMessage(BasePkt *pkt)
     // Work out the size of new ARS before advertising it
     this->updateARSlot();
     pkt->setARS(ARSlot);
-    emit(ARSlotLen, ARSlot);
 
     // Base requests addition
     this->PBRequest();
@@ -201,6 +199,10 @@ void Server::downMessage(BasePkt *pkt)
     SSlot = sc->getNeededDataFrames();
 
     cycleSlots = BCSlot + ARSlot + SSlot;
+
+    emit(efficiency, (double)(SSlot)/cycleSlots);
+    emit(business, (double)(SSlot)/(maxCycleSlots - BCSlot - ARSlot));
+
     if (cycleSlots > maxCycleSlots)
     {
         cycleSlots = maxCycleSlots;
@@ -235,7 +237,7 @@ void Server::downMessage(BasePkt *pkt)
     }
 
     // Initialize failed slot information for next cycle
-    initFailSlots(ARSlot);
+    initEvalSlots(ARSlot);
     sc->clearRequests(maxCycleSlots, ARSlot + BCSlot);
     sc->clearAllocations();
     for (int i = 0; i < max_alc; i++)
@@ -311,8 +313,7 @@ void Server::PBScheduleData()
 }
 
 
-
-void Server::initFailSlots(int slots)
+void Server::initEvalSlots(int slots)
 {
     if (failedSlots != NULL)
         delete failedSlots;
@@ -321,39 +322,48 @@ void Server::initFailSlots(int slots)
 
     for (int i = 0; i < slots; i++)
         failedSlots[i] = false;
+
+    if (reservedSlots != NULL)
+        delete reservedSlots;
+
+    reservedSlots = new bool[slots];
+
+    for (int i = 0; i < slots; i++)
+        reservedSlots[i] = false;
 }
 
 void Server::updateARSlot()
 {
-    int f = 0;
+    int m, r = 0, f = 0;
+
+    for (int i = 0; i < ARSlot; i++)
+    {
+       if (failedSlots[i])  // slots with collisions, n_c(t)
+          f++;
+
+       if (reservedSlots[i])    // successfully reserved slots, n_s(t)
+          r++;
+    }
 
     if (backOff != (int)BACKOFF_HARMONIC)
     {
-        for (int i = 0; i < ARSlot; i++)
-           if (failedSlots[i])
-              f++;
+        m = 2*f + r;    // MLE estimate taken from RMAC
 
-        if (f >= ARSlot/4)        // increase
-        {
-            if (ARSlot < ARSmax)
-                ARSlot++;
-        }
-        else   // decrease
-        {
-            if (ARSlot > ARSmin)
-                ARSlot--;
-        }
+        if (m > ARSmax)
+            m = ARSmax;
+
+        if (m < ARSmin)
+            m = ARSmin;
+
+        ARSlot = m;
     }
+
+    emit(collisionsBase, ((double)f)/ARSlot);
 }
 
 void Server::receiveRemote(cPacket* msg)
 {
     static int txSlot = -1;
-
-    if (REQ_PKT_TYPE == msg->getKind())
-    {
-        emit(initiatedBps, numOfTxDBits(((RequestPkt *)msg)->getFrames()));
-    }
 
     if (tmpSlotCnt != logicSlotCnt)
     {
@@ -366,18 +376,20 @@ void Server::receiveRemote(cPacket* msg)
         }
         else if (REQ_PKT_TYPE == msg->getKind())
         {
+            if (logicSlotCnt < ARSlot + BCSlot && logicSlotCnt >= BCSlot)
+                reservedSlots[logicSlotCnt - BCSlot] = true;
             txSlot = ((RequestPkt *)msg)->getLts();
             processRequest((RequestPkt *)msg);
         }
 
-        emit(collisionsBase, 0);
         return;
     }
 
     if (logicSlotCnt < ARSlot + BCSlot && logicSlotCnt >= BCSlot)
     {
-        failedSlots[logicSlotCnt - BCSlot] = true;
-        emit(collisionsBase, 1);
+        if (REQ_PKT_TYPE == msg->getKind())
+            failedSlots[logicSlotCnt - BCSlot] = true;
+
         EV << "Detected collision in mini-slot # " << logicSlotCnt << " transmitted @" << txSlot << "\n";
         EV << "Cycle "<< cycleCnt << "\n";
         txSlot = -1;
