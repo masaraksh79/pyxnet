@@ -332,7 +332,7 @@ void Host::doBackOff(BasePkt* pkt)
 
 void Host::processPBJoin(BasePkt* pkt)
 {
-    for (int i = 0; i < pkt->getMacsArraySize(); i++)
+    for (unsigned int i = 0; i < pkt->getMacsArraySize(); i++)
     {
         if (pkt->getMacs(i) == getMAC())
         {
@@ -355,7 +355,7 @@ void Host::processPBControl(BasePkt* pkt)
 
     PGBK = 0;
 
-    for (int i = 0; i < pkt->getAlloc_pidsArraySize(); i++)
+    for (unsigned int i = 0; i < pkt->getAlloc_pidsArraySize(); i++)
     {
         if (pid == pkt->getAlloc_pids(i))
         {
@@ -417,14 +417,14 @@ void Host::refreshDisplay() const
     {
         getDisplayString().setTagArg("i", 1, "red");
         char pidstr[20] = {0};
-        sprintf(pidstr, "BOOTED (%d)", pid, myMAC);
+        sprintf(pidstr, "BOOTED (%d)", myMAC);
         getDisplayString().setTagArg("t", 0, (const char *)pidstr);
     }
     else if (syncState == TSYNC)
     {
         getDisplayString().setTagArg("i", 1, "yellow");
         char pidstr[20] = {0};
-        sprintf(pidstr, "TIME-SYNCED (%d)", pid, myMAC);
+        sprintf(pidstr, "TIME-SYNCED (%d)", myMAC);
         getDisplayString().setTagArg("t", 0, (const char *)pidstr);
     }
     else if (syncState == LSYNC)
@@ -439,7 +439,7 @@ void Host::refreshDisplay() const
         }
         else
         {
-            sprintf(pidstr, "%d/%x\nBytes:%lu", pid, myMAC, queue->getByteLength());
+            sprintf(pidstr, "%d/%x\nBytes:%llu", pid, myMAC, queue->getByteLength());
             getDisplayString().setTagArg("t", 0, (const char *)pidstr);
         }
 

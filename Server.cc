@@ -430,7 +430,7 @@ void Server::refreshDisplay() const
 {
     getDisplayString().setTagArg("t", 2, "#808000");
     char str[80] = {0};
-    sprintf(str, "Cycle %d Access:%d Data:%d\n\t\t%x/Bytes:%d\n", cycleCnt, ARSlot, SSlot, myMAC, queue->getByteLength());
+    sprintf(str, "Cycle %d Access:%d Data:%d\n\t\t%x/Bytes:%llu\n", cycleCnt, ARSlot, SSlot, myMAC, queue->getByteLength());
     getDisplayString().setTagArg("i", 1, "red");
     getDisplayString().setTagArg("t", 0, (const char *)str);
 }
