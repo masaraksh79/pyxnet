@@ -36,6 +36,19 @@ averaging()
    done
 }
 
+runsim()
+{
+   local fname=$1
+   local res=$2
+   local num=$3
+   local sample=$4
+   local param=$5
+   f=${fname}.${param}
+   touch $f
+   averaging $res $num $sample $param $f
+   echo "Completed running the simulation scenario $f"
+}
+
 res=$1
 
 if [ "x${res}" == "x-h" ]; then
@@ -77,8 +90,9 @@ fi
 
 param=allocatedBps
 
-f=${fname}.${param}
-touch $f
-averaging $res $num $sample $param $f
-echo "Completed running the simulation scenario $f"
+# Run simulation and capture each $param in separation file ext
+runsim $fname $res $num $sample allocatedBps
+runsim $fname $res $num $sample requestedBps
+runsim $fname $res $num $sample efficiency
+runsim $fname $res $num $sample business
 
