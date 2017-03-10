@@ -88,11 +88,9 @@ if [ "x${iter}" == "xshow" ]; then
 	exit
 fi
 
-param=allocatedBps
-
 # Run simulation and capture each $param in separation file ext
 runsim $fname $res $num $sample allocatedBps
 runsim $fname $res $num $sample requestedBps
 runsim $fname $res $num $sample efficiency
 runsim $fname $res $num $sample business
-
+runsim $fname $res $num $sample collisionsAtBase
