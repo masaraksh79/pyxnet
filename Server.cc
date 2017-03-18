@@ -401,7 +401,7 @@ void Server::receiveRemote(cPacket* msg)
     if (txSlot >= BCSlot && txSlot < ARSlot + BCSlot)
     {
         failedSlots[txSlot - BCSlot] = true;
-        EV << "Detected collision in mini-slot # " << logicSlotCnt << " transmitted @" << txSlot << "\n";
+        EV << "Detected collision in mini-slot # " << txSlot << "\n";
         EV << "Cycle "<< cycleCnt << "\n";
         txSlot = -1;
     }
