@@ -335,6 +335,7 @@ void Server::initEvalSlots(int slots)
 void Server::updateARSlot()
 {
     int m, r = 0, f = 0;
+    double col;
 
     for (int i = 0; i < ARSlot; i++)
     {
@@ -344,6 +345,8 @@ void Server::updateARSlot()
        if (reservedSlots[i])    // successfully reserved slots, n_s(t)
           r++;
     }
+
+    col = (double)f / (double)ARSlot;
 
     if (backOff != (int)BACKOFF_HARMONIC)
     {
@@ -358,7 +361,7 @@ void Server::updateARSlot()
         ARSlot = m;
     }
 
-    emit(collisionsBase, ((double)f)/ARSlot);
+    emit(collisionsBase, col);
 }
 
 void Server::receiveRemote(cPacket* msg)
@@ -385,11 +388,19 @@ void Server::receiveRemote(cPacket* msg)
         return;
     }
 
-    if (logicSlotCnt < ARSlot + BCSlot && logicSlotCnt >= BCSlot)
+    // register packet
+    if (JOIN_PKT_TYPE == msg->getKind())
     {
-        if (REQ_PKT_TYPE == msg->getKind())
-            failedSlots[logicSlotCnt - BCSlot] = true;
+        txSlot = ((JoinPkt *)msg)->getLts();
+    }
+    else if (REQ_PKT_TYPE == msg->getKind())
+    {
+        txSlot = ((RequestPkt *)msg)->getLts();
+    }
 
+    if (txSlot >= BCSlot && txSlot < ARSlot + BCSlot)
+    {
+        failedSlots[txSlot - BCSlot] = true;
         EV << "Detected collision in mini-slot # " << logicSlotCnt << " transmitted @" << txSlot << "\n";
         EV << "Cycle "<< cycleCnt << "\n";
         txSlot = -1;

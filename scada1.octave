@@ -1,0 +1,4512 @@
+# name: scalars
+# type: struct
+# length: 501
+# name: description
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: string
+# elements: 1
+# length: 0
+
+# name: _pyxnet_results_PyxisPureScada50_0_sca_PyxisPureScada50_0_20170312_23_33_49_18772_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1474.354282
+# name: _pyxnet_results_PyxisPureScada50_1_sca_PyxisPureScada50_1_20170312_23_33_49_14584_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2196.594975
+# name: _pyxnet_results_PyxisPureScada50_2_sca_PyxisPureScada50_2_20170312_23_33_49_16572_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3046.827684
+# name: _pyxnet_results_PyxisPureScada50_3_sca_PyxisPureScada50_3_20170312_23_33_49_17900_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3920.741348
+# name: _pyxnet_results_PyxisPureScada50_4_sca_PyxisPureScada50_4_20170312_23_33_49_12984_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4743.097778
+# name: _pyxnet_results_PyxisPureScada50_5_sca_PyxisPureScada50_5_20170312_23_33_49_9836_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1407.704242
+# name: _pyxnet_results_PyxisPureScada50_6_sca_PyxisPureScada50_6_20170312_23_33_49_12968_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2215.008065
+# name: _pyxnet_results_PyxisPureScada50_7_sca_PyxisPureScada50_7_20170312_23_33_49_9944_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3038.523272
+# name: _pyxnet_results_PyxisPureScada50_8_sca_PyxisPureScada50_8_20170312_23_34_19_16120_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3911.850638
+# name: _pyxnet_results_PyxisPureScada50_9_sca_PyxisPureScada50_9_20170312_23_34_19_19376_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4768.837416
+# name: _pyxnet_results_PyxisPureScada50_10_sca_PyxisPureScada50_10_20170312_23_34_19_16696_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1370.072029
+# name: _pyxnet_results_PyxisPureScada50_11_sca_PyxisPureScada50_11_20170312_23_34_22_17572_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2144.430708
+# name: _pyxnet_results_PyxisPureScada50_12_sca_PyxisPureScada50_12_20170312_23_34_23_16564_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2957.707692
+# name: _pyxnet_results_PyxisPureScada50_13_sca_PyxisPureScada50_13_20170312_23_34_26_14064_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3842.98913
+# name: _pyxnet_results_PyxisPureScada50_14_sca_PyxisPureScada50_14_20170312_23_34_26_18312_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4654.80531
+# name: _pyxnet_results_PyxisPureScada50_15_sca_PyxisPureScada50_15_20170312_23_34_29_10816_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1341.882002
+# name: _pyxnet_results_PyxisPureScada50_16_sca_PyxisPureScada50_16_20170312_23_34_54_19684_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2153.271457
+# name: _pyxnet_results_PyxisPureScada50_17_sca_PyxisPureScada50_17_20170312_23_34_56_15244_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2990.078541
+# name: _pyxnet_results_PyxisPureScada50_18_sca_PyxisPureScada50_18_20170312_23_34_57_1852_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3807.864621
+# name: _pyxnet_results_PyxisPureScada50_19_sca_PyxisPureScada50_19_20170312_23_35_00_15932_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4656.752212
+# name: _pyxnet_results_PyxisPureScada50_20_sca_PyxisPureScada50_20_20170312_23_35_02_8432_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1450.34109
+# name: _pyxnet_results_PyxisPureScada50_21_sca_PyxisPureScada50_21_20170312_23_35_04_7852_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2261.882234
+# name: _pyxnet_results_PyxisPureScada50_22_sca_PyxisPureScada50_22_20170312_23_35_08_9936_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3133.619658
+# name: _pyxnet_results_PyxisPureScada50_23_sca_PyxisPureScada50_23_20170312_23_35_12_17292_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4033.46422
+# name: _pyxnet_results_PyxisPureScada50_24_sca_PyxisPureScada50_24_20170312_23_35_33_14772_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4910.379775
+# name: _pyxnet_results_PyxisPureScada50_25_sca_PyxisPureScada50_25_20170312_23_35_36_16300_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1432.539024
+# name: _pyxnet_results_PyxisPureScada50_26_sca_PyxisPureScada50_26_20170312_23_35_38_252_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2194.20201
+# name: _pyxnet_results_PyxisPureScada50_27_sca_PyxisPureScada50_27_20170312_23_35_41_10848_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3063.021216
+# name: _pyxnet_results_PyxisPureScada50_28_sca_PyxisPureScada50_28_20170312_23_35_45_13248_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3954.195255
+# name: _pyxnet_results_PyxisPureScada50_29_sca_PyxisPureScada50_29_20170312_23_35_45_8452_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4847.337808
+# name: _pyxnet_results_PyxisPureScada50_30_sca_PyxisPureScada50_30_20170312_23_35_48_18192_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1435.184259
+# name: _pyxnet_results_PyxisPureScada50_31_sca_PyxisPureScada50_31_20170312_23_35_54_2544_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2279.722279
+# name: _pyxnet_results_PyxisPureScada50_32_sca_PyxisPureScada50_32_20170312_23_36_11_6224_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3132.138177
+# name: _pyxnet_results_PyxisPureScada50_33_sca_PyxisPureScada50_33_20170312_23_36_17_10760_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4062.528545
+# name: _pyxnet_results_PyxisPureScada50_34_sca_PyxisPureScada50_34_20170312_23_36_17_18832_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4870.670404
+# name: _pyxnet_results_PyxisPureScada50_35_sca_PyxisPureScada50_35_20170312_23_36_17_19360_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1440.604154
+# name: _pyxnet_results_PyxisPureScada50_36_sca_PyxisPureScada50_36_20170312_23_36_21_3360_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2313.696319
+# name: _pyxnet_results_PyxisPureScada50_37_sca_PyxisPureScada50_37_20170312_23_36_21_15588_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3105.171875
+# name: _pyxnet_results_PyxisPureScada50_38_sca_PyxisPureScada50_38_20170312_23_36_27_16480_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3977.338828
+# name: _pyxnet_results_PyxisPureScada50_39_sca_PyxisPureScada50_39_20170312_23_36_32_15924_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4917.896396
+# name: _pyxnet_results_PyxisPureScada50_40_sca_PyxisPureScada50_40_20170312_23_36_46_17280_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1480.062924
+# name: _pyxnet_results_PyxisPureScada50_41_sca_PyxisPureScada50_41_20170312_23_36_55_17064_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2272.369919
+# name: _pyxnet_results_PyxisPureScada50_42_sca_PyxisPureScada50_42_20170312_23_36_55_13120_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3130.863442
+# name: _pyxnet_results_PyxisPureScada50_43_sca_PyxisPureScada50_43_20170312_23_36_56_15284_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4113.704251
+# name: _pyxnet_results_PyxisPureScada50_44_sca_PyxisPureScada50_44_20170312_23_37_00_11192_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4900.82287
+# name: _pyxnet_results_PyxisPureScada50_45_sca_PyxisPureScada50_45_20170312_23_37_03_1208_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1493.569307
+# name: _pyxnet_results_PyxisPureScada50_46_sca_PyxisPureScada50_46_20170312_23_37_06_3228_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2196.766834
+# name: _pyxnet_results_PyxisPureScada50_47_sca_PyxisPureScada50_47_20170312_23_37_11_3132_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3151.874465
+# name: _pyxnet_results_PyxisPureScada50_48_sca_PyxisPureScada50_48_20170312_23_37_27_17088_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4056.121324
+# name: _pyxnet_results_PyxisPureScada50_49_sca_PyxisPureScada50_49_20170312_23_37_36_14944_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4854.459641
+# name: _pyxnet_results_PyxisPureScada50_50_sca_PyxisPureScada50_50_20170312_23_37_36_8424_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1451.030618
+# name: _pyxnet_results_PyxisPureScada50_51_sca_PyxisPureScada50_51_20170312_23_37_36_19504_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2205.99799
+# name: _pyxnet_results_PyxisPureScada50_52_sca_PyxisPureScada50_52_20170312_23_37_40_19824_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3026.950704
+# name: _pyxnet_results_PyxisPureScada50_53_sca_PyxisPureScada50_53_20170312_23_37_40_7196_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3913.499089
+# name: _pyxnet_results_PyxisPureScada50_54_sca_PyxisPureScada50_54_20170312_23_37_44_10932_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4690.926829
+# name: _pyxnet_results_PyxisPureScada50_55_sca_PyxisPureScada50_55_20170312_23_37_48_18980_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1451.030618
+# name: _pyxnet_results_PyxisPureScada50_56_sca_PyxisPureScada50_56_20170312_23_38_05_1172_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2225.001008
+# name: _pyxnet_results_PyxisPureScada50_57_sca_PyxisPureScada50_57_20170312_23_38_13_8692_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3057.920792
+# name: _pyxnet_results_PyxisPureScada50_58_sca_PyxisPureScada50_58_20170312_23_38_14_14348_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3916.386157
+# name: _pyxnet_results_PyxisPureScada50_59_sca_PyxisPureScada50_59_20170312_23_38_16_18456_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4698.968958
+# name: _pyxnet_results_PyxisPureScada50_60_sca_PyxisPureScada50_60_20170312_23_38_17_16028_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1475.764128
+# name: _pyxnet_results_PyxisPureScada50_61_sca_PyxisPureScada50_61_20170312_23_38_21_11256_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2228.321249
+# name: _pyxnet_results_PyxisPureScada50_62_sca_PyxisPureScada50_62_20170312_23_38_22_14160_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3030.427567
+# name: _pyxnet_results_PyxisPureScada50_63_sca_PyxisPureScada50_63_20170312_23_38_28_19956_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3867.155797
+# name: _pyxnet_results_PyxisPureScada50_64_sca_PyxisPureScada50_64_20170312_23_38_44_18924_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4798.564444
+# name: _pyxnet_results_PyxisPureScada50_65_sca_PyxisPureScada50_65_20170312_23_38_51_15608_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1432.892879
+# name: _pyxnet_results_PyxisPureScada50_66_sca_PyxisPureScada50_66_20170312_23_38_52_8504_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2264.317492
+# name: _pyxnet_results_PyxisPureScada50_67_sca_PyxisPureScada50_67_20170312_23_38_52_8976_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3081.389518
+# name: _pyxnet_results_PyxisPureScada50_68_sca_PyxisPureScada50_68_20170312_23_38_57_9708_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3886.860254
+# name: _pyxnet_results_PyxisPureScada50_69_sca_PyxisPureScada50_69_20170312_23_38_57_16076_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4767.625835
+# name: _pyxnet_results_PyxisPureScada50_70_sca_PyxisPureScada50_70_20170312_23_39_03_12424_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1352.05675
+# name: _pyxnet_results_PyxisPureScada50_71_sca_PyxisPureScada50_71_20170312_23_39_06_3744_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2141.179283
+# name: _pyxnet_results_PyxisPureScada50_72_sca_PyxisPureScada50_72_20170312_23_39_21_12652_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2987.056101
+# name: _pyxnet_results_PyxisPureScada50_73_sca_PyxisPureScada50_73_20170312_23_39_29_15600_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3793.536937
+# name: _pyxnet_results_PyxisPureScada50_74_sca_PyxisPureScada50_74_20170312_23_39_30_13276_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4717.698448
+# name: _pyxnet_results_PyxisPureScada50_75_sca_PyxisPureScada50_75_20170312_23_39_34_1224_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1348.602862
+# name: _pyxnet_results_PyxisPureScada50_76_sca_PyxisPureScada50_76_20170312_23_39_34_19996_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2150.240519
+# name: _pyxnet_results_PyxisPureScada50_77_sca_PyxisPureScada50_77_20170312_23_39_35_2276_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2989.671809
+# name: _pyxnet_results_PyxisPureScada50_78_sca_PyxisPureScada50_78_20170312_23_39_43_17312_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3767.859712
+# name: _pyxnet_results_PyxisPureScada50_79_sca_PyxisPureScada50_79_20170312_23_39_43_17076_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4748.82
+# name: _pyxnet_results_PyxisPureScada50_80_sca_PyxisPureScada50_80_20170312_23_39_58_3780_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1341.779499
+# name: _pyxnet_results_PyxisPureScada50_81_sca_PyxisPureScada50_81_20170312_23_40_06_16720_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2134.099502
+# name: _pyxnet_results_PyxisPureScada50_82_sca_PyxisPureScada50_82_20170312_23_40_06_11148_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3047.981638
+# name: _pyxnet_results_PyxisPureScada50_83_sca_PyxisPureScada50_83_20170312_23_40_10_7848_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3848.449275
+# name: _pyxnet_results_PyxisPureScada50_84_sca_PyxisPureScada50_84_20170312_23_40_13_1392_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4656.882743
+# name: _pyxnet_results_PyxisPureScada50_85_sca_PyxisPureScada50_85_20170312_23_40_16_7464_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1382.261288
+# name: _pyxnet_results_PyxisPureScada50_86_sca_PyxisPureScada50_86_20170312_23_40_21_13204_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2146.081755
+# name: _pyxnet_results_PyxisPureScada50_87_sca_PyxisPureScada50_87_20170312_23_40_22_6748_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2995.68118
+# name: _pyxnet_results_PyxisPureScada50_88_sca_PyxisPureScada50_88_20170312_23_40_39_17572_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3812.823105
+# name: _pyxnet_results_PyxisPureScada50_89_sca_PyxisPureScada50_89_20170312_23_40_44_6988_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4656.05531
+# name: _pyxnet_results_PyxisPureScada50_90_sca_PyxisPureScada50_90_20170312_23_40_47_14376_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1422.259732
+# name: _pyxnet_results_PyxisPureScada50_91_sca_PyxisPureScada50_91_20170312_23_40_49_10884_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2168.71
+# name: _pyxnet_results_PyxisPureScada50_92_sca_PyxisPureScada50_92_20170312_23_40_49_9372_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3017.777465
+# name: _pyxnet_results_PyxisPureScada50_93_sca_PyxisPureScada50_93_20170312_23_40_58_5112_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3882.290381
+# name: _pyxnet_results_PyxisPureScada50_94_sca_PyxisPureScada50_94_20170312_23_40_59_9520_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4847.214765
+# name: _pyxnet_results_PyxisPureScada50_95_sca_PyxisPureScada50_95_20170312_23_41_02_3348_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1447.9438
+# name: _pyxnet_results_PyxisPureScada50_96_sca_PyxisPureScada50_96_20170312_23_41_17_11984_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2257.353955
+# name: _pyxnet_results_PyxisPureScada50_97_sca_PyxisPureScada50_97_20170312_23_41_23_8132_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3061.751412
+# name: _pyxnet_results_PyxisPureScada50_98_sca_PyxisPureScada50_98_20170312_23_41_25_10528_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3883.508167
+# name: _pyxnet_results_PyxisPureScada50_99_sca_PyxisPureScada50_99_20170312_23_41_25_9304_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4818.885906
+# name: _pyxnet_results_PyxisPureScada50_100_sca_PyxisPureScada50_100_20170312_23_41_30_4168_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1358.983244
+# name: _pyxnet_results_PyxisPureScada50_101_sca_PyxisPureScada50_101_20170312_23_41_37_11372_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2180.607214
+# name: _pyxnet_results_PyxisPureScada50_102_sca_PyxisPureScada50_102_20170312_23_41_37_16928_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2903.204451
+# name: _pyxnet_results_PyxisPureScada50_103_sca_PyxisPureScada50_103_20170312_23_41_41_19868_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3781.479279
+# name: _pyxnet_results_PyxisPureScada50_104_sca_PyxisPureScada50_104_20170312_23_41_55_16212_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4636.759382
+# name: _pyxnet_results_PyxisPureScada50_105_sca_PyxisPureScada50_105_20170312_23_41_59_7576_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1358.259725
+# name: _pyxnet_results_PyxisPureScada50_106_sca_PyxisPureScada50_106_20170312_23_41_59_19656_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2239.830131
+# name: _pyxnet_results_PyxisPureScada50_107_sca_PyxisPureScada50_107_20170312_23_42_02_7720_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2953.19021
+# name: _pyxnet_results_PyxisPureScada50_108_sca_PyxisPureScada50_108_20170312_23_42_12_12340_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3758.57554
+# name: _pyxnet_results_PyxisPureScada50_109_sca_PyxisPureScada50_109_20170312_23_42_14_11940_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4659.787611
+# name: _pyxnet_results_PyxisPureScada50_110_sca_PyxisPureScada50_110_20170312_23_42_17_16876_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1412.430825
+# name: _pyxnet_results_PyxisPureScada50_111_sca_PyxisPureScada50_111_20170312_23_42_17_8288_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2152.00998
+# name: _pyxnet_results_PyxisPureScada50_112_sca_PyxisPureScada50_112_20170312_23_42_32_4164_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3073.386686
+# name: _pyxnet_results_PyxisPureScada50_113_sca_PyxisPureScada50_113_20170312_23_42_36_10708_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3828.880651
+# name: _pyxnet_results_PyxisPureScada50_114_sca_PyxisPureScada50_114_20170312_23_42_37_18600_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4692.691796
+# name: _pyxnet_results_PyxisPureScada50_115_sca_PyxisPureScada50_115_20170312_23_42_40_10572_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1453.769608
+# name: _pyxnet_results_PyxisPureScada50_116_sca_PyxisPureScada50_116_20170312_23_42_50_18580_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2152.00998
+# name: _pyxnet_results_PyxisPureScada50_117_sca_PyxisPureScada50_117_20170312_23_42_50_20428_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3033.002821
+# name: _pyxnet_results_PyxisPureScada50_118_sca_PyxisPureScada50_118_20170312_23_42_54_492_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3864.896552
+# name: _pyxnet_results_PyxisPureScada50_119_sca_PyxisPureScada50_119_20170312_23_42_56_14848_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4707.084257
+# name: _pyxnet_results_PyxisPureScada50_120_sca_PyxisPureScada50_120_20170312_23_43_10_7364_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1436.821951
+# name: _pyxnet_results_PyxisPureScada50_121_sca_PyxisPureScada50_121_20170312_23_43_13_13284_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2189.668675
+# name: _pyxnet_results_PyxisPureScada50_122_sca_PyxisPureScada50_122_20170312_23_43_16_19360_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3022.442254
+# name: _pyxnet_results_PyxisPureScada50_123_sca_PyxisPureScada50_123_20170312_23_43_19_17856_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3880.130435
+# name: _pyxnet_results_PyxisPureScada50_124_sca_PyxisPureScada50_124_20170312_23_43_28_17744_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4784.772829
+# name: _pyxnet_results_PyxisPureScada50_125_sca_PyxisPureScada50_125_20170312_23_43_30_19180_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1409.091515
+# name: _pyxnet_results_PyxisPureScada50_126_sca_PyxisPureScada50_126_20170312_23_43_30_15392_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2177.476954
+# name: _pyxnet_results_PyxisPureScada50_127_sca_PyxisPureScada50_127_20170312_23_43_34_18692_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3047.479549
+# name: _pyxnet_results_PyxisPureScada50_128_sca_PyxisPureScada50_128_20170312_23_43_49_16740_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3880.448276
+# name: _pyxnet_results_PyxisPureScada50_129_sca_PyxisPureScada50_129_20170312_23_43_52_7700_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4787.583519
+# name: _pyxnet_results_PyxisPureScada50_130_sca_PyxisPureScada50_130_20170312_23_43_55_7884_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1439.47468
+# name: _pyxnet_results_PyxisPureScada50_131_sca_PyxisPureScada50_131_20170312_23_43_55_15992_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2232.76892
+# name: _pyxnet_results_PyxisPureScada50_132_sca_PyxisPureScada50_132_20170312_23_44_05_6588_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3118.463068
+# name: _pyxnet_results_PyxisPureScada50_133_sca_PyxisPureScada50_133_20170312_23_44_08_18136_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3952.418647
+# name: _pyxnet_results_PyxisPureScada50_134_sca_PyxisPureScada50_134_20170312_23_44_12_3412_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4795.020089
+# name: _pyxnet_results_PyxisPureScada50_135_sca_PyxisPureScada50_135_20170312_23_44_12_4420_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1445.29401
+# name: _pyxnet_results_PyxisPureScada50_136_sca_PyxisPureScada50_136_20170312_23_44_25_18360_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2277.38352
+# name: _pyxnet_results_PyxisPureScada50_137_sca_PyxisPureScada50_137_20170312_23_44_29_8260_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3139.594864
+# name: _pyxnet_results_PyxisPureScada50_138_sca_PyxisPureScada50_138_20170312_23_44_33_8284_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3890.330909
+# name: _pyxnet_results_PyxisPureScada50_139_sca_PyxisPureScada50_139_20170312_23_44_37_13404_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4820.255034
+# name: _pyxnet_results_PyxisPureScada50_140_sca_PyxisPureScada50_140_20170312_23_44_44_16196_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1420.184578
+# name: _pyxnet_results_PyxisPureScada50_141_sca_PyxisPureScada50_141_20170312_23_44_47_11708_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2172.41517
+# name: _pyxnet_results_PyxisPureScada50_142_sca_PyxisPureScada50_142_20170312_23_44_51_20412_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3013.566807
+# name: _pyxnet_results_PyxisPureScada50_143_sca_PyxisPureScada50_143_20170312_23_44_56_11976_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3908.229091
+# name: _pyxnet_results_PyxisPureScada50_144_sca_PyxisPureScada50_144_20170312_23_45_06_10620_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4695.215078
+# name: _pyxnet_results_PyxisPureScada50_145_sca_PyxisPureScada50_145_20170312_23_45_09_19424_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1439.833435
+# name: _pyxnet_results_PyxisPureScada50_146_sca_PyxisPureScada50_146_20170312_23_45_12_6664_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2281.793909
+# name: _pyxnet_results_PyxisPureScada50_147_sca_PyxisPureScada50_147_20170312_23_45_16_17200_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3054.980226
+# name: _pyxnet_results_PyxisPureScada50_148_sca_PyxisPureScada50_148_20170312_23_45_25_4452_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3959.868373
+# name: _pyxnet_results_PyxisPureScada50_149_sca_PyxisPureScada50_149_20170312_23_45_28_15980_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4757.080178
+# name: _pyxnet_results_PyxisPureScada50_150_sca_PyxisPureScada50_150_20170312_23_45_31_18016_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1447.96022
+# name: _pyxnet_results_PyxisPureScada50_151_sca_PyxisPureScada50_151_20170312_23_45_36_14380_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2268.592893
+# name: _pyxnet_results_PyxisPureScada50_152_sca_PyxisPureScada50_152_20170312_23_45_44_2216_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3126.246439
+# name: _pyxnet_results_PyxisPureScada50_153_sca_PyxisPureScada50_153_20170312_23_45_50_2560_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4004.217949
+# name: _pyxnet_results_PyxisPureScada50_154_sca_PyxisPureScada50_154_20170312_23_45_53_11700_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4894.526906
+# name: _pyxnet_results_PyxisPureScada50_155_sca_PyxisPureScada50_155_20170312_23_45_57_1304_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1459.772253
+# name: _pyxnet_results_PyxisPureScada50_156_sca_PyxisPureScada50_156_20170312_23_46_05_13160_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2257.225152
+# name: _pyxnet_results_PyxisPureScada50_157_sca_PyxisPureScada50_157_20170312_23_46_06_10732_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3203.712034
+# name: _pyxnet_results_PyxisPureScada50_158_sca_PyxisPureScada50_158_20170312_23_46_14_17676_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3957.655109
+# name: _pyxnet_results_PyxisPureScada50_159_sca_PyxisPureScada50_159_20170312_23_46_14_16972_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4888.683146
+# name: _pyxnet_results_PyxisPureScada50_160_sca_PyxisPureScada50_160_20170312_23_46_22_19956_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1516.695084
+# name: _pyxnet_results_PyxisPureScada50_161_sca_PyxisPureScada50_161_20170312_23_46_27_17064_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2291.363914
+# name: _pyxnet_results_PyxisPureScada50_162_sca_PyxisPureScada50_162_20170312_23_46_27_7852_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3046.937941
+# name: _pyxnet_results_PyxisPureScada50_163_sca_PyxisPureScada50_163_20170312_23_46_36_17944_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3944.605839
+# name: _pyxnet_results_PyxisPureScada50_164_sca_PyxisPureScada50_164_20170312_23_46_43_12108_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4853.358744
+# name: _pyxnet_results_PyxisPureScada50_165_sca_PyxisPureScada50_165_20170312_23_46_43_16168_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1456.144785
+# name: _pyxnet_results_PyxisPureScada50_166_sca_PyxisPureScada50_166_20170312_23_46_52_20456_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2270.51066
+# name: _pyxnet_results_PyxisPureScada50_167_sca_PyxisPureScada50_167_20170312_23_46_52_13308_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3142.37037
+# name: _pyxnet_results_PyxisPureScada50_168_sca_PyxisPureScada50_168_20170312_23_47_02_19820_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3936.01275
+# name: _pyxnet_results_PyxisPureScada50_169_sca_PyxisPureScada50_169_20170312_23_47_05_12472_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4845.087248
+# name: _pyxnet_results_PyxisPureScada50_170_sca_PyxisPureScada50_170_20170312_23_47_05_9068_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1366.803839
+# name: _pyxnet_results_PyxisPureScada50_171_sca_PyxisPureScada50_171_20170312_23_47_13_10080_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2175.459459
+# name: _pyxnet_results_PyxisPureScada50_172_sca_PyxisPureScada50_172_20170312_23_47_20_18036_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3046.908322
+# name: _pyxnet_results_PyxisPureScada50_173_sca_PyxisPureScada50_173_20170312_23_47_24_14400_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3877.98913
+# name: _pyxnet_results_PyxisPureScada50_174_sca_PyxisPureScada50_174_20170312_23_47_30_13348_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4690.960177
+# name: _pyxnet_results_PyxisPureScada50_175_sca_PyxisPureScada50_175_20170312_23_47_31_15368_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1365.680647
+# name: _pyxnet_results_PyxisPureScada50_176_sca_PyxisPureScada50_176_20170312_23_47_39_15424_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2230.429869
+# name: _pyxnet_results_PyxisPureScada50_177_sca_PyxisPureScada50_177_20170312_23_47_39_15536_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2990.368347
+# name: _pyxnet_results_PyxisPureScada50_178_sca_PyxisPureScada50_178_20170312_23_47_44_11512_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3851.960217
+# name: _pyxnet_results_PyxisPureScada50_179_sca_PyxisPureScada50_179_20170312_23_47_51_18948_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4714.866962
+# name: _pyxnet_results_PyxisPureScada50_180_sca_PyxisPureScada50_180_20170312_23_47_57_13456_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1388.963812
+# name: _pyxnet_results_PyxisPureScada50_181_sca_PyxisPureScada50_181_20170312_23_48_01_1832_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2200.251256
+# name: _pyxnet_results_PyxisPureScada50_182_sca_PyxisPureScada50_182_20170312_23_48_08_16332_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3017.905767
+# name: _pyxnet_results_PyxisPureScada50_183_sca_PyxisPureScada50_183_20170312_23_48_13_2916_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3906.28
+# name: _pyxnet_results_PyxisPureScada50_184_sca_PyxisPureScada50_184_20170312_23_48_19_8124_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4770.955457
+# name: _pyxnet_results_PyxisPureScada50_185_sca_PyxisPureScada50_185_20170312_23_48_20_15484_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1422.976277
+# name: _pyxnet_results_PyxisPureScada50_186_sca_PyxisPureScada50_186_20170312_23_48_23_17444_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2162.203
+# name: _pyxnet_results_PyxisPureScada50_187_sca_PyxisPureScada50_187_20170312_23_48_30_4052_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3031.794076
+# name: _pyxnet_results_PyxisPureScada50_188_sca_PyxisPureScada50_188_20170312_23_48_37_8620_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3884.116152
+# name: _pyxnet_results_PyxisPureScada50_189_sca_PyxisPureScada50_189_20170312_23_48_41_17528_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4779.734967
+# name: _pyxnet_results_PyxisPureScada50_190_sca_PyxisPureScada50_190_20170312_23_48_49_15764_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1446.114373
+# name: _pyxnet_results_PyxisPureScada50_191_sca_PyxisPureScada50_191_20170312_23_48_49_16808_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2244.809717
+# name: _pyxnet_results_PyxisPureScada50_192_sca_PyxisPureScada50_192_20170312_23_48_57_5076_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3152.54
+# name: _pyxnet_results_PyxisPureScada50_193_sca_PyxisPureScada50_193_20170312_23_48_59_19164_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4013.374312
+# name: _pyxnet_results_PyxisPureScada50_194_sca_PyxisPureScada50_194_20170312_23_49_03_13108_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4871.325112
+# name: _pyxnet_results_PyxisPureScada50_195_sca_PyxisPureScada50_195_20170312_23_49_10_1332_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1445.903364
+# name: _pyxnet_results_PyxisPureScada50_196_sca_PyxisPureScada50_196_20170312_23_49_15_1936_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2273.202236
+# name: _pyxnet_results_PyxisPureScada50_197_sca_PyxisPureScada50_197_20170312_23_49_18_6512_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3152.575714
+# name: _pyxnet_results_PyxisPureScada50_198_sca_PyxisPureScada50_198_20170312_23_49_28_4456_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3944.012774
+# name: _pyxnet_results_PyxisPureScada50_199_sca_PyxisPureScada50_199_20170312_23_49_31_12400_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4920.036036
+# name: _pyxnet_results_PyxisPureScada50_200_sca_PyxisPureScada50_200_20170312_23_49_38_13820_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1384.592414
+# name: _pyxnet_results_PyxisPureScada50_201_sca_PyxisPureScada50_201_20170312_23_49_38_11244_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2194.039157
+# name: _pyxnet_results_PyxisPureScada50_202_sca_PyxisPureScada50_202_20170312_23_49_42_8676_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2981.612903
+# name: _pyxnet_results_PyxisPureScada50_203_sca_PyxisPureScada50_203_20170312_23_49_52_13632_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3912.518182
+# name: _pyxnet_results_PyxisPureScada50_204_sca_PyxisPureScada50_204_20170312_23_49_53_11968_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4722.853333
+# name: _pyxnet_results_PyxisPureScada50_205_sca_PyxisPureScada50_205_20170312_23_49_54_18240_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1366.640288
+# name: _pyxnet_results_PyxisPureScada50_206_sca_PyxisPureScada50_206_20170312_23_50_05_19668_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2220.925403
+# name: _pyxnet_results_PyxisPureScada50_207_sca_PyxisPureScada50_207_20170312_23_50_07_12232_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3029.842254
+# name: _pyxnet_results_PyxisPureScada50_208_sca_PyxisPureScada50_208_20170312_23_50_15_20400_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3858.471014
+# name: _pyxnet_results_PyxisPureScada50_209_sca_PyxisPureScada50_209_20170312_23_50_19_20384_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4722.064302
+# name: _pyxnet_results_PyxisPureScada50_210_sca_PyxisPureScada50_210_20170312_23_50_21_1748_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1430.921999
+# name: _pyxnet_results_PyxisPureScada50_211_sca_PyxisPureScada50_211_20170312_23_50_29_14152_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2259.079108
+# name: _pyxnet_results_PyxisPureScada50_212_sca_PyxisPureScada50_212_20170312_23_50_30_16936_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3058.39548
+# name: _pyxnet_results_PyxisPureScada50_213_sca_PyxisPureScada50_213_20170312_23_50_37_8324_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3930.750455
+# name: _pyxnet_results_PyxisPureScada50_214_sca_PyxisPureScada50_214_20170312_23_50_46_3360_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4876.316143
+# name: _pyxnet_results_PyxisPureScada50_215_sca_PyxisPureScada50_215_20170312_23_50_47_11988_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1443.404645
+# name: _pyxnet_results_PyxisPureScada50_216_sca_PyxisPureScada50_216_20170312_23_50_54_12828_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2219.470766
+# name: _pyxnet_results_PyxisPureScada50_217_sca_PyxisPureScada50_217_20170312_23_50_57_18004_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3127.507824
+# name: _pyxnet_results_PyxisPureScada50_218_sca_PyxisPureScada50_218_20170312_23_51_03_15184_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3959.917733
+# name: _pyxnet_results_PyxisPureScada50_219_sca_PyxisPureScada50_219_20170312_23_51_10_17260_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4841.644295
+# name: _pyxnet_results_PyxisPureScada50_220_sca_PyxisPureScada50_220_20170312_23_51_10_16704_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1419.348117
+# name: _pyxnet_results_PyxisPureScada50_221_sca_PyxisPureScada50_221_20170312_23_51_16_12336_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2307.772449
+# name: _pyxnet_results_PyxisPureScada50_222_sca_PyxisPureScada50_222_20170312_23_51_25_19152_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3093.219547
+# name: _pyxnet_results_PyxisPureScada50_223_sca_PyxisPureScada50_223_20170312_23_51_30_8996_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3929.785064
+# name: _pyxnet_results_PyxisPureScada50_224_sca_PyxisPureScada50_224_20170312_23_51_35_1980_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4789.98441
+# name: _pyxnet_results_PyxisPureScada50_225_sca_PyxisPureScada50_225_20170312_23_51_36_17740_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1490.381953
+# name: _pyxnet_results_PyxisPureScada50_226_sca_PyxisPureScada50_226_20170312_23_51_41_16464_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2231.61554
+# name: _pyxnet_results_PyxisPureScada50_227_sca_PyxisPureScada50_227_20170312_23_51_48_14648_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3134.566145
+# name: _pyxnet_results_PyxisPureScada50_228_sca_PyxisPureScada50_228_20170312_23_51_53_19420_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3956.02011
+# name: _pyxnet_results_PyxisPureScada50_229_sca_PyxisPureScada50_229_20170312_23_51_57_784_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4757.821826
+# name: _pyxnet_results_PyxisPureScada50_230_sca_PyxisPureScada50_230_20170312_23_52_04_6168_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1386.829019
+# name: _pyxnet_results_PyxisPureScada50_231_sca_PyxisPureScada50_231_20170312_23_52_09_8072_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2174.032032
+# name: _pyxnet_results_PyxisPureScada50_232_sca_PyxisPureScada50_232_20170312_23_52_14_20160_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3021.035211
+# name: _pyxnet_results_PyxisPureScada50_233_sca_PyxisPureScada50_233_20170312_23_52_19_20436_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3828.157324
+# name: _pyxnet_results_PyxisPureScada50_234_sca_PyxisPureScada50_234_20170312_23_52_23_14296_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4694.073171
+# name: _pyxnet_results_PyxisPureScada50_235_sca_PyxisPureScada50_235_20170312_23_52_29_16104_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1449.753978
+# name: _pyxnet_results_PyxisPureScada50_236_sca_PyxisPureScada50_236_20170312_23_52_33_9728_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2184.070211
+# name: _pyxnet_results_PyxisPureScada50_237_sca_PyxisPureScada50_237_20170312_23_52_37_18084_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3020.125352
+# name: _pyxnet_results_PyxisPureScada50_238_sca_PyxisPureScada50_238_20170312_23_52_49_14760_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3911.814208
+# name: _pyxnet_results_PyxisPureScada50_239_sca_PyxisPureScada50_239_20170312_23_52_52_1184_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4731.157778
+# name: _pyxnet_results_PyxisPureScada50_240_sca_PyxisPureScada50_240_20170312_23_52_55_17844_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1475.712438
+# name: _pyxnet_results_PyxisPureScada50_241_sca_PyxisPureScada50_241_20170312_23_52_59_17380_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2217.623992
+# name: _pyxnet_results_PyxisPureScada50_242_sca_PyxisPureScada50_242_20170312_23_53_03_19840_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3074.344193
+# name: _pyxnet_results_PyxisPureScada50_243_sca_PyxisPureScada50_243_20170312_23_53_11_16732_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3985.700183
+# name: _pyxnet_results_PyxisPureScada50_244_sca_PyxisPureScada50_244_20170312_23_53_15_18448_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4830.200893
+# name: _pyxnet_results_PyxisPureScada50_245_sca_PyxisPureScada50_245_20170312_23_53_15_19068_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1397.207855
+# name: _pyxnet_results_PyxisPureScada50_246_sca_PyxisPureScada50_246_20170312_23_53_27_11116_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2169.358358
+# name: _pyxnet_results_PyxisPureScada50_247_sca_PyxisPureScada50_247_20170312_23_53_27_8504_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3073.319209
+# name: _pyxnet_results_PyxisPureScada50_248_sca_PyxisPureScada50_248_20170312_23_53_36_1208_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3959.453382
+# name: _pyxnet_results_PyxisPureScada50_249_sca_PyxisPureScada50_249_20170312_23_53_36_4044_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4799.01559
+# name: _pyxnet_results_PyxisPureScada50_250_sca_PyxisPureScada50_250_20170312_23_53_42_13120_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1340.010125
+# name: _pyxnet_results_PyxisPureScada50_251_sca_PyxisPureScada50_251_20170312_23_53_49_1304_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2125.45328
+# name: _pyxnet_results_PyxisPureScada50_252_sca_PyxisPureScada50_252_20170312_23_53_50_14448_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2975.7493
+# name: _pyxnet_results_PyxisPureScada50_253_sca_PyxisPureScada50_253_20170312_23_53_55_8804_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3745.910233
+# name: _pyxnet_results_PyxisPureScada50_254_sca_PyxisPureScada50_254_20170312_23_54_05_17900_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4605.757709
+# name: _pyxnet_results_PyxisPureScada50_255_sca_PyxisPureScada50_255_20170312_23_54_08_10172_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1357.2189
+# name: _pyxnet_results_PyxisPureScada50_256_sca_PyxisPureScada50_256_20170312_23_54_14_12212_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2134.232836
+# name: _pyxnet_results_PyxisPureScada50_257_sca_PyxisPureScada50_257_20170312_23_54_14_20280_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2936.95537
+# name: _pyxnet_results_PyxisPureScada50_258_sca_PyxisPureScada50_258_20170312_23_54_22_4292_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3762.235612
+# name: _pyxnet_results_PyxisPureScada50_259_sca_PyxisPureScada50_259_20170312_23_54_28_4672_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4628.788079
+# name: _pyxnet_results_PyxisPureScada50_260_sca_PyxisPureScada50_260_20170312_23_54_31_9924_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1426.737515
+# name: _pyxnet_results_PyxisPureScada50_261_sca_PyxisPureScada50_261_20170312_23_54_35_17928_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2147.095808
+# name: _pyxnet_results_PyxisPureScada50_262_sca_PyxisPureScada50_262_20170312_23_54_45_9628_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3087.228369
+# name: _pyxnet_results_PyxisPureScada50_263_sca_PyxisPureScada50_263_20170312_23_54_50_14356_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3973.345521
+# name: _pyxnet_results_PyxisPureScada50_264_sca_PyxisPureScada50_264_20170312_23_54_56_15632_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4818.566964
+# name: _pyxnet_results_PyxisPureScada50_265_sca_PyxisPureScada50_265_20170312_23_54_58_16956_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1481.141271
+# name: _pyxnet_results_PyxisPureScada50_266_sca_PyxisPureScada50_266_20170312_23_55_02_11696_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2262.867005
+# name: _pyxnet_results_PyxisPureScada50_267_sca_PyxisPureScada50_267_20170312_23_55_08_17020_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3064.44413
+# name: _pyxnet_results_PyxisPureScada50_268_sca_PyxisPureScada50_268_20170312_23_55_14_10080_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3919.320583
+# name: _pyxnet_results_PyxisPureScada50_269_sca_PyxisPureScada50_269_20170312_23_55_19_14908_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4777.953229
+# name: _pyxnet_results_PyxisPureScada50_270_sca_PyxisPureScada50_270_20170312_23_55_25_2620_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1479.334362
+# name: _pyxnet_results_PyxisPureScada50_271_sca_PyxisPureScada50_271_20170312_23_55_29_19376_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2282.064155
+# name: _pyxnet_results_PyxisPureScada50_272_sca_PyxisPureScada50_272_20170312_23_55_36_15964_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3060.64215
+# name: _pyxnet_results_PyxisPureScada50_273_sca_PyxisPureScada50_273_20170312_23_55_40_1360_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3958.945155
+# name: _pyxnet_results_PyxisPureScada50_274_sca_PyxisPureScada50_274_20170312_23_55_44_19200_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4889.420225
+# name: _pyxnet_results_PyxisPureScada50_275_sca_PyxisPureScada50_275_20170312_23_55_51_16284_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1431.132317
+# name: _pyxnet_results_PyxisPureScada50_276_sca_PyxisPureScada50_276_20170312_23_55_55_13380_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2261.324873
+# name: _pyxnet_results_PyxisPureScada50_277_sca_PyxisPureScada50_277_20170312_23_56_00_19564_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3225.785612
+# name: _pyxnet_results_PyxisPureScada50_278_sca_PyxisPureScada50_278_20170312_23_56_10_10512_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4025.097426
+# name: _pyxnet_results_PyxisPureScada50_279_sca_PyxisPureScada50_279_20170312_23_56_12_13188_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4867.813901
+# name: _pyxnet_results_PyxisPureScada50_280_sca_PyxisPureScada50_280_20170312_23_56_18_12160_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1412.586165
+# name: _pyxnet_results_PyxisPureScada50_281_sca_PyxisPureScada50_281_20170312_23_56_21_20376_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2223.940464
+# name: _pyxnet_results_PyxisPureScada50_282_sca_PyxisPureScada50_282_20170312_23_56_24_9320_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3076.786119
+# name: _pyxnet_results_PyxisPureScada50_283_sca_PyxisPureScada50_283_20170312_23_56_34_11880_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3850.304348
+# name: _pyxnet_results_PyxisPureScada50_284_sca_PyxisPureScada50_284_20170312_23_56_38_7324_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4812.783482
+# name: _pyxnet_results_PyxisPureScada50_285_sca_PyxisPureScada50_285_20170312_23_56_41_20080_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1448.246173
+# name: _pyxnet_results_PyxisPureScada50_286_sca_PyxisPureScada50_286_20170312_23_56_50_19364_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2109.5
+# name: _pyxnet_results_PyxisPureScada50_287_sca_PyxisPureScada50_287_20170312_23_56_50_12164_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3073.607649
+# name: _pyxnet_results_PyxisPureScada50_288_sca_PyxisPureScada50_288_20170312_23_57_00_17860_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3850.304348
+# name: _pyxnet_results_PyxisPureScada50_289_sca_PyxisPureScada50_289_20170312_23_57_01_11556_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4733.146667
+# name: _pyxnet_results_PyxisPureScada50_290_sca_PyxisPureScada50_290_20170312_23_57_04_136_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1457.853374
+# name: _pyxnet_results_PyxisPureScada50_291_sca_PyxisPureScada50_291_20170312_23_57_13_7308_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2245.63094
+# name: _pyxnet_results_PyxisPureScada50_292_sca_PyxisPureScada50_292_20170312_23_57_17_6380_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3157.848571
+# name: _pyxnet_results_PyxisPureScada50_293_sca_PyxisPureScada50_293_20170312_23_57_22_20400_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4031.193015
+# name: _pyxnet_results_PyxisPureScada50_294_sca_PyxisPureScada50_294_20170312_23_57_31_9176_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4869.41704
+# name: _pyxnet_results_PyxisPureScada50_295_sca_PyxisPureScada50_295_20170312_23_57_33_1748_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1446.376758
+# name: _pyxnet_results_PyxisPureScada50_296_sca_PyxisPureScada50_296_20170312_23_57_41_1156_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2260.007099
+# name: _pyxnet_results_PyxisPureScada50_297_sca_PyxisPureScada50_297_20170312_23_57_42_6172_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3167.121602
+# name: _pyxnet_results_PyxisPureScada50_298_sca_PyxisPureScada50_298_20170312_23_57_46_4492_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3984.82967
+# name: _pyxnet_results_PyxisPureScada50_299_sca_PyxisPureScada50_299_20170312_23_57_52_9828_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4935.211712
+# name: _pyxnet_results_PyxisPureScada50_300_sca_PyxisPureScada50_300_20170312_23_57_54_15316_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1429.508836
+# name: _pyxnet_results_PyxisPureScada50_301_sca_PyxisPureScada50_301_20170312_23_58_02_10296_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2265.730964
+# name: _pyxnet_results_PyxisPureScada50_302_sca_PyxisPureScada50_302_20170312_23_58_10_14788_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3166.662375
+# name: _pyxnet_results_PyxisPureScada50_303_sca_PyxisPureScada50_303_20170312_23_58_15_16584_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4033.360294
+# name: _pyxnet_results_PyxisPureScada50_304_sca_PyxisPureScada50_304_20170312_23_58_22_8580_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4876.040359
+# name: _pyxnet_results_PyxisPureScada50_305_sca_PyxisPureScada50_305_20170312_23_58_22_8996_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1451.947304
+# name: _pyxnet_results_PyxisPureScada50_306_sca_PyxisPureScada50_306_20170312_23_58_26_19632_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2284.881874
+# name: _pyxnet_results_PyxisPureScada50_307_sca_PyxisPureScada50_307_20170312_23_58_33_4000_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3152.121429
+# name: _pyxnet_results_PyxisPureScada50_308_sca_PyxisPureScada50_308_20170312_23_58_38_11432_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4022.75
+# name: _pyxnet_results_PyxisPureScada50_309_sca_PyxisPureScada50_309_20170312_23_58_45_15192_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4898.858427
+# name: _pyxnet_results_PyxisPureScada50_310_sca_PyxisPureScada50_310_20170312_23_58_51_18628_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1374.218619
+# name: _pyxnet_results_PyxisPureScada50_311_sca_PyxisPureScada50_311_20170312_23_58_56_18928_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2203.533199
+# name: _pyxnet_results_PyxisPureScada50_312_sca_PyxisPureScada50_312_20170312_23_59_03_20300_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3048.638418
+# name: _pyxnet_results_PyxisPureScada50_313_sca_PyxisPureScada50_313_20170312_23_59_05_16472_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3905.830909
+# name: _pyxnet_results_PyxisPureScada50_314_sca_PyxisPureScada50_314_20170312_23_59_10_4656_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4759.748889
+# name: _pyxnet_results_PyxisPureScada50_315_sca_PyxisPureScada50_315_20170312_23_59_16_14728_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1431.254723
+# name: _pyxnet_results_PyxisPureScada50_316_sca_PyxisPureScada50_316_20170312_23_59_19_17328_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2203.183099
+# name: _pyxnet_results_PyxisPureScada50_317_sca_PyxisPureScada50_317_20170312_23_59_26_10100_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3125.302987
+# name: _pyxnet_results_PyxisPureScada50_318_sca_PyxisPureScada50_318_20170312_23_59_35_14976_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3926.185792
+# name: _pyxnet_results_PyxisPureScada50_319_sca_PyxisPureScada50_319_20170312_23_59_35_8108_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4722.744444
+# name: _pyxnet_results_PyxisPureScada50_320_sca_PyxisPureScada50_320_20170312_23_59_44_16716_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1537.261413
+# name: _pyxnet_results_PyxisPureScada50_321_sca_PyxisPureScada50_321_20170312_23_59_44_8512_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2248.895643
+# name: _pyxnet_results_PyxisPureScada50_322_sca_PyxisPureScada50_322_20170312_23_59_44_9724_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3061.381895
+# name: _pyxnet_results_PyxisPureScada50_323_sca_PyxisPureScada50_323_20170312_23_59_55_9188_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3924.848816
+# name: _pyxnet_results_PyxisPureScada50_324_sca_PyxisPureScada50_324_20170312_23_59_57_17844_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4817.178571
+# name: _pyxnet_results_PyxisPureScada50_325_sca_PyxisPureScada50_325_20170313_00_00_04_18320_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1426.920413
+# name: _pyxnet_results_PyxisPureScada50_326_sca_PyxisPureScada50_326_20170313_00_00_11_13744_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2272.579268
+# name: _pyxnet_results_PyxisPureScada50_327_sca_PyxisPureScada50_327_20170313_00_00_11_19256_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3059.666195
+# name: _pyxnet_results_PyxisPureScada50_328_sca_PyxisPureScada50_328_20170313_00_00_23_12652_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3966.277372
+# name: _pyxnet_results_PyxisPureScada50_329_sca_PyxisPureScada50_329_20170313_00_00_24_15724_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4844.087248
+# name: _pyxnet_results_PyxisPureScada50_330_sca_PyxisPureScada50_330_20170313_00_00_28_17496_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1403.094374
+# name: _pyxnet_results_PyxisPureScada50_331_sca_PyxisPureScada50_331_20170313_00_00_33_5256_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2239.684848
+# name: _pyxnet_results_PyxisPureScada50_332_sca_PyxisPureScada50_332_20170313_00_00_34_14700_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3007.021097
+# name: _pyxnet_results_PyxisPureScada50_333_sca_PyxisPureScada50_333_20170313_00_00_45_7852_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3902.16
+# name: _pyxnet_results_PyxisPureScada50_334_sca_PyxisPureScada50_334_20170313_00_00_50_19224_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4814.792411
+# name: _pyxnet_results_PyxisPureScada50_335_sca_PyxisPureScada50_335_20170313_00_00_51_17944_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1395.361934
+# name: _pyxnet_results_PyxisPureScada50_336_sca_PyxisPureScada50_336_20170313_00_01_01_17464_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2251.508612
+# name: _pyxnet_results_PyxisPureScada50_337_sca_PyxisPureScada50_337_20170313_00_01_02_11256_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3123.719772
+# name: _pyxnet_results_PyxisPureScada50_338_sca_PyxisPureScada50_338_20170313_00_01_09_4468_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3859.043478
+# name: _pyxnet_results_PyxisPureScada50_339_sca_PyxisPureScada50_339_20170313_00_01_12_14468_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4723.677778
+# name: _pyxnet_results_PyxisPureScada50_340_sca_PyxisPureScada50_340_20170313_00_01_14_17188_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1311.45476
+# name: _pyxnet_results_PyxisPureScada50_341_sca_PyxisPureScada50_341_20170313_00_01_23_4292_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2111.481151
+# name: _pyxnet_results_PyxisPureScada50_342_sca_PyxisPureScada50_342_20170313_00_01_27_18540_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2961.745455
+# name: _pyxnet_results_PyxisPureScada50_343_sca_PyxisPureScada50_343_20170313_00_01_32_20172_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3759.692446
+# name: _pyxnet_results_PyxisPureScada50_344_sca_PyxisPureScada50_344_20170313_00_01_41_13792_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4558.6
+# name: _pyxnet_results_PyxisPureScada50_345_sca_PyxisPureScada50_345_20170313_00_01_47_19044_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1367.95081
+# name: _pyxnet_results_PyxisPureScada50_346_sca_PyxisPureScada50_346_20170313_00_01_47_17608_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2122.818091
+# name: _pyxnet_results_PyxisPureScada50_347_sca_PyxisPureScada50_347_20170313_00_01_51_10284_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2910.400556
+# name: _pyxnet_results_PyxisPureScada50_348_sca_PyxisPureScada50_348_20170313_00_01_55_12552_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3740.824057
+# name: _pyxnet_results_PyxisPureScada50_349_sca_PyxisPureScada50_349_20170313_00_02_05_8128_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4588.76652
+# name: _pyxnet_results_PyxisPureScada50_350_sca_PyxisPureScada50_350_20170313_00_02_05_452_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1403.304716
+# name: _pyxnet_results_PyxisPureScada50_351_sca_PyxisPureScada50_351_20170313_00_02_11_19800_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2224.688508
+# name: _pyxnet_results_PyxisPureScada50_352_sca_PyxisPureScada50_352_20170313_00_02_19_12196_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3086.161702
+# name: _pyxnet_results_PyxisPureScada50_353_sca_PyxisPureScada50_353_20170313_00_02_26_14732_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3965.321168
+# name: _pyxnet_results_PyxisPureScada50_354_sca_PyxisPureScada50_354_20170313_00_02_29_9212_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4814.361607
+# name: _pyxnet_results_PyxisPureScada50_355_sca_PyxisPureScada50_355_20170313_00_02_32_19468_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1341.003576
+# name: _pyxnet_results_PyxisPureScada50_356_sca_PyxisPureScada50_356_20170313_00_02_36_18776_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2232.940464
+# name: _pyxnet_results_PyxisPureScada50_357_sca_PyxisPureScada50_357_20170313_00_02_44_1924_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3015.232068
+# name: _pyxnet_results_PyxisPureScada50_358_sca_PyxisPureScada50_358_20170313_00_02_48_15424_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3952.868373
+# name: _pyxnet_results_PyxisPureScada50_359_sca_PyxisPureScada50_359_20170313_00_02_52_16628_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4774.227171
+# name: _pyxnet_results_PyxisPureScada50_360_sca_PyxisPureScada50_360_20170313_00_03_00_1000_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1394.778382
+# name: _pyxnet_results_PyxisPureScada50_361_sca_PyxisPureScada50_361_20170313_00_03_05_1832_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2199.217085
+# name: _pyxnet_results_PyxisPureScada50_362_sca_PyxisPureScada50_362_20170313_00_03_06_11352_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3140.649073
+# name: _pyxnet_results_PyxisPureScada50_363_sca_PyxisPureScada50_363_20170313_00_03_13_4288_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3850.052536
+# name: _pyxnet_results_PyxisPureScada50_364_sca_PyxisPureScada50_364_20170313_00_03_19_18964_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4704.445676
+# name: _pyxnet_results_PyxisPureScada50_365_sca_PyxisPureScada50_365_20170313_00_03_24_1936_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1405.642035
+# name: _pyxnet_results_PyxisPureScada50_366_sca_PyxisPureScada50_366_20170313_00_03_24_13556_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2179.140281
+# name: _pyxnet_results_PyxisPureScada50_367_sca_PyxisPureScada50_367_20170313_00_03_31_6880_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3078.033994
+# name: _pyxnet_results_PyxisPureScada50_368_sca_PyxisPureScada50_368_20170313_00_03_42_15788_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3849.371377
+# name: _pyxnet_results_PyxisPureScada50_369_sca_PyxisPureScada50_369_20170313_00_03_44_10400_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4731.884444
+# name: _pyxnet_results_PyxisPureScada50_370_sca_PyxisPureScada50_370_20170313_00_03_47_13108_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1396.96558
+# name: _pyxnet_results_PyxisPureScada50_371_sca_PyxisPureScada50_371_20170313_00_03_52_3700_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2170.283283
+# name: _pyxnet_results_PyxisPureScada50_372_sca_PyxisPureScada50_372_20170313_00_03_58_19616_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3026.269014
+# name: _pyxnet_results_PyxisPureScada50_373_sca_PyxisPureScada50_373_20170313_00_04_04_19432_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3850.195298
+# name: _pyxnet_results_PyxisPureScada50_374_sca_PyxisPureScada50_374_20170313_00_04_07_6604_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4757.391982
+# name: _pyxnet_results_PyxisPureScada50_375_sca_PyxisPureScada50_375_20170313_00_04_12_13976_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1379.536981
+# name: _pyxnet_results_PyxisPureScada50_376_sca_PyxisPureScada50_376_20170313_00_04_21_10016_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2217.510081
+# name: _pyxnet_results_PyxisPureScada50_377_sca_PyxisPureScada50_377_20170313_00_04_22_6156_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3012.977496
+# name: _pyxnet_results_PyxisPureScada50_378_sca_PyxisPureScada50_378_20170313_00_04_27_16560_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3847.807971
+# name: _pyxnet_results_PyxisPureScada50_379_sca_PyxisPureScada50_379_20170313_00_04_33_13096_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4878.887892
+# name: _pyxnet_results_PyxisPureScada50_380_sca_PyxisPureScada50_380_20170313_00_04_37_7872_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1344.588551
+# name: _pyxnet_results_PyxisPureScada50_381_sca_PyxisPureScada50_381_20170313_00_04_43_7440_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2250.301314
+# name: _pyxnet_results_PyxisPureScada50_382_sca_PyxisPureScada50_382_20170313_00_04_43_2636_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3034.235543
+# name: _pyxnet_results_PyxisPureScada50_383_sca_PyxisPureScada50_383_20170313_00_04_55_14900_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3871.905626
+# name: _pyxnet_results_PyxisPureScada50_384_sca_PyxisPureScada50_384_20170313_00_05_03_796_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4702.736142
+# name: _pyxnet_results_PyxisPureScada50_385_sca_PyxisPureScada50_385_20170313_00_05_03_9648_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1398.494864
+# name: _pyxnet_results_PyxisPureScada50_386_sca_PyxisPureScada50_386_20170313_00_05_03_6252_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2263.301217
+# name: _pyxnet_results_PyxisPureScada50_387_sca_PyxisPureScada50_387_20170313_00_05_10_19624_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3052.368644
+# name: _pyxnet_results_PyxisPureScada50_388_sca_PyxisPureScada50_388_20170313_00_05_16_11420_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3845.537071
+# name: _pyxnet_results_PyxisPureScada50_389_sca_PyxisPureScada50_389_20170313_00_05_20_10300_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4741.384444
+# name: _pyxnet_results_PyxisPureScada50_390_sca_PyxisPureScada50_390_20170313_00_05_23_18708_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1371.083433
+# name: _pyxnet_results_PyxisPureScada50_391_sca_PyxisPureScada50_391_20170313_00_05_33_20460_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2180.731463
+# name: _pyxnet_results_PyxisPureScada50_392_sca_PyxisPureScada50_392_20170313_00_05_41_11652_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2978.551192
+# name: _pyxnet_results_PyxisPureScada50_393_sca_PyxisPureScada50_393_20170313_00_05_44_16464_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3829.300181
+# name: _pyxnet_results_PyxisPureScada50_394_sca_PyxisPureScada50_394_20170313_00_05_48_18764_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4640.302428
+# name: _pyxnet_results_PyxisPureScada50_395_sca_PyxisPureScada50_395_20170313_00_05_52_6376_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1400.529021
+# name: _pyxnet_results_PyxisPureScada50_396_sca_PyxisPureScada50_396_20170313_00_05_57_18164_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2181.427856
+# name: _pyxnet_results_PyxisPureScada50_397_sca_PyxisPureScada50_397_20170313_00_06_02_17372_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2952.744056
+# name: _pyxnet_results_PyxisPureScada50_398_sca_PyxisPureScada50_398_20170313_00_06_07_8936_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3793.293694
+# name: _pyxnet_results_PyxisPureScada50_399_sca_PyxisPureScada50_399_20170313_00_06_16_14820_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4688.660754
+# name: _pyxnet_results_PyxisPureScada50_400_sca_PyxisPureScada50_400_20170313_00_06_23_18992_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1362.582635
+# name: _pyxnet_results_PyxisPureScada50_401_sca_PyxisPureScada50_401_20170313_00_06_25_19488_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2275.503553
+# name: _pyxnet_results_PyxisPureScada50_402_sca_PyxisPureScada50_402_20170313_00_06_30_9316_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3107.449645
+# name: _pyxnet_results_PyxisPureScada50_403_sca_PyxisPureScada50_403_20170313_00_06_36_8188_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3917.114754
+# name: _pyxnet_results_PyxisPureScada50_404_sca_PyxisPureScada50_404_20170313_00_06_37_3008_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4801.233853
+# name: _pyxnet_results_PyxisPureScada50_405_sca_PyxisPureScada50_405_20170313_00_06_44_14916_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1476.98398
+# name: _pyxnet_results_PyxisPureScada50_406_sca_PyxisPureScada50_406_20170313_00_06_44_15796_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2256.954407
+# name: _pyxnet_results_PyxisPureScada50_407_sca_PyxisPureScada50_407_20170313_00_06_55_19592_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3043.076164
+# name: _pyxnet_results_PyxisPureScada50_408_sca_PyxisPureScada50_408_20170313_00_07_04_14728_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3963.184644
+# name: _pyxnet_results_PyxisPureScada50_409_sca_PyxisPureScada50_409_20170313_00_07_08_20328_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4875.215247
+# name: _pyxnet_results_PyxisPureScada50_410_sca_PyxisPureScada50_410_20170313_00_07_12_19144_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1430.004875
+# name: _pyxnet_results_PyxisPureScada50_411_sca_PyxisPureScada50_411_20170313_00_07_12_12460_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2302.964322
+# name: _pyxnet_results_PyxisPureScada50_412_sca_PyxisPureScada50_412_20170313_00_07_15_6804_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3098.764539
+# name: _pyxnet_results_PyxisPureScada50_413_sca_PyxisPureScada50_413_20170313_00_07_25_9724_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3956.685558
+# name: _pyxnet_results_PyxisPureScada50_414_sca_PyxisPureScada50_414_20170313_00_07_29_11116_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4840.982103
+# name: _pyxnet_results_PyxisPureScada50_415_sca_PyxisPureScada50_415_20170313_00_07_36_13468_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1435.983516
+# name: _pyxnet_results_PyxisPureScada50_416_sca_PyxisPureScada50_416_20170313_00_07_43_2176_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2256.336032
+# name: _pyxnet_results_PyxisPureScada50_417_sca_PyxisPureScada50_417_20170313_00_07_46_18136_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3138.662393
+# name: _pyxnet_results_PyxisPureScada50_418_sca_PyxisPureScada50_418_20170313_00_07_52_16876_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3986.260073
+# name: _pyxnet_results_PyxisPureScada50_419_sca_PyxisPureScada50_419_20170313_00_07_52_8132_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4827.796421
+# name: _pyxnet_results_PyxisPureScada50_420_sca_PyxisPureScada50_420_20170313_00_07_57_14348_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1436.194139
+# name: _pyxnet_results_PyxisPureScada50_421_sca_PyxisPureScada50_421_20170313_00_08_04_11456_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2288.635066
+# name: _pyxnet_results_PyxisPureScada50_422_sca_PyxisPureScada50_422_20170313_00_08_07_11548_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3141.890157
+# name: _pyxnet_results_PyxisPureScada50_423_sca_PyxisPureScada50_423_20170313_00_08_18_19148_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3985.489011
+# name: _pyxnet_results_PyxisPureScada50_424_sca_PyxisPureScada50_424_20170313_00_08_24_20156_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4929.486486
+# name: _pyxnet_results_PyxisPureScada50_425_sca_PyxisPureScada50_425_20170313_00_08_24_8504_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1412.495752
+# name: _pyxnet_results_PyxisPureScada50_426_sca_PyxisPureScada50_426_20170313_00_08_29_16564_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2279.356053
+# name: _pyxnet_results_PyxisPureScada50_427_sca_PyxisPureScada50_427_20170313_00_08_30_17280_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3110.268466
+# name: _pyxnet_results_PyxisPureScada50_428_sca_PyxisPureScada50_428_20170313_00_08_39_6488_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3984.913919
+# name: _pyxnet_results_PyxisPureScada50_429_sca_PyxisPureScada50_429_20170313_00_08_44_14512_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4878.887892
+# name: _pyxnet_results_PyxisPureScada50_430_sca_PyxisPureScada50_430_20170313_00_08_44_2560_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1383.895783
+# name: _pyxnet_results_PyxisPureScada50_431_sca_PyxisPureScada50_431_20170313_00_08_55_20128_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2232.378406
+# name: _pyxnet_results_PyxisPureScada50_432_sca_PyxisPureScada50_432_20170313_00_09_01_16168_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3037.823695
+# name: _pyxnet_results_PyxisPureScada50_433_sca_PyxisPureScada50_433_20170313_00_09_05_17628_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3944.978102
+# name: _pyxnet_results_PyxisPureScada50_434_sca_PyxisPureScada50_434_20170313_00_09_05_17900_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4791.90625
+# name: _pyxnet_results_PyxisPureScada50_435_sca_PyxisPureScada50_435_20170313_00_09_06_16528_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1455.937462
+# name: _pyxnet_results_PyxisPureScada50_436_sca_PyxisPureScada50_436_20170313_00_09_15_11156_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2256.602434
+# name: _pyxnet_results_PyxisPureScada50_437_sca_PyxisPureScada50_437_20170313_00_09_19_13456_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3072.063739
+# name: _pyxnet_results_PyxisPureScada50_438_sca_PyxisPureScada50_438_20170313_00_09_24_19156_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3873.969147
+# name: _pyxnet_results_PyxisPureScada50_439_sca_PyxisPureScada50_439_20170313_00_09_34_1944_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4766.96882
+# name: _pyxnet_results_PyxisPureScada50_440_sca_PyxisPureScada50_440_20170313_00_09_39_17992_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1438.751526
+# name: _pyxnet_results_PyxisPureScada50_441_sca_PyxisPureScada50_441_20170313_00_09_41_14112_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2154.246507
+# name: _pyxnet_results_PyxisPureScada50_442_sca_PyxisPureScada50_442_20170313_00_09_41_7516_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3036.528169
+# name: _pyxnet_results_PyxisPureScada50_443_sca_PyxisPureScada50_443_20170313_00_09_47_12000_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3865.076225
+# name: _pyxnet_results_PyxisPureScada50_444_sca_PyxisPureScada50_444_20170313_00_09_54_11336_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4671.674779
+# name: _pyxnet_results_PyxisPureScada50_445_sca_PyxisPureScada50_445_20170313_00_09_57_20416_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1479.712261
+# name: _pyxnet_results_PyxisPureScada50_446_sca_PyxisPureScada50_446_20170313_00_10_03_12448_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2230.936428
+# name: _pyxnet_results_PyxisPureScada50_447_sca_PyxisPureScada50_447_20170313_00_10_12_5356_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3034.480959
+# name: _pyxnet_results_PyxisPureScada50_448_sca_PyxisPureScada50_448_20170313_00_10_20_19220_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3872.528986
+# name: _pyxnet_results_PyxisPureScada50_449_sca_PyxisPureScada50_449_20170313_00_10_22_16960_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4701.904656
+# name: _pyxnet_results_PyxisPureScada50_450_sca_PyxisPureScada50_450_20170313_00_10_24_2212_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1435.962782
+# name: _pyxnet_results_PyxisPureScada50_451_sca_PyxisPureScada50_451_20170313_00_10_25_8964_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2126.280318
+# name: _pyxnet_results_PyxisPureScada50_452_sca_PyxisPureScada50_452_20170313_00_10_33_13552_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3054.764124
+# name: _pyxnet_results_PyxisPureScada50_453_sca_PyxisPureScada50_453_20170313_00_10_39_20208_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3868.823956
+# name: _pyxnet_results_PyxisPureScada50_454_sca_PyxisPureScada50_454_20170313_00_10_45_1936_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4788.605791
+# name: _pyxnet_results_PyxisPureScada50_455_sca_PyxisPureScada50_455_20170313_00_10_52_3688_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1436.17439
+# name: _pyxnet_results_PyxisPureScada50_456_sca_PyxisPureScada50_456_20170313_00_10_59_20256_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2154.142715
+# name: _pyxnet_results_PyxisPureScada50_457_sca_PyxisPureScada50_457_20170313_00_11_00_4156_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3039.794076
+# name: _pyxnet_results_PyxisPureScada50_458_sca_PyxisPureScada50_458_20170313_00_11_03_7988_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3856.925725
+# name: _pyxnet_results_PyxisPureScada50_459_sca_PyxisPureScada50_459_20170313_00_11_07_11464_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4708.339246
+# name: _pyxnet_results_PyxisPureScada50_460_sca_PyxisPureScada50_460_20170313_00_11_15_19616_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1407.274818
+# name: _pyxnet_results_PyxisPureScada50_461_sca_PyxisPureScada50_461_20170313_00_11_18_14460_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2249.141557
+# name: _pyxnet_results_PyxisPureScada50_462_sca_PyxisPureScada50_462_20170313_00_11_25_19760_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3042.414085
+# name: _pyxnet_results_PyxisPureScada50_463_sca_PyxisPureScada50_463_20170313_00_11_36_1704_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3918.865455
+# name: _pyxnet_results_PyxisPureScada50_464_sca_PyxisPureScada50_464_20170313_00_11_40_8816_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4783.799555
+# name: _pyxnet_results_PyxisPureScada50_465_sca_PyxisPureScada50_465_20170313_00_11_40_15432_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1442.340659
+# name: _pyxnet_results_PyxisPureScada50_466_sca_PyxisPureScada50_466_20170313_00_11_44_19560_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2229.198589
+# name: _pyxnet_results_PyxisPureScada50_467_sca_PyxisPureScada50_467_20170313_00_11_44_8112_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3131.190612
+# name: _pyxnet_results_PyxisPureScada50_468_sca_PyxisPureScada50_468_20170313_00_11_55_14068_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3912.304189
+# name: _pyxnet_results_PyxisPureScada50_469_sca_PyxisPureScada50_469_20170313_00_11_59_5396_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4757.073497
+# name: _pyxnet_results_PyxisPureScada50_470_sca_PyxisPureScada50_470_20170313_00_12_04_13360_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1518.619552
+# name: _pyxnet_results_PyxisPureScada50_471_sca_PyxisPureScada50_471_20170313_00_12_15_1004_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2334.209231
+# name: _pyxnet_results_PyxisPureScada50_472_sca_PyxisPureScada50_472_20170313_00_12_16_7268_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3240.942363
+# name: _pyxnet_results_PyxisPureScada50_473_sca_PyxisPureScada50_473_20170313_00_12_22_14872_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4103.658672
+# name: _pyxnet_results_PyxisPureScada50_474_sca_PyxisPureScada50_474_20170313_00_12_22_18268_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4979.002257
+# name: _pyxnet_results_PyxisPureScada50_475_sca_PyxisPureScada50_475_20170313_00_12_22_916_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1475.19335
+# name: _pyxnet_results_PyxisPureScada50_476_sca_PyxisPureScada50_476_20170313_00_12_32_19896_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2349.408016
+# name: _pyxnet_results_PyxisPureScada50_477_sca_PyxisPureScada50_477_20170313_00_12_35_4424_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3188.753934
+# name: _pyxnet_results_PyxisPureScada50_478_sca_PyxisPureScada50_478_20170313_00_12_45_13400_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4088.155268
+# name: _pyxnet_results_PyxisPureScada50_479_sca_PyxisPureScada50_479_20170313_00_12_53_19216_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+5003.538462
+# name: _pyxnet_results_PyxisPureScada50_480_sca_PyxisPureScada50_480_20170313_00_12_55_6876_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1433.17378
+# name: _pyxnet_results_PyxisPureScada50_481_sca_PyxisPureScada50_481_20170313_00_12_58_20228_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2216.056452
+# name: _pyxnet_results_PyxisPureScada50_482_sca_PyxisPureScada50_482_20170313_00_12_59_20436_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3054.75565
+# name: _pyxnet_results_PyxisPureScada50_483_sca_PyxisPureScada50_483_20170313_00_13_04_17864_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3988.360806
+# name: _pyxnet_results_PyxisPureScada50_484_sca_PyxisPureScada50_484_20170313_00_13_13_7448_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4837.346756
+# name: _pyxnet_results_PyxisPureScada50_485_sca_PyxisPureScada50_485_20170313_00_13_14_7684_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1414.212985
+# name: _pyxnet_results_PyxisPureScada50_486_sca_PyxisPureScada50_486_20170313_00_13_22_4532_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2214.469285
+# name: _pyxnet_results_PyxisPureScada50_487_sca_PyxisPureScada50_487_20170313_00_13_31_14768_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3039.466855
+# name: _pyxnet_results_PyxisPureScada50_488_sca_PyxisPureScada50_488_20170313_00_13_32_14048_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4012.077064
+# name: _pyxnet_results_PyxisPureScada50_489_sca_PyxisPureScada50_489_20170313_00_13_35_14464_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4844.149888
+# name: _pyxnet_results_PyxisPureScada50_490_sca_PyxisPureScada50_490_20170313_00_13_39_8052_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1417.959295
+# name: _pyxnet_results_PyxisPureScada50_491_sca_PyxisPureScada50_491_20170313_00_13_44_18840_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2229.055499
+# name: _pyxnet_results_PyxisPureScada50_492_sca_PyxisPureScada50_492_20170313_00_13_52_9236_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3038.669958
+# name: _pyxnet_results_PyxisPureScada50_493_sca_PyxisPureScada50_493_20170313_00_13_56_15388_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4011.733945
+# name: _pyxnet_results_PyxisPureScada50_494_sca_PyxisPureScada50_494_20170313_00_14_02_19676_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4783.599109
+# name: _pyxnet_results_PyxisPureScada50_495_sca_PyxisPureScada50_495_20170313_00_14_09_19320_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+1441.874694
+# name: _pyxnet_results_PyxisPureScada50_496_sca_PyxisPureScada50_496_20170313_00_14_10_18048_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+2216.743952
+# name: _pyxnet_results_PyxisPureScada50_497_sca_PyxisPureScada50_497_20170313_00_14_12_14916_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+3062.995757
+# name: _pyxnet_results_PyxisPureScada50_498_sca_PyxisPureScada50_498_20170313_00_14_20_19928_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4011.733945
+# name: _pyxnet_results_PyxisPureScada50_499_sca_PyxisPureScada50_499_20170313_00_14_25_10980_Pyxis_server_allocatedBps__mean_
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 1
+4794.611607

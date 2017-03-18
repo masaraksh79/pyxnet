@@ -20,7 +20,7 @@ repmax=$(($3-1))
 
 ini=omnetpp.ini
 
-$opp -j$core -- $sim -r $repmin..$repmax -u Cmdenv -c $res -f $ini --debug-on-errors=false
+$opp -j$core -- $sim -r $repmin..$repmax -u Cmdenv -c $res -f $ini --debug-on-errors=auto
 
 # parse the results using sample size arg
 ./parse.sh $res $3 $4
