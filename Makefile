@@ -15,7 +15,7 @@ USERIF_LIBS = $(ALL_ENV_LIBS) # that is, $(TKENV_LIBS) $(QTENV_LIBS) $(CMDENV_LI
 #USERIF_LIBS = $(QTENV_LIBS)
 
 # C++ include paths (with -I)
-INCLUDE_PATH = -I.
+INCLUDE_PATH = -I. -Iresults -Itest_arslot
 
 # Additional object and library files to link with
 EXTRA_OBJS =
@@ -30,10 +30,10 @@ O = $(PROJECT_OUTPUT_DIR)/$(CONFIGNAME)/$(PROJECTRELATIVE_PATH)
 
 # Object files for local .cc, .msg and .sm files
 OBJS = \
-    $O/Scheduler.o \
-    $O/JoinLeave.o \
     $O/Defragmenter.o \
     $O/Host.o \
+    $O/JoinLeave.o \
+    $O/Scheduler.o \
     $O/Server.o \
     $O/pkt_m.o
 
@@ -123,13 +123,15 @@ clean:
 	$(Q)-rm -rf $O
 	$(Q)-rm -f pyxnet pyxnet.exe libpyxnet.so libpyxnet.a libpyxnet.dll libpyxnet.dylib
 	$(Q)-rm -f ./*_m.cc ./*_m.h ./*_sm.cc ./*_sm.h
+	$(Q)-rm -f results/*_m.cc results/*_m.h results/*_sm.cc results/*_sm.h
+	$(Q)-rm -f test_arslot/*_m.cc test_arslot/*_m.h test_arslot/*_sm.cc test_arslot/*_sm.h
 
 cleanall: clean
 	$(Q)-rm -rf $(PROJECT_OUTPUT_DIR)
 
 depend:
 	$(qecho) Creating dependencies...
-	$(Q)$(MAKEDEPEND) $(INCLUDE_PATH) -f Makefile -P\$$O/ -- $(MSG_CC_FILES) $(SM_CC_FILES)  ./*.cc
+	$(Q)$(MAKEDEPEND) $(INCLUDE_PATH) -f Makefile -P\$$O/ -- $(MSG_CC_FILES) $(SM_CC_FILES)  ./*.cc results/*.cc test_arslot/*.cc
 
 # DO NOT DELETE THIS LINE -- make depend depends on it.
 $O/Defragmenter.o: Defragmenter.cc \
