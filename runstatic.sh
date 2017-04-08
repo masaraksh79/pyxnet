@@ -45,6 +45,16 @@ elif [ "$stage" == "2" ]; then
 	./run.sh PyxisTraffic55M1 $cpus $repet $sampl
 	./run.sh PyxisTraffic55M2 $cpus $repet $sampl
 	./run.sh PyxisTraffic55M3 $cpus $repet $sampl
+elif [ "$stage" == "3" ]; then
+	repet=500
+	sampl=50
+	./run.sh PyxisTraffic25M4 $cpus $repet $sampl
+	./run.sh PyxisTraffic30M4 $cpus $repet $sampl
+	./run.sh PyxisTraffic35M4 $cpus $repet $sampl
+	./run.sh PyxisTraffic40M4 $cpus $repet $sampl
+	./run.sh PyxisTraffic45M4 $cpus $repet $sampl
+	./run.sh PyxisTraffic50M4 $cpus $repet $sampl
+	./run.sh PyxisTraffic55M4 $cpus $repet $sampl
 else
 	echo "Terminating. Unrecognised step..."
 fi
