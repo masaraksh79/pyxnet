@@ -180,9 +180,31 @@ FilesUnitsM0 = {Files25M0,Files30M0,Files35M0,Files40M0,Files45M0,Files50M0,File
 FilesUnitsM1 = {Files25M1,Files30M1,Files35M1,Files40M1,Files45M1,Files50M1,Files55M1}            
 FilesUnitsM2 = {Files25M2,Files30M2,Files35M2,Files40M2,Files45M2,Files50M2,Files55M2}            
 FilesUnitsM3 = {Files25M3,Files30M3,Files35M3,Files40M3,Files45M3,Files50M3,Files55M3}            
+#FilesUnitsM0 = {Files25M0,Files30M0,Files35M0,Files40M0,Files45M0}            
+#FilesUnitsM1 = {Files25M1,Files30M1,Files35M1,Files40M1,Files45M1}            
+#FilesUnitsM2 = {Files25M2,Files30M2,Files35M2,Files40M2,Files45M2}            
+#FilesUnitsM3 = {Files25M3,Files30M3,Files35M3,Files40M3,Files45M3}            
 
-files=arFiles
+files=FilesUnitsM3
 path=fpath
+
+function retval = runOne(p, f, prm, elms, x)
+  g={}
+  h={}
+  ret={}
+
+  for k = 1:elms
+    for j = 1:numel(x)
+      g = load("-ascii", char( strcat( p, f{1,j}{prm}) ))
+      h(j) = g(k)
+    endfor
+    ret{k}=h
+  endfor
+  
+  retval=ret
+
+endfunction
+
 ################################################################################
 # Plot for M0/M1/M2 and M3 traffic loads
 ################################################################################
@@ -190,99 +212,65 @@ xAxis={25,30,35,40,45,50,55}
 
 elmInEachFile=10
 
+# params
+p_allocated=1
+p_requested=2
+p_busy=3
+p_collAtBase=4
+p_efficiency=5
+
 figure(1)
 
-# TODO: replace with relevant scenario code
-
-g={}
-h={}
-a={}
-prm=1
-
-for k = 1:elmInEachFile
-  for j = 1:numel(xAxis)
-    g = load("-ascii", char( strcat( path, files{1,j}{prm}) ))
-    h(j) = g(k)
-  endfor
-  a{k}=h
-endfor
-
-g={}
-h={}
-r={}
-prm=2
-
-for k = 1:elmInEachFile
-  for j = 1:numel(xAxis)
-    g = load("-ascii", char( strcat( path, files{1,j}{prm}) ))
-    h(j) = g(k)
-  endfor
-  r{k}=h
-endfor
+a0=runOne(fpath, FilesUnitsM0, p_allocated, elmInEachFile, xAxis)
+r0=runOne(fpath, FilesUnitsM0, p_requested, elmInEachFile, xAxis)
+a1=runOne(fpath, FilesUnitsM1, p_allocated, elmInEachFile, xAxis)
+r1=runOne(fpath, FilesUnitsM1, p_requested, elmInEachFile, xAxis)
+a2=runOne(fpath, FilesUnitsM2, p_allocated, elmInEachFile, xAxis)
+r2=runOne(fpath, FilesUnitsM2, p_requested, elmInEachFile, xAxis)
+a3=runOne(fpath, FilesUnitsM3, p_allocated, elmInEachFile, xAxis)
+r3=runOne(fpath, FilesUnitsM3, p_requested, elmInEachFile, xAxis)
 
 hold on
 for k = 1:elmInEachFile
-  plot(cell2mat(xAxis),cell2mat(a{1,k}),"b-*", cell2mat(xAxis),cell2mat(r{1,k}),'r:o')
+  plot(cell2mat(xAxis),cell2mat(a0{1,k}),"b-*", cell2mat(xAxis),cell2mat(r0{1,k}),'b--o')
+  plot(cell2mat(xAxis),cell2mat(a1{1,k}),"g-*", cell2mat(xAxis),cell2mat(r1{1,k}),'g--o')
+  plot(cell2mat(xAxis),cell2mat(a2{1,k}),"m-*", cell2mat(xAxis),cell2mat(r2{1,k}),'m--o')
+  plot(cell2mat(xAxis),cell2mat(a3{1,k}),"y-*", cell2mat(xAxis),cell2mat(r3{1,k}),'y--o')
 endfor
 hold off
 
 xlabel("nodes")
 ylabel("bps", "rotation", 0)
-legend("allocated","requested", "location", "northwest")
+legend("allocated (M0)","requested (M0)", 
+       "allocated (M1)","requested (M1)",
+       "allocated (M2)","requested (M2)",
+       "allocated (M3)","requested (M3)","location", "northwest")
 grid("on") 
 
-################################################################################
-# Pyxis business, efficiency and collisions at the base
-################################################################################
 figure(2)
-xAxis={50,60,70,80,90,100,110,120}
-# business
-g={}
-h={}
-b={}
-prm=3
 
-for k = 1:elmInEachFile
-  for j = 1:numel(xAxis)
-    g = load("-ascii", char( strcat( path, files{1,j}{prm}) ))
-    h(j) = g(k)
-  endfor
-  b{k}=h
-endfor
-
-# collisions at Base
-g={}
-h={}
-c={}
-prm=4
-
-for k = 1:elmInEachFile
-  for j = 1:numel(xAxis)
-    g = load("-ascii", char( strcat( path, files{1,j}{prm}) ))
-    h(j) = g(k)
-  endfor
-  c{k}=h
-endfor
-
-# efficiency
-g={}
-h={}
-e={}
-prm=5
-
-for k = 1:elmInEachFile
-  for j = 1:numel(xAxis)
-    g = load("-ascii", char( strcat( path, files{1,j}{prm}) ))
-    h(j) = g(k)
-  endfor
-  e{k}=h
-endfor
+b0=runOne(fpath, FilesUnitsM0, p_busy, elmInEachFile, xAxis)
+e0=runOne(fpath, FilesUnitsM0, p_efficiency, elmInEachFile, xAxis)
+c0=runOne(fpath, FilesUnitsM0, p_collAtBase, elmInEachFile, xAxis)
+b1=runOne(fpath, FilesUnitsM1, p_busy, elmInEachFile, xAxis)
+e1=runOne(fpath, FilesUnitsM1, p_efficiency, elmInEachFile, xAxis)
+c1=runOne(fpath, FilesUnitsM1, p_collAtBase, elmInEachFile, xAxis)
+b2=runOne(fpath, FilesUnitsM2, p_busy, elmInEachFile, xAxis)
+e2=runOne(fpath, FilesUnitsM2, p_efficiency, elmInEachFile, xAxis)
+c2=runOne(fpath, FilesUnitsM2, p_collAtBase, elmInEachFile, xAxis)
+b3=runOne(fpath, FilesUnitsM3, p_busy, elmInEachFile, xAxis)
+e3=runOne(fpath, FilesUnitsM3, p_efficiency, elmInEachFile, xAxis)
+c3=runOne(fpath, FilesUnitsM3, p_collAtBase, elmInEachFile, xAxis)
 
 hold on
 for k = 1:elmInEachFile
-  plot(cell2mat(xAxis),cell2mat(b{1,k}),'r:o', cell2mat(xAxis),cell2mat(c{1,k}),'g--o',cell2mat(xAxis),cell2mat(e{1,k}),'y-o')
+  plot(cell2mat(xAxis),cell2mat(b2{1,k}),"r-*", cell2mat(xAxis),cell2mat(e2{1,k}),'r--o', cell2mat(xAxis),cell2mat(c2{1,k}),'r-:o')
+  plot(cell2mat(xAxis),cell2mat(b3{1,k}),"b-*", cell2mat(xAxis),cell2mat(e3{1,k}),'b--o', cell2mat(xAxis),cell2mat(c3{1,k}),'b-:o')
 endfor
 hold off
+
 xlabel("nodes")
-legend("business", "collisions", "efficiency", "location", "northwest")
+ylabel("bps", "rotation", 0)
+legend("business (+60%)","efficiency (+60%)", "collisions (+60%)", 
+       "business (+100%)","efficiency (+100%)", "collisions (+100%)","location", "northwest")
 grid("on") 
