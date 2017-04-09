@@ -251,26 +251,41 @@ figure(2)
 
 b0=runOne(fpath, FilesUnitsM0, p_busy, elmInEachFile, xAxis)
 e0=runOne(fpath, FilesUnitsM0, p_efficiency, elmInEachFile, xAxis)
-c0=runOne(fpath, FilesUnitsM0, p_collAtBase, elmInEachFile, xAxis)
 b1=runOne(fpath, FilesUnitsM1, p_busy, elmInEachFile, xAxis)
 e1=runOne(fpath, FilesUnitsM1, p_efficiency, elmInEachFile, xAxis)
-c1=runOne(fpath, FilesUnitsM1, p_collAtBase, elmInEachFile, xAxis)
 b2=runOne(fpath, FilesUnitsM2, p_busy, elmInEachFile, xAxis)
 e2=runOne(fpath, FilesUnitsM2, p_efficiency, elmInEachFile, xAxis)
-c2=runOne(fpath, FilesUnitsM2, p_collAtBase, elmInEachFile, xAxis)
 b3=runOne(fpath, FilesUnitsM3, p_busy, elmInEachFile, xAxis)
 e3=runOne(fpath, FilesUnitsM3, p_efficiency, elmInEachFile, xAxis)
-c3=runOne(fpath, FilesUnitsM3, p_collAtBase, elmInEachFile, xAxis)
 
 hold on
 for k = 1:elmInEachFile
-  plot(cell2mat(xAxis),cell2mat(b2{1,k}),"r-*", cell2mat(xAxis),cell2mat(e2{1,k}),'r--o', cell2mat(xAxis),cell2mat(c2{1,k}),'r-:o')
-  plot(cell2mat(xAxis),cell2mat(b3{1,k}),"b-*", cell2mat(xAxis),cell2mat(e3{1,k}),'b--o', cell2mat(xAxis),cell2mat(c3{1,k}),'b-:o')
+  plot(cell2mat(xAxis),cell2mat(b0{1,k}),"g-*")
+  plot(cell2mat(xAxis),cell2mat(b2{1,k}),"r-*")
+  plot(cell2mat(xAxis),cell2mat(b3{1,k}),"b-*")
 endfor
 hold off
 
 xlabel("nodes")
 ylabel("bps", "rotation", 0)
-legend("business (+60%)","efficiency (+60%)", "collisions (+60%)", 
-       "business (+100%)","efficiency (+100%)", "collisions (+100%)","location", "northwest")
+legend("business (Scada only)",
+       "business (+30%)", 
+       "business (+50%)", "location", "northwest")
+grid("on") 
+
+figure(3)
+
+hold on
+for k = 1:elmInEachFile
+  plot(cell2mat(xAxis),cell2mat(e0{1,k}),"g-*")
+  plot(cell2mat(xAxis),cell2mat(e2{1,k}),"r-*")
+  plot(cell2mat(xAxis),cell2mat(e3{1,k}),"b-*")
+endfor
+hold off
+
+xlabel("nodes")
+ylabel("bps", "rotation", 0)
+legend("efficiency (Scada only)",
+       "efficiency (+30%)", 
+       "efficiency (+50%)", "location", "northwest")
 grid("on") 
