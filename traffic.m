@@ -220,10 +220,7 @@ FilesUnitsM0 = {Files25M0,Files30M0,Files35M0,Files40M0,Files45M0,Files50M0,File
 FilesUnitsM1 = {Files25M1,Files30M1,Files35M1,Files40M1,Files45M1,Files50M1,Files55M1}            
 FilesUnitsM2 = {Files25M2,Files30M2,Files35M2,Files40M2,Files45M2,Files50M2,Files55M2}            
 FilesUnitsM3 = {Files25M3,Files30M3,Files35M3,Files40M3,Files45M3,Files50M3,Files55M3}            
-FilesUnitsM3 = {Files25M4,Files30M4,Files35M4,Files40M4,Files45M4,Files50M4,Files55M4}            
-
-files=FilesUnitsM3
-path=fpath
+FilesUnitsM4 = {Files25M4,Files30M4,Files35M4,Files40M4,Files45M4,Files50M4,Files55M4}            
 
 function retval = runOne(p, f, prm, elms, x)
   g={}
@@ -266,13 +263,16 @@ a2=runOne(fpath, FilesUnitsM2, p_allocated, elmInEachFile, xAxis)
 r2=runOne(fpath, FilesUnitsM2, p_requested, elmInEachFile, xAxis)
 a3=runOne(fpath, FilesUnitsM3, p_allocated, elmInEachFile, xAxis)
 r3=runOne(fpath, FilesUnitsM3, p_requested, elmInEachFile, xAxis)
+a4=runOne(fpath, FilesUnitsM4, p_allocated, elmInEachFile, xAxis)
+r4=runOne(fpath, FilesUnitsM4, p_requested, elmInEachFile, xAxis)
 
 hold on
 for k = 1:elmInEachFile
-  plot(cell2mat(xAxis),cell2mat(a0{1,k}),"b-*", cell2mat(xAxis),cell2mat(r0{1,k}),'b--o')
-  plot(cell2mat(xAxis),cell2mat(a1{1,k}),"g-*", cell2mat(xAxis),cell2mat(r1{1,k}),'g--o')
-  plot(cell2mat(xAxis),cell2mat(a2{1,k}),"m-*", cell2mat(xAxis),cell2mat(r2{1,k}),'m--o')
-  plot(cell2mat(xAxis),cell2mat(a3{1,k}),"y-*", cell2mat(xAxis),cell2mat(r3{1,k}),'y--o')
+  plot(cell2mat(xAxis),cell2mat(a0{1,k}),"b-*", cell2mat(xAxis),cell2mat(r0{1,k}),'b--*')
+  plot(cell2mat(xAxis),cell2mat(a1{1,k}),"g-*", cell2mat(xAxis),cell2mat(r1{1,k}),'g--*')
+  plot(cell2mat(xAxis),cell2mat(a2{1,k}),"m-*", cell2mat(xAxis),cell2mat(r2{1,k}),'m--*')
+  plot(cell2mat(xAxis),cell2mat(a3{1,k}),"y-*", cell2mat(xAxis),cell2mat(r3{1,k}),'y--*')
+  plot(cell2mat(xAxis),cell2mat(a4{1,k}),"r-*", cell2mat(xAxis),cell2mat(r4{1,k}),'r--*')
 endfor
 hold off
 
@@ -281,7 +281,9 @@ ylabel("bps", "rotation", 0)
 legend("allocated (M0)","requested (M0)", 
        "allocated (M1)","requested (M1)",
        "allocated (M2)","requested (M2)",
-       "allocated (M3)","requested (M3)","location", "northwest")
+       "allocated (M3)","requested (M3)",
+       "allocated (M4)","requested (M4)",
+       "location", "northwest")
 grid("on") 
 
 figure(2)
@@ -294,20 +296,26 @@ b2=runOne(fpath, FilesUnitsM2, p_busy, elmInEachFile, xAxis)
 e2=runOne(fpath, FilesUnitsM2, p_efficiency, elmInEachFile, xAxis)
 b3=runOne(fpath, FilesUnitsM3, p_busy, elmInEachFile, xAxis)
 e3=runOne(fpath, FilesUnitsM3, p_efficiency, elmInEachFile, xAxis)
+b4=runOne(fpath, FilesUnitsM4, p_busy, elmInEachFile, xAxis)
+e4=runOne(fpath, FilesUnitsM4, p_efficiency, elmInEachFile, xAxis)
+c4=runOne(fpath, FilesUnitsM4, p_collAtBase, elmInEachFile, xAxis)
 
 hold on
 for k = 1:elmInEachFile
   plot(cell2mat(xAxis),cell2mat(b0{1,k}),"g-*")
-  plot(cell2mat(xAxis),cell2mat(b2{1,k}),"r-*")
   plot(cell2mat(xAxis),cell2mat(b3{1,k}),"b-*")
+  plot(cell2mat(xAxis),cell2mat(b4{1,k}),"r-*")
+  plot(cell2mat(xAxis),cell2mat(c4{1,k}),"b--o")
 endfor
 hold off
 
 xlabel("nodes")
 ylabel("bps", "rotation", 0)
 legend("business (Scada only)",
-       "business (+30%)", 
-       "business (+50%)", "location", "northwest")
+       "business (+50%)", 
+       "business (+100%)", 
+       "base collisions (+100%)",
+       "location", "northwest")
 grid("on") 
 
 figure(3)
@@ -315,14 +323,14 @@ figure(3)
 hold on
 for k = 1:elmInEachFile
   plot(cell2mat(xAxis),cell2mat(e0{1,k}),"g-*")
-  plot(cell2mat(xAxis),cell2mat(e2{1,k}),"r-*")
   plot(cell2mat(xAxis),cell2mat(e3{1,k}),"b-*")
+  plot(cell2mat(xAxis),cell2mat(e4{1,k}),"r-*")
 endfor
 hold off
 
 xlabel("nodes")
 ylabel("bps", "rotation", 0)
 legend("efficiency (Scada only)",
-       "efficiency (+30%)", 
-       "efficiency (+50%)", "location", "northwest")
+       "efficiency (+50%)", 
+       "efficiency (+100%)", "location", "northwest")
 grid("on") 
