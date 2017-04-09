@@ -30,6 +30,11 @@ Files25M3={'PyxisTraffic25M3.sim.allocatedBps',
            'PyxisTraffic25M3.sim.collisionsAtBase',
            'PyxisTraffic25M3.sim.efficiency'}
            
+Files25M4={'PyxisTraffic25M4.sim.allocatedBps',
+           'PyxisTraffic25M4.sim.requestedBps'
+           'PyxisTraffic25M4.sim.business',
+           'PyxisTraffic25M4.sim.collisionsAtBase',
+           'PyxisTraffic25M4.sim.efficiency'}
 
 Files30M0={'PyxisTraffic30M0.sim.allocatedBps',
            'PyxisTraffic30M0.sim.requestedBps'
@@ -55,6 +60,12 @@ Files30M3={'PyxisTraffic30M3.sim.allocatedBps',
            'PyxisTraffic30M3.sim.collisionsAtBase',
            'PyxisTraffic30M3.sim.efficiency'}
            
+Files30M4={'PyxisTraffic30M4.sim.allocatedBps',
+           'PyxisTraffic30M4.sim.requestedBps'
+           'PyxisTraffic30M4.sim.business',
+           'PyxisTraffic30M4.sim.collisionsAtBase',
+           'PyxisTraffic30M4.sim.efficiency'}
+
 Files35M0={'PyxisTraffic35M0.sim.allocatedBps',
            'PyxisTraffic35M0.sim.requestedBps'
            'PyxisTraffic35M0.sim.business',
@@ -79,6 +90,12 @@ Files35M3={'PyxisTraffic35M3.sim.allocatedBps',
            'PyxisTraffic35M3.sim.collisionsAtBase',
            'PyxisTraffic35M3.sim.efficiency'}
            
+Files35M4={'PyxisTraffic35M4.sim.allocatedBps',
+           'PyxisTraffic35M4.sim.requestedBps'
+           'PyxisTraffic35M4.sim.business',
+           'PyxisTraffic35M4.sim.collisionsAtBase',
+           'PyxisTraffic35M4.sim.efficiency'}
+           
 Files40M0={'PyxisTraffic40M0.sim.allocatedBps',
            'PyxisTraffic40M0.sim.requestedBps'
            'PyxisTraffic40M0.sim.business',
@@ -102,6 +119,12 @@ Files40M3={'PyxisTraffic40M3.sim.allocatedBps',
            'PyxisTraffic40M3.sim.business',
            'PyxisTraffic40M3.sim.collisionsAtBase',
            'PyxisTraffic40M3.sim.efficiency'}
+
+Files40M4={'PyxisTraffic40M4.sim.allocatedBps',
+           'PyxisTraffic40M4.sim.requestedBps'
+           'PyxisTraffic40M4.sim.business',
+           'PyxisTraffic40M4.sim.collisionsAtBase',
+           'PyxisTraffic40M4.sim.efficiency'}
            
 Files45M0={'PyxisTraffic45M0.sim.allocatedBps',
            'PyxisTraffic45M0.sim.requestedBps'
@@ -126,6 +149,12 @@ Files45M3={'PyxisTraffic45M3.sim.allocatedBps',
            'PyxisTraffic45M3.sim.business',
            'PyxisTraffic45M3.sim.collisionsAtBase',
            'PyxisTraffic45M3.sim.efficiency'}
+
+Files45M4={'PyxisTraffic45M4.sim.allocatedBps',
+           'PyxisTraffic45M4.sim.requestedBps'
+           'PyxisTraffic45M4.sim.business',
+           'PyxisTraffic45M4.sim.collisionsAtBase',
+           'PyxisTraffic45M4.sim.efficiency'}
            
 Files50M0={'PyxisTraffic50M0.sim.allocatedBps',
            'PyxisTraffic50M0.sim.requestedBps'
@@ -151,6 +180,12 @@ Files50M3={'PyxisTraffic50M3.sim.allocatedBps',
            'PyxisTraffic50M3.sim.collisionsAtBase',
            'PyxisTraffic50M3.sim.efficiency'}
 
+Files50M4={'PyxisTraffic50M4.sim.allocatedBps',
+           'PyxisTraffic50M4.sim.requestedBps'
+           'PyxisTraffic50M4.sim.business',
+           'PyxisTraffic50M4.sim.collisionsAtBase',
+           'PyxisTraffic50M4.sim.efficiency'}
+           
 Files55M0={'PyxisTraffic55M0.sim.allocatedBps',
            'PyxisTraffic55M0.sim.requestedBps'
            'PyxisTraffic55M0.sim.business',
@@ -175,15 +210,17 @@ Files55M3={'PyxisTraffic55M3.sim.allocatedBps',
            'PyxisTraffic55M3.sim.collisionsAtBase',
            'PyxisTraffic55M3.sim.efficiency'}
 
+Files55M4={'PyxisTraffic55M4.sim.allocatedBps',
+           'PyxisTraffic55M4.sim.requestedBps'
+           'PyxisTraffic55M4.sim.business',
+           'PyxisTraffic55M4.sim.collisionsAtBase',
+           'PyxisTraffic55M4.sim.efficiency'}
            
 FilesUnitsM0 = {Files25M0,Files30M0,Files35M0,Files40M0,Files45M0,Files50M0,Files55M0}            
 FilesUnitsM1 = {Files25M1,Files30M1,Files35M1,Files40M1,Files45M1,Files50M1,Files55M1}            
 FilesUnitsM2 = {Files25M2,Files30M2,Files35M2,Files40M2,Files45M2,Files50M2,Files55M2}            
 FilesUnitsM3 = {Files25M3,Files30M3,Files35M3,Files40M3,Files45M3,Files50M3,Files55M3}            
-#FilesUnitsM0 = {Files25M0,Files30M0,Files35M0,Files40M0,Files45M0}            
-#FilesUnitsM1 = {Files25M1,Files30M1,Files35M1,Files40M1,Files45M1}            
-#FilesUnitsM2 = {Files25M2,Files30M2,Files35M2,Files40M2,Files45M2}            
-#FilesUnitsM3 = {Files25M3,Files30M3,Files35M3,Files40M3,Files45M3}            
+FilesUnitsM3 = {Files25M4,Files30M4,Files35M4,Files40M4,Files45M4,Files50M4,Files55M4}            
 
 files=FilesUnitsM3
 path=fpath
