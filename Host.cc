@@ -73,6 +73,7 @@ void Host::initialize()
     cycleCnt = 0;
     isSynced = false;
     slotRx = 0;
+    numHandledFrames = 0;
     slotUs = uniform(0, 0.0, 1.0) * slotTime.dbl();
 
     df = new Defragmenter(slotBytes, firstSlotBytes);
@@ -256,7 +257,12 @@ void Host::upRequest(RequestPkt* pkt)
         pkt->setLts(logicSlotCnt);
         pkt->setBytes(queue->getByteLength());
         int frames = df->queue2frames(queue->getByteLength());
-        pkt->setFrames(frames);
+
+        if (frames >= numHandledFrames)
+            pkt->setFrames(frames - numHandledFrames);
+        else
+            pkt->setFrames(frames); // should never get here...
+
         EV << "Requested to transmit " << frames << " pkts\n";
         cMessage *copy = ((cMessage *)pkt)->dup();
         send(copy, "out");
@@ -354,6 +360,7 @@ void Host::processPBControl(BasePkt* pkt)
     frames_in_data = df->framesInData(dataLen);
 
     PGBK = 0;
+    numHandledFrames = 0;
 
     for (unsigned int i = 0; i < pkt->getAlloc_pidsArraySize(); i++)
     {
@@ -400,6 +407,8 @@ void Host::processPBControl(BasePkt* pkt)
                 {
                     EV << "Host>dealt with " << frame_count << " out of " << frames_in_data << " data packet frames\n";
                 }
+
+                numHandledFrames = frame_count;
             }
         } // ignore other pids
     }

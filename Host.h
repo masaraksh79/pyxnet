@@ -34,7 +34,7 @@ class Host : public cSimpleModule
     int cycleSlots, ARSlot, bootDelay, randomStart;
     int BCSlot;
     int reqSlot, collisionCnt, slotBytes, firstSlotBytes;
-    int dataLen;
+    int dataLen, numHandledFrames;
     int myMAC;
     simtime_t slotRx, slotUs;
     simtime_t slotTime, txRx;
