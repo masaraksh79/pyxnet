@@ -6,7 +6,8 @@
 #
 
 # Name of target to be created (-o option)
-TARGET = pyxnet$(EXE_SUFFIX)
+TARGET = pyxnet$(D)$(EXE_SUFFIX)
+TARGET_DIR = .
 
 # User interface (uncomment one) (-u option)
 USERIF_LIBS = $(ALL_ENV_LIBS) # that is, $(TKENV_LIBS) $(QTENV_LIBS) $(CMDENV_LIBS)
@@ -15,7 +16,7 @@ USERIF_LIBS = $(ALL_ENV_LIBS) # that is, $(TKENV_LIBS) $(QTENV_LIBS) $(CMDENV_LI
 #USERIF_LIBS = $(QTENV_LIBS)
 
 # C++ include paths (with -I)
-INCLUDE_PATH = -I. -Iresults -Itest_arslot -Itest_traffic
+INCLUDE_PATH =
 
 # Additional object and library files to link with
 EXTRA_OBJS =
@@ -46,7 +47,7 @@ SMFILES =
 
 #------------------------------------------------------------------------------
 
-# Pull in OMNeT++ configuration (Makefile.inc or configuser.vc)
+# Pull in OMNeT++ configuration (Makefile.inc)
 
 ifneq ("$(OMNETPP_CONFIGFILE)","")
 CONFIGFILE = $(OMNETPP_CONFIGFILE)
@@ -65,10 +66,9 @@ endif
 include $(CONFIGFILE)
 
 # Simulation kernel and user interface libraries
-OMNETPP_LIB_SUBDIR = $(OMNETPP_LIB_DIR)/$(TOOLCHAIN_NAME)
-OMNETPP_LIBS = -L"$(OMNETPP_LIB_SUBDIR)" -L"$(OMNETPP_LIB_DIR)" -loppmain$D $(USERIF_LIBS) $(KERNEL_LIBS) $(SYS_LIBS)
+OMNETPP_LIBS = $(OPPMAIN_LIB) $(USERIF_LIBS) $(KERNEL_LIBS) $(SYS_LIBS)
 
-COPTS = $(CFLAGS)  $(INCLUDE_PATH) -I$(OMNETPP_INCL_DIR)
+COPTS = $(CFLAGS) $(IMPORT_DEFINES)  $(INCLUDE_PATH) -I$(OMNETPP_INCL_DIR)
 MSGCOPTS = $(INCLUDE_PATH)
 SMCOPTS =
 
@@ -76,10 +76,8 @@ SMCOPTS =
 # so we store COPTS into $COPTS_FILE and have object
 # files depend on it (except when "make depend" was called)
 COPTS_FILE = $O/.last-copts
-ifneq ($(MAKECMDGOALS),depend)
 ifneq ("$(COPTS)","$(shell cat $(COPTS_FILE) 2>/dev/null || echo '')")
 $(shell $(MKPATH) "$O" && echo "$(COPTS)" >$(COPTS_FILE))
-endif
 endif
 
 #------------------------------------------------------------------------------
@@ -89,19 +87,25 @@ endif
 #------------------------------------------------------------------------------
 
 # Main target
-all: $O/$(TARGET)
-	$(Q)$(LN) $O/$(TARGET) .
+all: $(TARGET_DIR)/$(TARGET)
 
-$O/$(TARGET): $(OBJS)  $(wildcard $(EXTRA_OBJS)) Makefile
+$(TARGET_DIR)/% :: $O/%
+	@mkdir -p $(TARGET_DIR)
+	$(Q)$(LN) $< $@
+ifeq ($(TOOLCHAIN_NAME),clangc2)
+	$(Q)-$(LN) $(<:%.dll=%.lib) $(@:%.dll=%.lib)
+endif
+
+$O/$(TARGET): $(OBJS)  $(wildcard $(EXTRA_OBJS)) Makefile $(CONFIGFILE)
 	@$(MKPATH) $O
 	@echo Creating executable: $@
-	$(Q)$(CXX) $(LDFLAGS) -o $O/$(TARGET)  $(OBJS) $(EXTRA_OBJS) $(AS_NEEDED_OFF) $(WHOLE_ARCHIVE_ON) $(LIBS) $(WHOLE_ARCHIVE_OFF) $(OMNETPP_LIBS)
+	$(Q)$(CXX) $(LDFLAGS) -o $O/$(TARGET) $(OBJS) $(EXTRA_OBJS) $(AS_NEEDED_OFF) $(WHOLE_ARCHIVE_ON) $(LIBS) $(WHOLE_ARCHIVE_OFF) $(OMNETPP_LIBS)
 
 .PHONY: all clean cleanall depend msgheaders smheaders
 
 .SUFFIXES: .cc
 
-$O/%.o: %.cc $(COPTS_FILE)
+$O/%.o: %.cc $(COPTS_FILE) | msgheaders smheaders
 	@$(MKPATH) $(dir $@)
 	$(qecho) "$<"
 	$(Q)$(CXX) -c $(CXXFLAGS) $(COPTS) -o $@ $<
@@ -119,44 +123,16 @@ msgheaders: $(MSGFILES:.msg=_m.h)
 smheaders: $(SMFILES:.sm=_sm.h)
 
 clean:
-	$(qecho) Cleaning...
+	$(qecho) Cleaning $(TARGET)
 	$(Q)-rm -rf $O
-	$(Q)-rm -f pyxnet pyxnet.exe libpyxnet.so libpyxnet.a libpyxnet.dll libpyxnet.dylib
-	$(Q)-rm -f ./*_m.cc ./*_m.h ./*_sm.cc ./*_sm.h
-	$(Q)-rm -f results/*_m.cc results/*_m.h results/*_sm.cc results/*_sm.h
-	$(Q)-rm -f test_arslot/*_m.cc test_arslot/*_m.h test_arslot/*_sm.cc test_arslot/*_sm.h
-	$(Q)-rm -f test_traffic/*_m.cc test_traffic/*_m.h test_traffic/*_sm.cc test_traffic/*_sm.h
+	$(Q)-rm -f $(TARGET_DIR)/$(TARGET)
+	$(Q)-rm -f $(TARGET_DIR)/$(TARGET:%.dll=%.lib)
+	$(Q)-rm -f $(call opp_rwildcard, . , *_m.cc *_m.h *_sm.cc *_sm.h)
 
-cleanall: clean
+cleanall:
+	$(Q)$(MAKE) -s clean MODE=release
+	$(Q)$(MAKE) -s clean MODE=debug
 	$(Q)-rm -rf $(PROJECT_OUTPUT_DIR)
 
-depend:
-	$(qecho) Creating dependencies...
-	$(Q)$(MAKEDEPEND) $(INCLUDE_PATH) -f Makefile -P\$$O/ -- $(MSG_CC_FILES) $(SM_CC_FILES)  ./*.cc results/*.cc test_arslot/*.cc test_traffic/*.cc
-
-# DO NOT DELETE THIS LINE -- make depend depends on it.
-$O/Defragmenter.o: Defragmenter.cc \
-	Defragmenter.h
-$O/Host.o: Host.cc \
-	Defragmenter.h \
-	Host.h \
-	JoinLeave.h \
-	PyxisDefs.h \
-	pkt_m.h
-$O/JoinLeave.o: JoinLeave.cc \
-	JoinLeave.h \
-	pkt_m.h
-$O/Scheduler.o: Scheduler.cc \
-	JoinLeave.h \
-	Scheduler.h \
-	pkt_m.h
-$O/Server.o: Server.cc \
-	Defragmenter.h \
-	JoinLeave.h \
-	PyxisDefs.h \
-	Scheduler.h \
-	Server.h \
-	pkt_m.h
-$O/pkt_m.o: pkt_m.cc \
-	pkt_m.h
-
+# include all dependencies
+-include $(OBJS:%.o=%.d)

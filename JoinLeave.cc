@@ -13,7 +13,7 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#include <JoinLeave.h>
+#include "JoinLeave.h"
 
 namespace pyxis {
 
