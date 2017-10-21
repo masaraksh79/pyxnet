@@ -448,7 +448,7 @@ void Host::refreshDisplay() const
         }
         else
         {
-            sprintf(pidstr, "%d/%x\nBytes:%llu", pid, myMAC, queue->getByteLength());
+            sprintf(pidstr, "%d/%x\nBytes:%lu", pid, myMAC, queue->getByteLength());
             getDisplayString().setTagArg("t", 0, (const char *)pidstr);
         }
 
