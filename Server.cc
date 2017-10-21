@@ -315,16 +315,10 @@ void Server::PBScheduleData()
 
 void Server::initEvalSlots(int slots)
 {
-    if (failedSlots != NULL)
-        delete failedSlots;
-
     failedSlots = new bool[slots];
 
     for (int i = 0; i < slots; i++)
         failedSlots[i] = false;
-
-    if (reservedSlots != NULL)
-        delete reservedSlots;
 
     reservedSlots = new bool[slots];
 
